@@ -3,7 +3,7 @@
 Quick start
 ----
 
-###1. Selecting files and folders to compare</title>
+### 1. Selecting files and folders to compare
 
 After you have installed WinMerge, step through the procedure and
 discussions in this topic to learn basic WinMerge operations and concepts.

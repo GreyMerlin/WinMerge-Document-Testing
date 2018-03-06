@@ -14,23 +14,23 @@ The goal of WinMerge development is to make comparing, synchronizing, and mergin
 
 Please note that WinMerge is not freeware (as many sites on the Web have stated): it is [GPL](http://www.gnu.org/licenses/gpl-2.0.html) licensed. We provide you with a good tool for free, so please honor your license agreement and submit improvements to us. We are happy to get help improving WinMerge, to the advantage of all WinMerge users.
 
-###1. WinMerge versions
+### 1. WinMerge versions
 
 There are three kind of versions available in the [downloads](http://sourceforge.net/projects/winmerge/files/) page.
 
-####1.1 Stable versions
+#### 1.1 Stable versions
 
 [Stable versions](http://sourceforge.net/projects/winmerge/files/stable/) are recommended for most users. If you are unsure about what version to use, use the latest stable version. Stable versions have an even second number, for example, 2.4, 2.6 and 2.8.
 
-####1.2 Beta versions
+#### 1.2 Beta versions
 
 [Beta versions](http://sourceforge.net/projects/winmerge/files/beta/) are for people who want to test latest features and improvements made after last stable version. Beta versions are not tested as extensively as stable versions and probably have some bugs. Beta versions have an odd second number, for example 2.5 and 2.7. Beta versions can be used in production, because they are not expected to have major bugs. But there is always a risk with using beta-level releases, so       consider it carefully. We have tried to release a new stable series once a year, so it may be worth waiting for few months for the next stable release...
 
-####1.3 Experimental versions
+#### 1.3 Experimental versions
 
 [Experimental versions](http://sourceforge.net/projects/winmerge/files/alpha/) or alpha versions are snapshot releases from our version control system (Subversion). They have all the latest features and improvements. Some features may still be buggy or incomplete. These releases are made available to allow users to try out the current code without needing to compile, and to participate in development discussions concerning new and changing features. We also appreciate any help testing the current code. Use experimental versions with care and enable backups! And please [report bugs](http://sourceforge.net/p/winmerge/bugs/) that you find while using these builds: it really helps with WinMerge development!
 
-####1.4 Version tree
+#### 1.4 Version tree
 
 All this talk about different versions might be confusing if you never have worked with this kind of model. Lets illustrate with a picture:
 
@@ -48,7 +48,7 @@ This branching also means that stable versions don't get many new features after
 
  Many software vendors always increase their version numbers and advise people to use the version with the biggest number. If WinMerge were developed as proprietary software, users would see only versions from stable branches. But because WinMerge is an open source software project,  we want to keep our development as open as possible and to release many development versions. The latest development version can have version  number 2.9.1.0 and the latest stable version can be version 2.6.14.
 
-###1.2 Getting support and reporting bugs
+### 1.2 Getting support and reporting bugs
 
 The [Open Discussion forum](http://forums.winmerge.org/viewforum.php?f=4) is the fastest way to get help. Please be patient, it may take some time for somebody to answer.
 
@@ -58,13 +58,13 @@ If you find a bug, please submit it as a [bug report](http://sourceforge.net/p/w
 
 You must [register with SourceForge.net](https://sourceforge.net/account/registration/) before posting a bug report (registration is free). We require registering because anonymous submissions caused a lot of spam and also because there were no possibility to contact people for asking more information. We rarely sent direct emails but you'll get notifications when we ask questions in the bug item.
 
-###3. WinMerge source code and development
+### 3. WinMerge source code and development
 
 WinMerge source code is available in the [downloads](http://sourceforge.net/projects/winmerge/files/) page and from the [public Subversion server](http://sourceforge.net/p/winmerge/code/). Anyone can download the sources, study them, and alter them. If you find (and fix) bugs, improve something, and so on, please submit your changes to us as [patches](http://sourceforge.net/p/winmerge/patches/) and help improve this product! If you publish your altered version, you are required to publish the changes to source code too. This is what the [GPL](http://www.gnu.org/licenses/gpl-2.0.html) license is about: please respect it.</para>
 
 WinMerge development work is done by people in their spare time. Nobody gets paid for improving WinMerge. We try to fix bugs as we find them or when somebody reports them to us. We really try - we use WinMerge too. But there are absolutely no promises for new features. We always appreciate any help with WinMerge, be it testing, documenting, translating, or coding.
 
-####3.1 Participating in WinMerge development
+#### 3.1 Participating in WinMerge development
 
 As mentioned above, we look for help in many areas, not just coding. Translation, documentation, and testing are important too.
 

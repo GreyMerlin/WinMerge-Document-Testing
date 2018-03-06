@@ -1,4 +1,4 @@
-#WinMerge 2.16.0 Help
+# WinMerge 2.16.0 Help
 
 
 #### Original Authors ...

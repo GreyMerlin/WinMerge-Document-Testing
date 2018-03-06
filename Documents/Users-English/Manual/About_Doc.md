@@ -3,11 +3,11 @@
 
 This is Help for WinMerge 2.16.0
 
-##1. Audience and scope
+## 1. Audience and scope
 
 WinMerge Help is intended for both new and experienced users.  It explains how to use WinMerge, and documents its capabilities and limitations.
 
-##2. How to access Help
+## 2. How to access Help
 
 WinMerge Help topics are provided in two forms:
 
@@ -26,7 +26,7 @@ You can access WinMerge Help in several ways:
 - **WinMerge Web site:** Open your Web browser to [winmerge.org](http://winmerge.org/). Under [Documentation](http://winmerge.org/docs/), follow the [Manual](http://manual.winmerge.org/) link to the latest Help version.
           
 
-##3. How to use Help  
+## 3. How to use Help  
 
 Please read the following topics to learn essential WinMerge basics,
 
@@ -54,7 +54,7 @@ To learn about WinMerge in more detail, read these topics:
 Before submitting questions to [SourceForge.net](http://sourceforge.net/projects/winmerge/), please check the [Faq]()  topic first to see if your question is answered there.
           
 
-##4. Documentation conventions
+## 4. Documentation conventions
 
 
 | Example | Indicates |
