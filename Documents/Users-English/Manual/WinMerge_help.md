@@ -3,13 +3,13 @@
 
 #### Original Authors ...
 
-- **Kimmo Varis**   
-- **Denis Bradford**   
-- **Dean Grimm**  
-- **Laurent Ganier**   
-- **Tim Gerundt**   
-- **Perry Rapp **  
-- **Christian List**   
+- **Kimmo Varis**
+- **Denis Bradford**
+- **Dean Grimm**
+- **Laurent Ganier**
+- **Tim Gerundt**
+- **Perry Rapp**
+- **Christian List**
 - and all others who helped with this
 
 *Revision 2.16.0*
