@@ -27,37 +27,9 @@ Information in this document is subject to change without notice.
 
 [About Doc](./About_Doc.md)
 
+[Quick Start](./Quick_start.md) 
+
 [Introduction](./Introduction.md)
 
-[User Manual](./Quick_start.md) 
-
-  &Install;
-
-  &Intro_diffs;
-
-  &Open_paths;
-
-  &Compare_dirs;
-
-  &Compare_files;
-
-  &Compare_bin;
-
-  &Compare_images;
-
-  &Configuration;
-
-  &Locales;
-
-  &Plugins;
-
-  &Filters;
-
-  &Command_line;
-
-  &Version_control;
-
-  &Faq;
-
-  &Shortcut_keys;
+![](./images/note.gif) &nbsp; Thats as far as I've gotten !! 
 
