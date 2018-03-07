@@ -18,7 +18,7 @@ topics.
      - In a Command Prompt window, cd to the WinMerge installation folder and enter **WinMergeU**
  
 2. In the WinMerge window select the files or folders that you want to operate on. For example:
-      - Click File &rarr; Open.
+      - Click *File &rarr; Open*.
       - Click the ![](./screenshots/open_icon.png) WinMerge open button.
       - Press **Ctrl+O**.
 
