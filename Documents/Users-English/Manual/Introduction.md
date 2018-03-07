@@ -40,7 +40,7 @@ WinMerge stable and development versions
 
 The preceding diagram shows the relationships between different releases and versions. Development always happens within experimental and beta development versions. At the appropriate points we create new branches for stable releases. In the diagram, the arrows for 2.4.x and 2.6.x versions are two current stable branches. (The diagram is a snapshot; it is not updated to show the current stable branch).
       
-> ![](.\images/important.gif) &nbsp; **Important** :: A branch always indicates a separate development effort. There is no any automation to copy improvements or fixes from development versions to stable versions, or in the opposite direction. Changes are always selected by hand and then merged (using WinMerge, of course).
+> ![](./images/important.gif) &nbsp; **Important** <br/> A branch always indicates a separate development effort. There is no any automation to copy improvements or fixes from development versions to stable versions, or in the opposite direction. Changes are always selected by hand and then merged (using WinMerge, of course).
         
 After a branch is created, we try to keep the code in it as stable as possible. Usually this means that we copy only tested bug fixes from development versions to stable versions. Unfortunately this is not always an easy task, and errors can occur. New bugs can also appear in stable versions: this is real-life software development. However, in general, quality increases in branches. For example, 2.6.14 was a better release than 2.4.0. So we always recommend using the latest stable branch release.
 
@@ -54,7 +54,7 @@ The [Open Discussion forum](http://forums.winmerge.org/viewforum.php?f=4) is the
 
 If you find a bug, please submit it as a [bug report](http://sourceforge.net/p/winmerge/bugs/). Please attach as much information as you can: at a minimum, the version number of WinMerge that you are using. If you can, also attach a configuration log which, you can display by clicking *Help &rarr; Configuration* in the WinMerge window. Good information in a bug report makes it more likely that your bug will be fixed quickly.</para>
 
-> ![](.\images/important.gif) &nbsp;  **Important** :: Include the version number in bug reports. You can check the version number by clicking *Help&nbsp;&rarr;&nbsp;About&nbsp;WinMerge*.
+> ![](./images/important.gif) &nbsp;  **Important** <br/>Include the version number in bug reports. You can check the version number by clicking *Help&nbsp;&rarr;&nbsp;About&nbsp;WinMerge*.
 
 You must [register with SourceForge.net](https://sourceforge.net/account/registration/) before posting a bug report (registration is free). We require registering because anonymous submissions caused a lot of spam and also because there were no possibility to contact people for asking more information. We rarely sent direct emails but you'll get notifications when we ask questions in the bug item.
 
