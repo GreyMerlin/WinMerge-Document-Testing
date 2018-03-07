@@ -10,7 +10,7 @@
 
 - For comparison, here are the exactly identical four pages **directly** from the current **2.15.3** web-based WinMerge help pages.
 
-    [**Index**](./Build/Manual/html/Index.html) - also the root page of the entire web-based help
+    [**Index**](./Build/Manual/html/index.html) - also the root page of the entire web-based help
 
     [**About Doc**](./Build/Manual/html/About_Doc.html)
 

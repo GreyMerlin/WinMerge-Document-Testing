@@ -30,34 +30,34 @@ You can access WinMerge Help in several ways:
 
 Please read the following topics to learn essential WinMerge basics,
 
-- **[Quick Start](./Quick_start.md)** 
+- **[Quick Start](./Quick_start.md)**  
     Gets you quickly started with WinMerge and shows its basic usage.
           
-- **[Comparing and merging folders]()** 
+- **[Comparing and merging folders]()**  
     Explains the folder comparison window, available operations, and customizing the results display.
           
-- **[Comparing and merging text files]()** 
+- **[Comparing and merging text files]()**  
     Explains the file comparison/merge window, available operations, methods of navigation, and modes.
           
-- **[Options and Configuration]()** 
+- **[Options and Configuration]()**  
     Explains how to customize WinMerge, including handling whitespace, colours, and text encoding.
           
           
 To learn about WinMerge in more detail, read these topics:
 
-- **[Opening Files and Folders]()** 
+- **[Opening Files and Folders]()**  
     Introduces several ways to open files and folders in WinMerge - there are many! For example, do you know how to use the Shell Extension context menu in advanced mode?
           
-- **[Plugins]()** 
+- **[Plugins]()**  
     Describes the optional, extra features that you can add to WinMerge using its plugin mechanism.
 
-- **[Using Filters]()** 
+- **[Using Filters]()**  
     Explains how to control what is compared in the folder or file comparison window.
 
-- **[Command Line]()** 
+- **[Command Line]()**  
     Lists command-line parameters for using WinMerge with other tools or from a script.
 
-- **[Faq]()**
+- **[Faq]()**  
     Contains answers to many common questions asked of developers.
 
 Before submitting questions to [SourceForge.net](http://sourceforge.net/projects/winmerge/), please check the [Faq]()  topic first to see if your question is answered there.
