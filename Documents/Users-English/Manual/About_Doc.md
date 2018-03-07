@@ -30,7 +30,7 @@ You can access WinMerge Help in several ways:
 
 Please read the following topics to learn essential WinMerge basics,
 
-- **[Quick Start](Manual\Quick_start.md)** - Gets you quickly started with WinMerge and shows its basic usage.
+- **[Quick Start](./Manual/Quick_start.md)** - Gets you quickly started with WinMerge and shows its basic usage.
           
 - **[Comparing and merging folders]()** - Explains the folder comparison window, available operations, and customizing the results display.
           
