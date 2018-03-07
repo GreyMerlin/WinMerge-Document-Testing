@@ -1,1 +1,1 @@
-[WinMerge Help](./Documents/Users-English/Manual/WinMerge_help.md)
+[WinMerge Help](./Docs/Users-English/Manual/WinMerge_help.md)

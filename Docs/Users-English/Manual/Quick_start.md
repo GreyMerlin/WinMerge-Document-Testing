@@ -1,5 +1,3 @@
-<link href="./Github_GreyMerlin.css" rel="stylesheet"></link>
-
 Quick start
 ----
 
