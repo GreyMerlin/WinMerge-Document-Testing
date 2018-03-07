@@ -40,7 +40,7 @@ WinMerge stable and development versions
 
 The preceding diagram shows the relationships between different releases and versions. Development always happens within experimental and beta development versions. At the appropriate points we create new branches for stable releases. In the diagram, the arrows for 2.4.x and 2.6.x versions are two current stable branches. (The diagram is a snapshot; it is not updated to show the current stable branch).
       
-> <div style="background-color:yellow;"><strong>Important</strong> <br/> A branch always indicates a separate development effort. There is no any automation to copy improvements or fixes from development versions to stable versions, or in the opposite direction. Changes are always selected by hand and then merged (using WinMerge, of course).</div>
+<blockquote style="background-color:yellow;"><strong>Important</strong> <br/> A branch always indicates a separate development effort. There is no any automation to copy improvements or fixes from development versions to stable versions, or in the opposite direction. Changes are always selected by hand and then merged (using WinMerge, of course).</blockquote>
         
 After a branch is created, we try to keep the code in it as stable as possible. Usually this means that we copy only tested bug fixes from development versions to stable versions. Unfortunately this is not always an easy task, and errors can occur. New bugs can also appear in stable versions: this is real-life software development. However, in general, quality increases in branches. For example, 2.6.14 was a better release than 2.4.0. So we always recommend using the latest stable branch release.
 
