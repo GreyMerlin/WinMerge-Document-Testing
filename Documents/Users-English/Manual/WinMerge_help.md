@@ -25,11 +25,11 @@ Information in this document is subject to change without notice.
 
 --------
 
-[About Doc](./Documents/Users-English/Manual/About_Doc.md)
+[About Doc](./About_Doc.md)
 
-[Introduction](./Documents/Users-English/Manual/Introduction.md)
+[Introduction](./Introduction.md)
 
-[User Manual](./Documents/Users-English/Manual/Quick_start.md) 
+[User Manual](./Quick_start.md) 
 
   &Install;
 
