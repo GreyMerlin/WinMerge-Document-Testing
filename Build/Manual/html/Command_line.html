@@ -1,0 +1,297 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Command line - WinMerge 2.12 Manual</title>
+      <meta name="generator" content="DocBook XSL Stylesheets V1.74.0">
+      <link rel="home" href="index.html" title="WinMerge 2.16 Help">
+      <link rel="up" href="index.html" title="WinMerge 2.16 Help">
+      <link rel="prev" href="Filters.html" title="Using Filters">
+      <link rel="next" href="Version_control.html" title="Using WinMerge with other tools">
+      <link rel="stylesheet" type="text/css" href="css/all.css">
+      <link rel="stylesheet" type="text/css" media="print" href="css/print.css">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Command line</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="Filters.html">Prev</a>&nbsp;
+               </td>
+               <th width="60%" align="center">&nbsp;</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="Version_control.html">Next</a></td>
+            </tr>
+         </table>
+      </div>
+      <div class="article" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title"><a name="Command_line"></a>Command line<a class="indexterm" name="d0e8938"></a><a class="indexterm" name="d0e8941"></a></h2>
+               </div>
+            </div>
+            <hr>
+         </div>
+         <p>The WinMerge command line accepts several parameters in addition to the
+            paths to compare. Most of these parameters are intended for using WinMerge as
+            an external compare application or starting a compare operation from a batch
+              file.
+         </p>
+         <p>Use one of these formats for the WinMerge command:</p>
+         <div class="cmdsynopsis">
+            <p><code class="command">WinMergeU</code>  [<code class="option">/?</code>]
+            </p>
+         </div>
+         <div class="cmdsynopsis">
+            <p><code class="command">WinMergeU</code>  [<code class="option">/r</code>] [<code class="option">/e</code>] [<code class="option">/f</code>
+                     <em class="replaceable"><code>filter</code></em>] [<code class="option">/x</code>] [<code class="option">/xq</code>] [<code class="option">/s</code>] [<code class="option">/ul</code>] [<code class="option">/um</code>] [<code class="option">/ur</code>] [<code class="option">/u</code>] [<code class="option">/wl</code>] [<code class="option">/wm</code>] [<code class="option">/wr</code>] [<code class="option">/minimize</code>] [<code class="option">/maximize</code>] [<code class="option">/fl</code>] [<code class="option">/fm</code>] [<code class="option">/fr</code>] [<code class="option">/dl</code>
+                     <em class="replaceable"><code>leftdesc</code></em>] [<code class="option">/dm</code>
+                     <em class="replaceable"><code>middledesc</code></em>] [<code class="option">/dr</code>
+                     <em class="replaceable"><code>rightdesc</code></em>]  <em class="replaceable"><code>leftpath</code></em>  [<em class="replaceable"><code>middlepath</code></em>]  <em class="replaceable"><code>rightpath</code></em>  [<code class="option">/o</code>
+                     <em class="replaceable"><code>outputpath</code></em>] [<code class="option">/al</code>] [<code class="option">/am</code>] [<code class="option">/ar</code>]
+            </p>
+         </div>
+         <div class="cmdsynopsis">
+            <p><code class="command">WinMergeU</code>   <em class="replaceable"><code>conflictfile</code></em> 
+            </p>
+         </div>
+         <p>Entering the command with no parameters or pathnames simply opens the
+              WinMerge window. Parameters are prefixed with either a forward slash (
+              <code class="literal">/</code> ) or dash ( <code class="literal">-</code> ) character. Pathnames
+              have no prefix character.
+         </p>
+         <div class="itemizedlist">
+            <ul type="disc">
+               <li>
+                  <p><code class="option">/?</code> opens WinMerge Help at this topic.
+                  </p>
+               </li>
+               <li><a class="indexterm" name="d0e9081"></a><p><code class="option">/r</code> compares all files in all subfolders (recursive
+                           compare). Unique folders (occurring only on one side) are listed in the
+                           compare result as separate items. Note that including subfolders can
+                           increase compare time significantly. Without this parameter, WinMerge
+                           lists only files and subfolders at the top level of the two target
+                           folders. It does not compare the subfolders.
+                  </p>
+               </li>
+               <li><a class="indexterm" name="d0e9089"></a><p><code class="option">/e</code> enables you to close WinMerge with a single
+                           <span class="keycap"><strong>Esc</strong></span> key press. This is useful when you use WinMerge as an
+                           external compare application: you can close WinMerge quickly, like a
+                           dialog. Without this parameter, you might have to press
+                           <span class="keycap"><strong>Esc</strong></span> multiple times to close all its windows.
+                  </p>
+               </li>
+               <li><a class="indexterm" name="d0e9105"></a><p><code class="option">/f</code> applies a specified filter to restrict the
+                           comparison. The filter can be a filemask like <code class="filename"><strong class="userinput"><code>*.h
+                                    *.cpp</code></strong></code>, or the name of a file filter like
+                           <strong class="userinput"><code>XML/HTML Devel</code></strong>. Add quotation marks around a filter
+                           mask or name that contains spaces.
+                  </p>
+               </li>
+               <li>
+                  <p><code class="option">/x</code> closes WinMerge (after displaying an information
+                           dialog) when you start a comparison of identical files. The parameter has
+                           no effect after the comparison, for example if the files become identical
+                           as a result of merging or editing. This parameter is useful when you use
+                           WinMerge as an external compare application, or when you want to eliminate
+                           unnecessary steps by ignoring files that don't have any
+                           differences.
+                  </p>
+               </li>
+               <li>
+                  <p><code class="option">/xq</code> is similar to <code class="option">/x</code> but does not
+                           show the message about identical files. 
+                  </p>
+               </li>
+               <li><a class="indexterm" name="d0e9135"></a><p><code class="option">/s</code> limits WinMerge windows to a single instance.
+                           For example, if WinMerge is already running, a new compare opens in the
+                           same instance. Without this parameter, multiple windows are allowed:
+                           depending on other settings, a new compare might open in the existing
+                           window or in a new window.
+                  </p>
+               </li>
+               <li><a class="indexterm" name="d0e9145"></a><p><code class="option">/ul</code> prevents WinMerge from adding the left path to
+                           the Most Recently Used (MRU) list. External applications should not add
+                           paths to the MRU list in the Select Files or Folders dialog.
+                  </p>
+               </li>
+               <li>
+                  <p><code class="option">/um</code> prevents WinMerge from adding the middle path to
+                           the Most Recently Used (MRU) list. External applications should not add
+                           paths to the MRU list in the Select Files or Folders dialog.
+                  </p>
+               </li>
+               <li>
+                  <p><code class="option">/ur</code> prevents WinMerge from adding the right path to
+                           the Most Recently Used (MRU) list. External applications should not add
+                           paths to the MRU list in the Select Files or Folders dialog.
+                  </p>
+               </li>
+               <li>
+                  <p><code class="option">/u</code> prevents WinMerge from adding either path (left
+                           or right) to the Most Recently Used (MRU) list. External applications
+                           should not add paths to the MRU list in the Select Files or Folders
+                           dialog.
+                  </p>
+               </li>
+               <li><a class="indexterm" name="d0e9168"></a><p><code class="option">/wl</code> opens the left side as read-only. Use this when
+                           you don't want to change left side items in the compare.
+                  </p>
+               </li>
+               <li>
+                  <p><code class="option">/wm</code> opens the middle side as read-only. Use this
+                           when you don't want to change right side items in the compare.
+                  </p>
+               </li>
+               <li>
+                  <p><code class="option">/wr</code> opens the right side as read-only. Use this
+                           when you don't want to change right side items in the compare.
+                  </p>
+               </li>
+               <li><a class="indexterm" name="d0e9186"></a><p><code class="option">/minimize</code> starts WinMerge as a minimized window.
+                           This option can be useful during lengthy compares.
+                  </p>
+               </li>
+               <li>
+                  <p><code class="option">/maximize</code> starts WinMerge as a maximized
+                           window.
+                  </p>
+               </li>
+               <li>
+                  <p><code class="option">/fl</code> sets focus to the left side at startup
+                  </p>
+               </li>
+               <li>
+                  <p><code class="option">/fm</code> sets focus to the middle side at startup
+                  </p>
+               </li>
+               <li>
+                  <p><code class="option">/fr</code> sets focus to the right side at startup
+                  </p>
+               </li>
+               <li>
+                  <p><code class="option">/dl</code> specifies a description in the left side title
+                           bar, overriding the default folder or filename text. For example:
+                           <strong class="userinput"><code>/dl "Version 1.0</code></strong>" or <strong class="userinput"><code>/dl
+                                 WorkingCopy</code></strong>. Use quotation marks around descriptions that
+                           contain spaces.
+                  </p>
+               </li>
+               <li>
+                  <p><code class="option">/dm</code> specifies a description in the middle side title
+                           bar, just like <code class="option">/dl</code>.
+                  </p>
+               </li>
+               <li>
+                  <p><code class="option">/dr</code> specifies a description in the right side title
+                           bar, just like <code class="option">/dl</code>.
+                  </p>
+               </li>
+               <li>
+                  <p><code class="option"><em class="replaceable"><code>leftpath</code></em></code> specifies the
+                           folder, file, or project file to open on the left side.
+                  </p>
+               </li>
+               <li>
+                  <p><code class="option"><em class="replaceable"><code>middlepath</code></em></code> specifies the
+                           folder, file, or project file to open on the middle side.
+                  </p>
+               </li>
+               <li>
+                  <p><code class="option"><em class="replaceable"><code>rightpath</code></em></code> specifies the
+                           folder, file, or project file to open on the right side.
+                  </p>
+                  <p>WinMerge cannot compare files to folders, so both path parameters
+                           (<code class="option"><em class="replaceable"><code>leftpath</code></em></code> and
+                           <code class="option"><em class="replaceable"><code>rightpath</code></em></code>) must point to the
+                           same target type (either folders or files). If WinMerge cannot find either
+                           of the specified paths, it opens the Select Files or Folders dialog, where
+                           you can browse for the correct paths.
+                  </p>
+                  <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+                     <table border="0" summary="Tip">
+                        <tr>
+                           <td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.gif"></td>
+                           <th align="left">Tip</th>
+                        </tr>
+                        <tr>
+                           <td align="left" valign="top">
+                              <p>In file comparisons, you can specify a folder name in one of the
+                                         path parameters, as long as the folder contains a file with the same
+                                         name as the one specified in the other, file path.
+                              </p>
+                              <p>For example, consider this command:</p>
+                              <p><strong class="userinput"><code>WinMergeU <code class="filename">C:\Folder\File.txt</code>
+                                               <code class="filename">C:\Folder2</code> </code></strong></p>
+                              <p>If <code class="filename">C:\Folder2</code> contains a
+                                         file named <code class="filename">File.txt</code>: WinMerge implicitly resolves
+                                         the second path as a file specification, and compares the two files. Of
+                                         course, the command is invalid if <code class="filename">C:\Folder2</code> does <span class="emphasis"><em>not</em></span>
+                                         contain a file named <code class="filename">File.txt</code>.
+                              </p>
+                           </td>
+                        </tr>
+                     </table>
+                  </div>
+               </li>
+               <li><a class="indexterm" name="d0e9302"></a><p><code class="option">/o <em class="replaceable"><code>outputpath</code></em></code> Specifies an
+                           optional output folder where you want merged result files to be
+                           saved.
+                  </p>
+                  <p>The output path is rarely needed when you start WinMerge from
+                           the command line. It is meant to be used with version control tools, where
+                           you might need to specify a output path for the
+                           <em class="wordasword">result</em> file. If you specify a output path,
+                           WinMerge still shows only two or three files in the File Compare window. However,
+                           if you save either of these files, it is written to the output path,
+                           leaving the two or three source files intact.
+                  </p>
+                  <p>Version control systems typically refer to the source and result
+                           files using terms like <em class="glossterm">theirs</em>,
+                           <em class="glossterm">mine</em>, and either <em class="glossterm">merged</em> or
+                           <em class="glossterm">resolved</em>. If you specify a output path on the
+                           WinMerge command line, and are working with a version control system, you
+                           should list the files in that order.
+                  </p>
+               </li>
+               <li>
+                  <p><code class="option">/al</code> auto-merges at the left side at startup.
+                  </p>
+               </li>
+               <li>
+                  <p><code class="option">/am</code> auto-merges at the middle side at startup.
+                  </p>
+               </li>
+               <li>
+                  <p><code class="option">/ar</code> auto-merges at the right side at startup.
+                  </p>
+               </li>
+               <li><a class="indexterm" name="d0e9348"></a><p><code class="option"><em class="replaceable"><code>conflictfile</code></em></code> Specifies a
+                           conflict file, typically generated by a Version control system. The
+                           conflict file opens in the File Compare window, where you can merge and
+                           resolve conflicts, as described in <a class="xref" href="Compare_files.html#ResolveConflictFiles" title="5.3.&nbsp;Resolving conflict files">Resolving conflict files</a>. Note that no other paths can be used
+                           with a conflict file.
+                  </p>
+               </li>
+            </ul>
+         </div>
+      </div>
+      <div class="navfooter">
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="Filters.html">Prev</a>&nbsp;
+               </td>
+               <td width="20%" align="center">&nbsp;</td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="Version_control.html">Next</a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Using Filters&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Using WinMerge with other tools</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

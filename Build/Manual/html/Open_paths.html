@@ -1,0 +1,608 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Opening files and folders - WinMerge 2.12 Manual</title>
+      <meta name="generator" content="DocBook XSL Stylesheets V1.74.0">
+      <link rel="home" href="index.html" title="WinMerge 2.16 Help">
+      <link rel="up" href="index.html" title="WinMerge 2.16 Help">
+      <link rel="prev" href="Intro_diffs.html" title="Overview of file comparing and merging">
+      <link rel="next" href="Compare_dirs.html" title="Comparing and merging folders">
+      <link rel="stylesheet" type="text/css" href="css/all.css">
+      <link rel="stylesheet" type="text/css" media="print" href="css/print.css">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Opening files and folders</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="Intro_diffs.html">Prev</a>&nbsp;
+               </td>
+               <th width="60%" align="center">&nbsp;</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="Compare_dirs.html">Next</a></td>
+            </tr>
+         </table>
+      </div>
+      <div class="article" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title"><a name="Open_paths"></a>Opening files and folders<a class="indexterm" name="d0e1644"></a></h2>
+               </div>
+            </div>
+            <hr>
+         </div>
+         <p>WinMerge provides several ways to specify paths and open files or
+              folders:<a class="indexterm" name="d0e1649"></a><a class="indexterm" name="d0e1654"></a></p>
+         <div class="itemizedlist">
+            <ul type="disc">
+               <li>
+                  <p><a class="xref" href="Open_paths.html#OpenPaths_opendialog" title="1.&nbsp;Select Files or Folders dialog">Select Files or Folders dialog</a></p>
+               </li>
+               <li>
+                  <p><a class="xref" href="Open_paths.html#OpenPaths_shell-integ" title="2.&nbsp;Launching WinMerge operations in Windows Explorer">Launching WinMerge operations in Windows Explorer</a></p>
+               </li>
+               <li>
+                  <p><a class="xref" href="Open_paths.html#OpenPaths_dragndrop" title="3.&nbsp;Using Drag and drop">Using Drag and drop</a></p>
+               </li>
+               <li>
+                  <p><a class="xref" href="Open_paths.html#OpenPaths_project" title="4.&nbsp;Project files">Project files</a></p>
+               </li>
+            </ul>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="OpenPaths_opendialog"></a>1.&nbsp;Select Files or Folders dialog<a class="indexterm" name="d0e1675"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p><a class="xref" href="Quick_start.html" title="Quick start">Quick start</a> describes the Select Files or Folders
+                   dialog. This section provides more details, and some tips for using the
+                   Select Files or Folders dialog more efficiently.
+            </p>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e1681"></a>1.1.&nbsp;Using environment variables<a class="indexterm" name="d0e1684"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>You can use environment variables in your paths. Windows expands the
+                        variable name between % (percent) delimiters. For example, if an
+                        environment variable named <code class="envar">WORKDIR</code> has the value <code class="filename">c:\workfiles</code>, then the path
+                        <code class="envar">%WORKDIR%\project1</code> is expanded to <code class="filename">c:\workfiles\project1</code> .
+               </p>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="OpeningArchives"></a>1.2.&nbsp;Opening archive files<a class="indexterm" name="d0e1704"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>WinMerge archive support is provided in the 7-Zip plugin. See <a class="xref" href="Install.html" title="Getting and installing WinMerge">Getting and installing WinMerge</a> to install this plugin.
+               </p>
+               <p>Opening two archive files is similar to opening normal files:
+                        specify two archive files in the Open-dialog's <span class="guilabel">Left</span>
+                        and <span class="guilabel">Right</span> fields. If WinMerge recognizes the archive
+                        format, it opens the contents of the archive files in the Folder Compare
+                        window.
+               </p>
+               <p>The <a class="xref" href="Compare_dirs.html" title="Comparing and merging folders">Comparing and merging folders</a> topic describes how to work with
+                        archive files. For example, if an archive file contains two subfolders
+                        named <code class="filename">Original/</code> and <code class="filename">Altered/</code>, you can compare the contents of the
+                        two subfolders by specifying the same archive file in both sides in the
+                        Select Files or Folders dialog or WinMerge command line.
+               </p>
+               <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Tip">
+                     <tr>
+                        <td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.gif"></td>
+                        <th align="left">Tip</th>
+                     </tr>
+                     <tr>
+                        <td align="left" valign="top">
+                           <p>When you drag an archive file to the WinMerge window, press
+                                      <span class="keycap"><strong>Shift</strong></span> when dropping the file: WinMerge automatically
+                                      copies the same filename to both sides and opens the archive
+                                      file.
+                           </p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="Open_paths_filters"></a>1.3.&nbsp;Applying filters<a class="indexterm" name="d0e1740"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The <span class="guilabel">Filter</span> edit field enables you to restrict
+                        the files to be included in your folder compare. You can specify one or
+                        more file masks, or a single file filter (not both).
+               </p>
+               <p>A mask is a simple expression based on file extensions. For example,
+                        this list of file masks includes only files with the specified extensions;
+                        all others are excluded from the selection when the compare operation
+                        starts:
+               </p><pre class="screen">*.h;*.cpp *.txt,*.ini</pre><p>File masks are practical for simple filtering; for more advanced
+                        selecting, use filter files. Filter files are collections of regular
+                        expressions that can either include or exclude files. WinMerge installs a
+                        number of predefined filter files in its <code class="filename">Filters</code>
+                        folder, and you can create your own, too.
+               </p>
+               <p>To specify a filter, click the <span class="guibutton">Select</span> button
+                        next to the <span class="guilabel">Filters</span> field to choose from a list of
+                        available filters. Or, click the Filter drop-down list and choose a
+                        recently-used filter file.
+               </p>
+               <p>For full information about filter masks and filter files, see <a class="xref" href="Filters.html" title="Using Filters">Using Filters</a>.
+               </p>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="Open_paths_unpacker"></a>1.4.&nbsp;Selecting an unpacker for file comparisons<a class="indexterm" name="d0e1774"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Unpackers are plugins that are installed with WinMerge to provide
+                        functionality that is not used by default. Plugins that can be used to
+                        preprocess certain types of files before comparing them. For example,
+                        WinMerge cannot normally compare MS Word doc files, but by unpacking them,
+                        you can compare just the text contents. See <a class="xref" href="Plugins.html" title="Plugins">Plugins</a> for
+                        details.
+               </p>
+               <p>To apply a plugin to your file comparison, click the
+                        <span class="guibutton">Select</span> button for the <span class="guilabel">Unpacker</span>
+                        option. In the Select Unpacker dialog:
+               </p>
+               <div class="orderedlist"><a name="select-unpacker-proc"></a><ol type="1">
+                     <li>
+                        <p>Configure automatic plugin selection or choose a plugin
+                                 manually:
+                        </p>
+                        <div class="itemizedlist">
+                           <ul type="disc">
+                              <li>
+                                 <p>To use automatic mode (which applies the first available
+                                              plugin), verify that <span class="guilabel">&lt;None&gt;</span> is displayed in
+                                              the <span class="guilabel">File unpacker</span> control.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>To choose a different plugin (if available), use the
+                                              <span class="guilabel">File unpacker</span> control to choose the
+                                              plugin.
+                                 </p>
+                                 <p>By default, this control lists only suggested plugins for the
+                                              file type you selected to compare. To see all available plugins,
+                                              enable the option, <span class="guilabel">Display all packers, don't check the
+                                                 extension</span>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>To launch the compare without using any plugin, choose
+                                              <span class="guimenuitem">&lt;None&gt;</span> in the <span class="guilabel">File
+                                                 unpacker</span> control.
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li>
+                        <p>Click <span class="guibutton">OK</span> to close the Select Unpacker
+                                 dialog.
+                        </p>
+                     </li>
+                  </ol>
+               </div>
+               <p>Your choice is displayed in the <span class="guilabel">Unpacker</span> field.
+                        Note that you cannot select an unpacker when launching a Folder Compare
+                        operation.
+               </p>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="OpenPaths_shell-integ"></a>2.&nbsp;<a class="indexterm" name="d0e1836"></a><a class="indexterm" name="d0e1839"></a>Launching WinMerge operations in Windows Explorer
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>The optional Windows shell integration enables you to run WinMerge
+                   compare operations directly from Windows Explorer, using WinMerge shortcuts
+                   in the context menu.
+            </p>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e1846"></a>2.1.&nbsp;Enabling the Windows Explorer integration
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The Windows Explorer shell integration is available only if enabled.
+                        You can enable it either <a class="link" href="Install.html#Installing_usinginstaller" title="3.&nbsp;Using the installer (recommended)">during
+                           WinMerge installation</a> or later, using the <a class="xref" href="Configuration.html#Configuration_shell-integ" title="17.&nbsp;Shell Integration page">Shell Integration page</a> in the Options window. In the
+                        Options window, configure the <code class="option">Add to context menu</code> option,
+                        including its suboptions if you like.
+               </p>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e1859"></a>2.2.&nbsp;Using the WinMerge shortcut
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>If you enable <code class="option">Add to context menu</code> without the
+                        advanced menu suboption, the <span class="guimenuitem">WinMerge</span> shortcut
+                        is added to the Explorer context menu. For example:
+               </p>
+               <p>To use the basic shell integration, begin by selecting two paths in
+                        Windows Explorer. Then, right-click and choose WinMerge in the context
+                        menu. For example:
+               </p>
+               <div class="mediaobject"><img src="screenshots/ctx_menu_simple.png" alt="WinMerge command in Windows Explorer context menu"></div>
+               <p>WinMerge opens the paths directly in the File Compare or Folder
+                        Compare window.
+               </p>
+               <p>The left and right sides are determined by the sort order in Windows
+                        Explorer. In the preceding screen shot, the Windows Explorer file list is
+                        in ascending order, so WinMerge opens with <code class="filename">File2</code> on
+                        the left side and <code class="filename">File1</code> on the right..
+               </p>
+               <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                     <tr>
+                        <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td>
+                        <th align="left">Note</th>
+                     </tr>
+                     <tr>
+                        <td align="left" valign="top">
+                           <p>If either path cannot be opened for any reason, WinMerge opens the
+                                      Select Files or Folders dialog, where you can specify new paths.
+                                      Similarly, if you select only a single path, the Select Files or Folders
+                                      dialog opens with the selected file or folder in the
+                                      <span class="guilabel">Left</span> field, leaving the <span class="guilabel">Right</span>
+                                      path for you to specify.
+                           </p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <p>The <span class="guimenuitem">WinMerge</span> shortcut is quick and easy
+                        to use, but you can compare only files or folders that you are able to
+                        select concurrently in Windows Explorer. For more flexible selections,
+                        consider enabling the advanced menu, described in the next section.
+               </p>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e1902"></a>2.3.&nbsp;Using the advanced menu
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>If you choose the <code class="option">Enable advanced menu</code>, the
+                        <span class="guimenuitem">WinMerge</span> shortcut is replaced with two
+                        <span class="guimenuitem">Compare</span> shortcuts:
+               </p>
+               <div class="mediaobject"><img src="screenshots/ctx_menu_advanced.png" alt="Advanced WinMerge context menu"></div>
+               <p>Use the <span class="guimenuitem">Compare</span> shortcuts in this
+                        order:
+               </p>
+               <div class="orderedlist">
+                  <ol type="1">
+                     <li>
+                        <p>Right-click the first path and choose <span class="guimenuitem">Compare
+                                        To</span>. WinMerge stores the path in memory until you select
+                                     the second path.
+                        </p>
+                     </li>
+                     <li>
+                        <p>If you decide that you have chosen the wrong first path, you can
+                                     change it before choosing the second path:
+                        </p>
+                        <p>Right-click the new path and choose the <span class="guimenuitem">Re-select
+                                        First</span> shortcut. The new selection overrides your
+                                     previous path, and you can go on to the next step.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Navigate to the second file or folder that you want to compare.
+                                     The second path can be in any folder, or even in a different Windows
+                                     Explorer window from the first path. Right-click the second path and
+                                     choose <span class="guimenuitem">Compare</span>.
+                        </p>
+                        <p>WinMerge opens the File Compare or Folder Compare window,
+                                     loading the first and second paths in the left and right sides,
+                                     respectively.
+                        </p>
+                     </li>
+                  </ol>
+               </div>
+               <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                     <tr>
+                        <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td>
+                        <th align="left">Note</th>
+                     </tr>
+                     <tr>
+                        <td align="left" valign="top">
+                           <p>If you click <span class="guimenuitem">Compare</span> before designating
+                                      the first path, the Select Files or Folders dialog is opened, with your
+                                      selection as the first (<span class="guilabel">Left</span>) path. Specify the
+                                      second path in the <span class="guilabel">Right</span> field to continue with the
+                                      comparison.
+                           </p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <p>The <span class="guimenuitem">Compare To</span> paths is stored in memory
+                        until WinMerge is opened. As a result, you don't need to select both files
+                        at the same time or even using the same Windows Explorer view: you can
+                        choose one, open a different directory, and choose the other one. Both
+                        paths are discarded from memory after a compare operation. This means that
+                        you cannot select one <span class="guimenuitem">Compare To</span> path and
+                        compare it against several paths.
+               </p>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e1971"></a>2.4.&nbsp;Including subfolders when using the Windows Explorer
+                                 integration<a class="indexterm" name="d0e1974"></a><a class="indexterm" name="d0e1979"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>By default, folder compares that you do using the
+                        <span class="guimenuitem">WinMerge</span> or <span class="guimenuitem">Compare</span>
+                        shortcut are not recursive: only files in the top level are included.
+                        There are two ways to launch recursive compares with the Windows Explorer
+                        integration:
+               </p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p>Enable <span class="guilabel">Include subfolders by default</span> in the
+                                     Shell Integration page of the WinMerge Options dialog.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Press <span class="keycap"><strong>Control</strong></span> while selecting the
+                                     <span class="guimenuitem">WinMerge</span> or
+                                     <span class="guimenuitem">Compare</span> shortcut in the Windows Explorer
+                                     context menu.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+               <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                     <tr>
+                        <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td>
+                        <th align="left">Note</th>
+                     </tr>
+                     <tr>
+                        <td align="left" valign="top">
+                           <p>These settings for the Windows Explorer integration do not change
+                                      the <code class="option">Include Subfolders</code> setting for the Select Files or
+                                      Folders dialog, described in <a class="xref" href="Quick_start.html" title="Quick start">Quick start</a>.
+                           </p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="OpenPaths_dragndrop"></a>3.&nbsp;<a class="indexterm" name="d0e2021"></a>Using Drag and drop
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>From any Windows source that allows you to drag objects, such as
+                   Windows Explorer or the Desktop, you can drag and drop one or two paths into
+                   the WinMerge window. If you drop only one path into WinMerge, the Select
+                   Files or Folders dialog opens for you to select the second path. If the
+                   single path specifies a project file, then the project file is
+                   opened.
+            </p>
+            <p>By default, WinMerge does not include subfolders in compare
+                   operations. To include subfolders, press and hold <span class="keycap"><strong>Control</strong></span>
+                   while dropping paths. Another useful key when dropping paths is
+                   <span class="keycap"><strong>Shift</strong></span>: To open the same path in both sides of a Compare
+                   window, press and hold <span class="keycap"><strong>Shift</strong></span> while dropping only one path.
+                   This is a handy way to open archive files (see <a class="xref" href="Open_paths.html#OpeningArchives" title="1.2.&nbsp;Opening archive files">Opening archive files</a>.
+            </p>
+            <p>You can drop paths into the Select Files or Folders dialog. A typical
+                   procedure is to drag and drop the first path into the WinMerge window, and
+                   then drag and drop the second path into the Select Files or Folders dialog.
+                   When a path is dropped into the Select Files or Folders dialog, it is loaded
+                   into either the left or right path field:
+            </p>
+            <div class="variablelist">
+               <dl>
+                  <dt><span class="term">Left</span></dt>
+                  <dd>
+                     <p>If the left field is empty or both path fields already contain
+                                  paths
+                     </p>
+                  </dd>
+                  <dt><span class="term">Right</span></dt>
+                  <dd>
+                     <p>If the left path is not empty and the right path is empty</p>
+                  </dd>
+               </dl>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="OpenPaths_project"></a>4.&nbsp;<a class="indexterm" name="d0e2057"></a><a class="indexterm" name="d0e2060"></a>Project files
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>You can save the currently open paths and filters in a project file.
+                   Then, you can easily open the project later to compare the same files.
+                   Project files are handy if you compare the same files repeatedly.
+            </p>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e2068"></a>4.1.&nbsp;Using project files
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>To use a project file In the WinMerge window, click <span class="guimenu">File</span> &#8594; <span class="guimenuitem">Open Project</span>. WinMerge reads the paths from the project file. If the
+                        project file has two paths, both paths are opened. If only one path is
+                        given or one of paths is invalid, WinMerge opens the Select Files or
+                        Folders dialog, where you can add or correct the path information. Here
+                        are a few things to consider:
+               </p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>If you specify two project files, the project files
+                                  themselves are compared.
+                     </li>
+                     <li>If you specify a project file as the left file but do not
+                                  specify a right file, the single project file is opened as if you had
+                                  used the <span class="guimenu">File</span> &#8594; <span class="guimenuitem">Open Project</span> command.
+                     </li>
+                     <li>If you specify a project file as the left file and any other
+                                  file on the right side, the contents of the project file and the other
+                                  file are compared.
+                     </li>
+                  </ul>
+               </div>
+               <p>To specify a project file on the command line, simply enter it as a
+                        single file path.
+               </p>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e2097"></a>4.2.&nbsp;Editing and saving project files
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>To save a project file, click <span class="guimenu">File</span> &#8594; <span class="guimenuitem">Save Project</span>. The <span class="guilabel">Project File</span> dialog provides
+                        fields and options that you can easily edit to build a project file. If a
+                        compare window is currently open, the <span class="guilabel">Project File</span>
+                        dialog is initialized with values from the current compare; otherwise, you
+                        provide the values yourself. To use an existing project, click
+                        <span class="guibutton">Open</span> and select a project to load its values (any
+                        existing values are overwritten in the dialog).
+               </p>
+               <p>When you finished editing, click <span class="guibutton">Save</span> to
+                        store the file.
+               </p>
+               <div class="mediaobject"><img src="screenshots/projfile_save.png" alt="Project File dialog"></div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e2128"></a>4.3.&nbsp;Project file format
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Project files are simple XML files with <code class="filename">a .WinMerge</code> extension. For example:
+               </p><pre class="screen">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;project&gt;
+   &lt;paths&gt;
+      &lt;left&gt;c:\work\project1&lt;/left&gt;
+      &lt;left-readonly&gt;1&lt;/left-readonly&gt;
+      &lt;right&gt;c:\work\project2&lt;/right&gt;
+      &lt;right-readonly&gt;0&lt;/right-readonly&gt;
+      &lt;filter&gt;Visual C++ loose&lt;/filter&gt;
+      &lt;subfolders&gt;0&lt;/subfolders&gt;
+   &lt;/paths&gt;
+&lt;/project&gt;</pre><p>A project file contains a <code class="sgmltag-element">paths</code> element that can
+                        contain one of each of these elements:
+               </p>
+               <div class="variablelist">
+                  <dl>
+                     <dt><span class="term"><code class="sgmltag-element">left</code></span></dt>
+                     <dd>
+                        <p>Left path to open</p>
+                     </dd>
+                     <dt><span class="term"><code class="sgmltag-element">left-readonly</code></span></dt>
+                     <dd>
+                        <p>1 = Open read only</p>
+                        <p>0 = Open normally</p>
+                     </dd>
+                     <dt><span class="term"><code class="sgmltag-element">right</code></span></dt>
+                     <dd>
+                        <p>Right path to open</p>
+                     </dd>
+                     <dt><span class="term"><code class="sgmltag-element">right-readonly</code></span></dt>
+                     <dd>
+                        <p>1 = Open read only</p>
+                        <p>0 = Open normally</p>
+                     </dd>
+                     <dt><span class="term"><code class="sgmltag-element">filter</code></span></dt>
+                     <dd>
+                        <p>File filter name or list of extensions</p>
+                     </dd>
+                     <dt><span class="term"><code class="sgmltag-element">subfolders</code></span></dt>
+                     <dd>
+                        <p>0 = Subfolders not included</p>
+                        <p>1 = Subfolders included</p>
+                     </dd>
+                  </dl>
+               </div>
+               <p>None of the fields is required, and they can be empty (<code class="literal">for
+                           example, &lt;left&gt;&lt;/left&gt; or &lt;left/&gt;</code>).
+               </p>
+            </div>
+         </div>
+      </div>
+      <div class="navfooter">
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="Intro_diffs.html">Prev</a>&nbsp;
+               </td>
+               <td width="20%" align="center">&nbsp;</td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="Compare_dirs.html">Next</a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Overview of file comparing and merging&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Comparing and merging folders</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

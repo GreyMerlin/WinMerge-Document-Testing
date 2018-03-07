@@ -1,0 +1,1291 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Comparing and merging text files - WinMerge 2.12 Manual</title>
+      <meta name="generator" content="DocBook XSL Stylesheets V1.74.0">
+      <link rel="home" href="index.html" title="WinMerge 2.16 Help">
+      <link rel="up" href="index.html" title="WinMerge 2.16 Help">
+      <link rel="prev" href="Compare_dirs.html" title="Comparing and merging folders">
+      <link rel="next" href="Compare_bin.html" title="Comparing binary files">
+      <link rel="stylesheet" type="text/css" href="css/all.css">
+      <link rel="stylesheet" type="text/css" media="print" href="css/print.css">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Comparing and merging text files</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="Compare_dirs.html">Prev</a>&nbsp;
+               </td>
+               <th width="60%" align="center">&nbsp;</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="Compare_bin.html">Next</a></td>
+            </tr>
+         </table>
+      </div>
+      <div class="article" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title"><a name="Compare_files"></a>Comparing and merging text files<a class="indexterm" name="d0e3394"></a></h2>
+               </div>
+            </div>
+            <hr>
+         </div>
+         <p>This topic describes how to use the WinMerge File Compare window to
+              compare and merge text files. To understand the basic concepts about
+              differences discussed here, we suggest you read <a class="xref" href="Intro_diffs.html" title="Overview of file comparing and merging">Overview of file comparing and merging</a>
+              first. See <a class="xref" href="Intro_diffs.html" title="Overview of file comparing and merging">Overview of file comparing and merging</a> for related information about hex
+              files. 
+         </p>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Compare_files_starting"></a>1.&nbsp;Starting a file compare operation
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>You can start a file compare operation from either the WinMerge window
+                   or a Command Prompt window.
+            </p>
+            <div class="variablelist">
+               <dl>
+                  <dt><span class="term">From the WinMerge window</span></dt>
+                  <dd>
+                     <p>Click <span class="guimenu">File</span> &#8594; <span class="guimenuitem">Open</span>. Use the Select Files or Folders dialog to specify the
+                                  left and right source files to compare. For more details about the
+                                  Select Files or Folder dialog, see <a class="xref" href="Open_paths.html" title="Opening files and folders">Opening files and folders</a>.
+                     </p>
+                  </dd>
+                  <dt><span class="term">From a Command Prompt window</span></dt>
+                  <dd>
+                     <p>Run <span class="command"><strong>WinMergeU.exe</strong></span>, which is in your WinMerge
+                                  install directory. In your command arguments, include the left and
+                                  right files to compare. For more information about using the command
+                                  line, see <a class="xref" href="Command_line.html" title="Command line">Command line</a>.
+                     </p>
+                  </dd>
+               </dl>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Compare_files_window"></a>2.&nbsp;File Compare window<a class="indexterm" name="d0e3437"></a><a class="indexterm" name="d0e3442"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p>The File Compare window displays compared files in two File panes,
+                   side by side. The WinMerge toolbar and context menu provides functions for
+                   viewing, navigating, and merging differences. The screen shot below shows a
+                   comparison of two versions of a file.
+            </p>
+            <div class="mediaobject"><img src="screenshots/filecomp1.png" width="600" alt="File Compare Window"></div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e3455"></a>2.1.&nbsp;File panes<a class="indexterm" name="d0e3458"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The left and right File panes show the text contents and differences
+                        of the two files being compared. The File panes are the main area for
+                        navigating and merging differences, and also allow you to edit the text
+                        directly. This section describes the features that support these actions,
+                        and ways that you can customize the File panes.
+               </p>
+               <div class="section" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="d0e3463"></a>2.1.1.&nbsp;File pane header
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>The header at the top of each File pane shows the full path of the
+                             source file. The left and right file names are also identified in the
+                             header of the Compare Window, above the File panes.
+                  </p>
+                  <p>One of the File panes is always active (indicated by the dark
+                             header background); the other is inactive and has a lighter header bar.
+                             You can edit only in the active pane (as described in <a class="xref" href="Compare_files.html#CompareFiles_editing" title="2.1.4.&nbsp;File pane editing features">File pane editing features</a>). Click in either side to make it
+                             active and make the other side inactive.
+                  </p>
+                  <p>An asterisk (*) before the filename in the header indicates that
+                             there are unsaved changes in the file.
+                  </p>
+                  <p>The header bar's context menu has shortcuts that are useful for
+                             copying and pasting file information:
+                  </p>
+                  <div class="variablelist">
+                     <dl>
+                        <dt><span class="term">Copy Full Path<a class="indexterm" name="d0e3480"></a></span></dt>
+                        <dd>
+                           <p>Copies the full path of the source file into the system
+                                            clipboard.
+                           </p>
+                        </dd>
+                        <dt><span class="term">Copy Filename<a class="indexterm" name="d0e3489"></a></span></dt>
+                        <dd>
+                           <p>Copies just the source filename into the system
+                                            clipboard.
+                           </p>
+                        </dd>
+                     </dl>
+                  </div>
+               </div>
+               <div class="section" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="CompareFiles_diffcolors"></a>2.1.2.&nbsp;Difference highlighting<a class="indexterm" name="d0e3498"></a></h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>WinMerge highlights several types of differences in the File
+                             panes. The Colors page in the Options dialog defines a set of background
+                             and text colors for most difference types, with variations indicating
+                             their state: unselected, selected, or deleted. This section describes
+                             how each of the basic difference types is detected and displayed.
+                  </p>
+                  <div class="variablelist">
+                     <dl>
+                        <dt><span class="term">Difference</span></dt>
+                        <dd>
+                           <p>A difference block contains one or more contiguous lines
+                                            that are different. The default difference background color is
+                                            gold, but blank lines are marked with the deleted color.
+                           </p>
+                           <p>For this and other screens in this section, we enabled
+                                            <code class="option">View line numbers</code> to show which lines in the
+                                            source files are compared.
+                           </p>
+                           <div class="mediaobject"><img src="screenshots/diff-blocks-01.png" width="489" alt="Difference block background colors"></div>
+                           <p>This comparison detects three difference blocks:</p>
+                           <div class="orderedlist">
+                              <ol type="1">
+                                 <li>
+                                    <p>The first difference is a single line.</p>
+                                 </li>
+                                 <li>
+                                    <p>The blank line in <code class="filename">file2</code> has no
+                                                         corresponding blank line in <code class="filename">file1</code>.
+                                                         WinMerge treats the missing blank line as a deleted
+                                                         difference, marked here with the default gray color.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>The last difference block includes two lines.</p>
+                                 </li>
+                              </ol>
+                           </div>
+                        </dd>
+                        <dt><span class="term">Ignored Difference<a class="indexterm" name="d0e3544"></a></span></dt>
+                        <dd>
+                           <p>This color marks content that you have configured WinMerge
+                                            to ignore. In contrast to difference blocks, ignored content is
+                                            not compared, it is simply highlighted to help you see what has
+                                            been ignored. Ignored differences include:
+                           </p>
+                           <div class="itemizedlist">
+                              <ul type="disc">
+                                 <li>
+                                    <p>Blank lines, if you have enabled <code class="option">Ignore blank
+                                                            lines</code> in the Options dialog Compare page.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Differences that match patterns in line filters that you
+                                                         have defined (see <a class="xref" href="Filters.html" title="Using Filters">Using Filters</a> to learn
+                                                         how).
+                                    </p>
+                                 </li>
+                              </ul>
+                           </div>
+                           <p>The next example repeats the previous comparison, this time
+                                            with <code class="option">Ignore blank lines</code> enabled. There are now
+                                            only two differences. The blank line on the right side is marked
+                                            with the Ignored Differences color.
+                           </p>
+                           <div class="mediaobject"><img src="screenshots/ignore-blank-lines.png" width="492" alt="Difference block colors with ignored diff"></div>
+                        </dd>
+                        <dt><span class="term">Moved<a class="indexterm" name="d0e3576"></a></span></dt>
+                        <dd>
+                           <p>Moved differences are identical lines found in different
+                                            locations in the compared files, if <code class="option">Moved block
+                                               detection</code> is enabled in the Options dialog Compare page.
+                                            The next screen shot repeats the previous comparison, this time
+                                            with moved block detection enabled.
+                           </p>
+                           <div class="mediaobject"><img src="screenshots/moved-01.png" width="490" alt="Difference block colors with moved block detection"></div>
+                           <p>Notice that the two identical lines (containing
+                                            <code class="literal">a</code> and <code class="literal">c</code>) that are in
+                                            different locations are marked with the default orange moved
+                                            color. Another effect of moved block detection in this case is
+                                            that the last two lines are now two separate differences instead
+                                            of a single difference block.
+                           </p>
+                           <p>In some cases, showing moved differences can make it easier
+                                            to visualize changes in files. However, too many moved lines might
+                                            make your comparison hard to navigate. Use your own
+                                            judgement!
+                           </p>
+                        </dd>
+                        <dt><span class="term">Word Difference</span></dt>
+                        <dd>
+                           <p>WinMerge can mark the text that is changed with difference
+                                            blocks. Line differences are marked with the word difference
+                                            color. See <a class="xref" href="Compare_files.html#CompareFiles_linediff-highlight" title="2.1.3.&nbsp;Line difference highlighting">Line difference highlighting</a> for
+                                            details.
+                           </p>
+                        </dd>
+                        <dt><span class="term">Similar lines<a class="indexterm" name="d0e3612"></a></span></dt>
+                        <dd>
+                           <p>WinMerge tries to match similar lines within difference
+                                            blocks when you enable <code class="option">Match similar lines</code> in the
+                                            Options dialog Compare page. What does &#8220;<span class="quote">similar</span>&#8221;
+                                            mean? Generally, this feature works best in simple cases, for
+                                            example where lines that have strong similarities. When detected,
+                                            similar lines are adjusted to align in the File pane. The next
+                                            figure shows comparisons of the same two files, before and after
+                                            enabling the <code class="option">Match similar lines</code> option:
+                           </p>
+                           <table class="simplelist" border="0" summary="Simple list">
+                              <tr>
+                                 <td><span class="strong"><strong>Disabled</strong></span>:
+                                                    <span class="inlinemediaobject"><img src="screenshots/simlines-diffs-off.png" width="273" alt="Compare without matching similar lines"></span></td>
+                                 <td><span class="strong"><strong>Enabled</strong></span>:
+                                                    <span class="inlinemediaobject"><img src="screenshots/simlines-diffs-on.png" width="273" alt="Compare matching similar lines"></span></td>
+                              </tr>
+                           </table>
+                           <p>In the second comparison, the lines &#8220;<span class="quote">mice</span>&#8221; and
+                                            &#8220;<span class="quote">mice and a</span>&#8221; are detected as similar. WinMerge adds blank
+                                            lines in the display to make these lines appear at the same level
+                                            within the difference block.
+                           </p>
+                        </dd>
+                     </dl>
+                  </div>
+               </div>
+               <div class="section" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="CompareFiles_linediff-highlight"></a>2.1.3.&nbsp;Line difference highlighting<a class="indexterm" name="d0e3659"></a><a class="indexterm" name="d0e3664"></a></h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>Sometimes it's useful to highlight not just difference blocks, but
+                             also the text within them that is changed. You can disable or enable
+                             them in two ways:
+                  </p>
+                  <div class="itemizedlist">
+                     <ul type="disc">
+                        <li>
+                           <p>Set all <code class="option">View line differences</code> options in the
+                                          Options dialog Editor page.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Click <span class="guimenu">View</span> &#8594; <span class="guimenuitem">View line differences</span> to toggle line differences on or off.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                     <table border="0" summary="Note">
+                        <tr>
+                           <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td>
+                           <th align="left">Note</th>
+                        </tr>
+                        <tr>
+                           <td align="left" valign="top">
+                              <p>Remember that WinMerge navigation and merging functions (like
+                                           Next Difference or Copy Left) work on difference blocks, not on line
+                                           differences within them.
+                              </p>
+                           </td>
+                        </tr>
+                     </table>
+                  </div>
+                  <p>This section describes how line differences are detected and
+                             marked. Note that the effect of these options is also affected by your
+                             current whitespace settings in the Options dialog Compare page.
+                  </p>
+                  <div class="variablelist">
+                     <dl>
+                        <dt><span class="term"><a name="wordlevel-linediffs"></a>Word-level line differences<a class="indexterm" name="d0e3696"></a></span></dt>
+                        <dd>
+                           <p>The following examples show how word-level line differences
+                                            are displayed with each of the whitespace settings:
+                           </p>
+                           <div class="example"><a name="d0e3702"></a><p class="title"><b>Example&nbsp;1.&nbsp;Line differences with Whitespace: Compare</b></p>
+                              <div class="example-contents">
+                                 <p>WinMerge detects all different words and spaces:</p>
+                                 <div class="mediaobject"><img src="screenshots/word-diff-allwhite.png" width="530" alt="Word-level line diff comparing whitespace"></div>
+                              </div>
+                           </div><br class="example-break"><div class="example"><a name="d0e3713"></a><p class="title"><b>Example&nbsp;2.&nbsp;Line differences with Whitespace: Ignore change</b></p>
+                              <div class="example-contents">
+                                 <p>Multiple spaces and tabs are treated the same as a single
+                                                    space. In the example, the extra space between the last two
+                                                    words is not marked:
+                                 </p>
+                                 <div class="mediaobject"><img src="screenshots/word-diff-nochange.png" width="530" alt="Word-level line diff comparing no whitespace changes"></div>
+                              </div>
+                           </div><br class="example-break"><div class="example"><a name="d0e3724"></a><p class="title"><b>Example&nbsp;3.&nbsp;Line differences with Whitespace: Ignoring all</b></p>
+                              <div class="example-contents">
+                                 <p>No spaces between words are compared, so these lines are
+                                                    treated as identical:
+                                 </p>
+                                 <div class="mediaobject"><img src="screenshots/word-diff-nowhite.png" width="530" alt="Word-level line diff comparing no whitespace"></div>
+                              </div>
+                           </div><br class="example-break"></dd>
+                        <dt><span class="term">Character-level line differences<a class="indexterm" name="d0e3738"></a></span></dt>
+                        <dd>
+                           <p>A character-level line difference includes the first and
+                                            last different characters in a word, and all the characters
+                                            between them. A single character-level difference can span
+                                            adjacent words. The following example illustrates:
+                           </p>
+                           <div class="mediaobject"><img src="screenshots/char-diff-01.png" width="485.00000000000006" alt="Character-level line diff comparing no whitespace"></div>
+                           <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                              <table border="0" summary="Note">
+                                 <tr>
+                                    <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td>
+                                    <th align="left">Note</th>
+                                 </tr>
+                                 <tr>
+                                    <td align="left" valign="top">
+                                       <p>As with word-level line differences, character
+                                                          highlighting varies according to how WinMerge is configured to
+                                                          detect word breaks. In the example, the extra space after the
+                                                          word <code class="literal">cure</code> in <code class="filename">file2</code> is
+                                                          highlighted only if whitespace is compared.
+                                       </p>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </dd>
+                     </dl>
+                  </div>
+                  <div class="variablelist">
+                     <dl>
+                        <dt><span class="term">Breaks for words or character<a class="indexterm" name="d0e3763"></a></span></dt>
+                        <dd>
+                           <p>Words and characters in line differences can be separated by
+                                            whitespace, or by a combination of whitespace and punctuation.
+                                            Whitespace (the default) is the typical choice for comparing most
+                                            text files. All the preceding line difference examples use
+                                            whitespace to break words and characters.
+                           </p>
+                           <p>In some cases it's useful to break at punctuation. For
+                                            example, the next screen shot compares a comma-separated list. To
+                                            highlight meaningful line differences, we have enabled
+                                            <code class="option">Break at whitespace or punctuation</code> in the Options
+                                            dialog Editor page.
+                           </p>
+                           <div class="mediaobject"><img src="screenshots/line-diff-punctuation.png" width="494" alt="Character-level line diff comparing no whitespace"></div>
+                        </dd>
+                     </dl>
+                  </div>
+               </div>
+               <div class="section" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="CompareFiles_editing"></a>2.1.4.&nbsp;File pane editing features<a class="indexterm" name="d0e3783"></a></h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>Although WinMerge is a not a full-featured editor or IDE, it does
+                             provide basic editing functions, like <span class="guilabel">Undo</span> and
+                             <span class="guilabel">Redo</span>, <span class="guilabel">Find</span> and
+                             <span class="guilabel">Replace</span>, and <span class="guilabel">Goto</span>. These basic
+                             editing tasks are often needed during merging (for example, to change
+                             text within differences). You can edit in the active File pane
+                             (remember, click in a pane to make it active). Changes are not written
+                             to a file until you save a pane to a result file.
+                  </p>
+                  <p>WinMerge editing features also include syntax highlighting. This
+                             optional feature supports several file formats, and you can configure
+                             the colors used. Note that syntax highlighting is not applied within
+                             differences, as the preceding screen shot shows.
+                  </p>
+                  <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+                     <table border="0" summary="Tip">
+                        <tr>
+                           <td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.gif"></td>
+                           <th align="left">Tip</th>
+                        </tr>
+                        <tr>
+                           <td align="left" valign="top">
+                              <p>Make sure that <span class="guilabel">Automatic rescan</span> is enabled,
+                                           as described in <a class="xref" href="Compare_files.html#Compare_files_scan" title="5.1.&nbsp;Rescanning files">Rescanning files</a>. If it is not,
+                                           manually refresh your view (press F5) before and after editing a file,
+                                           to ensure that WinMerge difference detection is up to date.
+                              </p>
+                           </td>
+                        </tr>
+                     </table>
+                  </div>
+               </div>
+               <div class="section" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="CompareFiles_fonts"></a>2.1.5.&nbsp;File pane fonts<a class="indexterm" name="d0e3818"></a></h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>You can choose fonts for the File pane by clicking <span class="guimenu">View</span> &#8594; <span class="guimenuitem">Select Font</span>. WinMerge supports only fixed width fonts.
+                  </p>
+                  <p>Here are font suggestions for using WinMerge with East Asian
+                             languages:
+                  </p>
+                  <div class="itemizedlist">
+                     <ul type="disc">
+                        <li>Simplified Chinese: <span class="guilabel">SimSun</span> or
+                                       <span class="guilabel">SimHei</span> fixed-width fonts
+                        </li>
+                        <li>Traditional Chinese: <span class="guilabel">MingLiU</span>
+                                       fixed-width font
+                        </li>
+                        <li>Japanese: <span class="guilabel">MS Gothic</span> or <span class="guilabel">MS
+                                          Mincho</span> fixed-width fonts
+                        </li>
+                        <li>Korean: <span class="guilabel">GulimChe</span> fixed-width font (not
+                                       <span class="guilabel">Gulim</span>, because this variant uses
+                                       proportional-spacing glyphs that are not centered in grid cells and
+                                       poorly aligned in fixed-width mode).
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="section" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="d0e3867"></a>2.1.6.&nbsp;File pane margins<a class="indexterm" name="d0e3870"></a></h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>The File panes have optional gray margins that show line numbers
+                             and some symbols. To show or hide the margins, clicking <span class="guimenu">View</span> &#8594; <span class="guimenuitem">View Margins</span>. If you are using multiple File Compare windows, you can
+                             control margins for each window independently. The margin can show any
+                             or all of these features:
+                  </p><a class="indexterm" name="d0e3883"></a><a class="indexterm" name="d0e3888"></a><a class="indexterm" name="d0e3891"></a><div class="itemizedlist">
+                     <ul type="disc">
+                        <li>
+                           <p>Line numbers, if <span class="guimenu">View</span> &#8594; <span class="guimenuitem">View Line Numbers</span> is enabled.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Bookmarks, if <span class="guimenu">Edit</span> &#8594; <span class="guisubmenu">Bookmarks</span> is enabled. A bookmark is a blue circle, in the
+                                          margin next to a line, that you can make WinMerge remember and
+                                          return to.
+                           </p>
+                           <div class="itemizedlist">
+                              <ul type="circle">
+                                 <li>
+                                    <p>To set a bookmark on a line, double-click in its margin
+                                                       (or press (<span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>F2</strong></span>). The same action deletes an existing
+                                                       bookmark.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>To navigate bookmarks, click <span class="guimenu">Edit</span> &#8594; <span class="guimenuitem">Bookmarks</span> and choose <span class="guimenuitem">Next</span> or
+                                                       <span class="guimenuitem">Previous</span>.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Double-click a single bookmark to delete it (or press
+                                                       (<span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>F2</strong></span>).
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Click <span class="guimenu">Edit</span> &#8594; <span class="guimenuitem">Bookmarks</span> &#8594; <span class="guimenuitem">Clear All Bookmarks</span> to delete all bookmarks.
+                                    </p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Word wrap arrow symbols, if <span class="guimenu">View</span> &#8594; <span class="guimenuitem">Wrap Lines</span> is enabled.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <p>The following screen shot shows a margin with bookmarks and word
+                             wrap enabled. Without line numbers, the margin width is minimal.
+                  </p>
+                  <div class="mediaobject"><img src="screenshots/filecomp_margin1.png" width="384" alt="File Compare window margin with bookmark and word wrap"></div>
+                  <p>The next screen shot shows a margin with bookmarks and line
+                             numbers enabled. Notice that the margin is wider. In fact, the margin is
+                             wide enough for the largest line number. Thus, the margins for large
+                             files with many lines can be quite wide.
+                  </p>
+                  <div class="mediaobject"><img src="screenshots/filecomp_margin2.png" width="384" height="77" alt="File Compare window margin with bookmark and line numbers"></div>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="Compare_files_functions"></a>2.2.&nbsp;Toolbar and menus<a class="indexterm" name="d0e3988"></a><a class="indexterm" name="d0e3991"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The WinMerge toolbar and menus provide a range of functions to
+                        navigate, select, and merge differences within files.
+               </p>
+               <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                     <tr>
+                        <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td>
+                        <th align="left">Note</th>
+                     </tr>
+                     <tr>
+                        <td align="left" valign="top">
+                           <p>WinMerge shortcuts have the same names and buttons whether you
+                                      open a Folder Compare or File Compare window. However, the functions
+                                      behave differently: with a File Compare window, the functions operate on
+                                      differences within files, not on differences within folders.
+                           </p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <p>The difference functions you can use depend on your context, which
+                        often changes as you work. This means that a function is available only
+                        when its operation is possible for a given location or other condition in
+                        your WinMerge environment. For example, if you click in a line of text
+                        within a difference, you might notice several navigation and merge buttons
+                        become enabled in the toolbar. If you click in another area of text that
+                        is not within a difference, these functions become unavailable.
+               </p>
+               <p>Difference functions are available in the WinMerge toolbar,and also
+                        through these alternate mechanisms:
+               </p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p>WinMerge menus, especially <span class="guimenu">Merge</span></p>
+                     </li>
+                     <li>
+                        <p>Context menus within the File Compare window (when you
+                                     right-click in text)
+                        </p>
+                     </li>
+                     <li>
+                        <p>Keyboard shortcuts</p>
+                     </li>
+                  </ul>
+               </div>
+               <p>Difference functions are described in <a class="xref" href="Compare_files.html#Compare_files_nav" title="3.&nbsp;Navigating differences">Navigating differences</a> and <a class="xref" href="Compare_files.html#Compare_files_merge" title="5.&nbsp;Merging differences">Merging differences</a>,
+                        later in this topic. <a class="xref" href="Quick_start.html" title="Quick start">Quick start</a> and <a class="xref" href="Intro_diffs.html" title="Overview of file comparing and merging">Overview of file comparing and merging</a> provide examples of comparing and merging.
+               </p>
+               <div class="section" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="d0e4025"></a>2.2.1.&nbsp;Merge Mode<a class="indexterm" name="d0e4028"></a></h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p><span class="guimenu">File</span> &#8594; <span class="guimenuitem">Merge Mode</span> restores these WinMerge 1.7.1 single keyboard shortcuts
+                             for difference merging and navigating functions:
+                  </p>
+                  <div class="itemizedlist">
+                     <ul type="disc">
+                        <li><span class="keycap"><strong>Up</strong></span> and <span class="keycap"><strong>Down</strong></span> keys for the
+                                       <code class="function">Previous Difference</code> and <code class="function">Next
+                                          Difference</code> functions.
+                        </li>
+                        <li><span class="keycap"><strong>Left</strong></span> and <span class="keycap"><strong>Right</strong></span> keys for
+                                       the <code class="function">Copy Left</code> and <code class="function">Copy
+                                          Right</code> functions.
+                        </li>
+                     </ul>
+                  </div>
+                  <p>Merge mode omits the <span class="keycap"><strong>Alt</strong></span> key for these common
+                             operations (making them quicker to use than the normal mode). Note that
+                             the <span class="keycap"><strong>Shift</strong></span> and <span class="keycap"><strong>Alt</strong></span>
+                             <span class="keycap"><strong>Arrow</strong></span> key combinations work in merge mode in the same
+                             way as normal mode.
+                  </p>
+                  <p>Merge mode is indicated in the status bar by the text,
+                             <span class="guilabel">Merge</span>.
+                  </p>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e4086"></a>2.3.&nbsp;Location pane
+                        </h3>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e4089"></a><a class="indexterm" name="d0e4092"></a><p>The Location pane, to the left of the File panes, maps the entire
+                        length of the compared files into two vertical bars (corresponding to the
+                        left and right File panes). It is especially useful for working with files
+                        that are too long to easily navigate in the File panes.
+               </p>
+               <p>The Location pane shows several kinds of items:</p>
+               <div class="variablelist">
+                  <dl>
+                     <dt><span class="term"><span class="inlinemediaobject"><img src="screenshots/locpane_diffs.png" height="15" alt="Location pane diff lines"></span> Difference blocks</span></dt>
+                     <dd>
+                        <p>Each difference block in the File panes is indicated in the
+                                       Location pane by a horizontal line across each vertical bar. The
+                                       thickness, color , and locations of these lines are clues about of
+                                       the size (number of lines), types and distribution of all
+                                       differences in the files. For example, the color of a line is the
+                                       same as the color of the corresponding difference block. The
+                                       Location pane in the preceding screen shot shows many basic
+                                       differences (gold) and some empty difference blocks (gray).
+                        </p>
+                     </dd>
+                     <dt><span class="term"><span class="inlinemediaobject"><img src="screenshots/locpane_currentdiff.png" height="15" alt="Location pane current diff pointer"></span> Current difference</span></dt>
+                     <dd>
+                        <p>If you have selected a difference, the Location pane marks the
+                                       current difference line with a pair of small triangles on either
+                                       side of the vertical bars. If you navigate to another difference,
+                                       the pointer moves up or down with the location. Scrolling the File
+                                       pane does not change the location of the difference pointer (or any
+                                       of the difference lines) in the location pane.
+                        </p>
+                     </dd>
+                     <dt><span class="term"><span class="inlinemediaobject"><img src="screenshots/locpane_viewbar.png" height="15" alt="Location pane view area bar"></span> View area</span></dt>
+                     <dd>
+                        <p>The area of the files currently visible in the File panes is
+                                       indicated by a shaded (translucent) view bar over the Location pane.
+                                       The area bar's height and location correspond to the portion of the
+                                       files that is visible in the scroll region. For example, you might
+                                       see the bar expand or shrink if you change the height of your File
+                                       panes. This synchronization of the Location pane view bar and File
+                                       panes enables quick navigation, and some useful actions:
+                        </p>
+                        <div class="itemizedlist">
+                           <ul type="disc">
+                              <li>
+                                 <p>When you scroll the File panes, the view area in the
+                                                    Location pane moves with it.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Conversely, you can drag the view area bar in the Location
+                                                    pane up or down to scroll the File panes. This scrollbar thumb
+                                                    action is very handy for navigating long files.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Click anywhere in the Location pane to jump to the
+                                                    corresponding location in the File panes.
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </dd>
+                     <dt><span class="term">Moved differences<a class="indexterm" name="d0e4149"></a></span></dt>
+                     <dd>
+                        <p>Moved differences are identical lines in different locations.
+                                       They are shown only if the Enable moved block detection is checked
+                                       in the Options dialog Compare page. See <a class="xref" href="Compare_files.html#CompareFiles_diffcolors" title="2.1.2.&nbsp;Difference highlighting">Difference highlighting</a> for more details about moved
+                                       differences in the File pane. The Location pane draws a line
+                                       connecting moved differences in the left and right location bars.
+                                       For example:
+                        </p>
+                        <div class="mediaobject"><img src="screenshots/locpane_moved_diffs.png" width="576" alt="Location pane with moved diff"></div>
+                     </dd>
+                  </dl>
+               </div>
+               <p>The Location pane's context menu contains these shortcuts:<a class="indexterm" name="d0e4165"></a><a class="indexterm" name="d0e4170"></a></p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><span class="guimenuitem">Goto Line 1</span>: Moves the cursor to the
+                                     top of the file.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guimenuitem">Goto</span>: Moves the cursor to a line you
+                                     specify (described in <a class="xref" href="Compare_files.html#Compare_files_nav_functions" title="3.1.&nbsp;Navigation functions">Navigation functions</a>).
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guimenuitem">No Moved Blocks</span>: Turns off moved
+                                     difference color for moved blocks.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guimenuitem">All Moved Blocks</span>: Turns on moved
+                                     difference color for all moved blocks.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guimenuitem">Moved Block for Current Diff</span>: Turns
+                                     on moved difference color only for current selected moved
+                                     difference.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e4201"></a>2.4.&nbsp;Diff pane<a class="indexterm" name="d0e4204"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The Diff pane shows the contents of the two sides of a selected
+                        difference.
+               </p>
+               <p>When you select a difference, the two versions are loaded in the
+                        upper and lower sides of the Diff pane. In this way, the Diff pane
+                        confirms which lines are included in a difference, and lets you examine
+                        them in isolation from the rest of the file.
+               </p>
+               <p>You can merge differences directly in the Diff pane by
+                        right-clicking in either the top or bottom side and choosing
+                        <code class="function"><span class="guimenuitem">Copy to Right</span></code> or
+                        <span class="guimenuitem">Copy to Left</span>.
+               </p>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e4220"></a>2.5.&nbsp;Status bars<a class="indexterm" name="d0e4223"></a><a class="indexterm" name="d0e4228"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Each File pane contains a status bar at the bottom. The status bar
+                        contains several panes with different types of information about the
+                        document and your location in it:
+               </p>
+               <div class="variablelist">
+                  <dl>
+                     <dt><span class="term">Line status</span></dt>
+                     <dd>
+                        <div class="itemizedlist">
+                           <ul type="disc">
+                              <li>
+                                 <p><span class="guilabel">Ln</span>: Line number in the source
+                                                    file.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="guilabel">Col</span>: Column location of the cursor
+                                                    and the total number of columns in the line.
+                                 </p>
+                                 <p><span class="guilabel">Col</span> counts tabs as
+                                                    <em class="replaceable"><code>n</code></em> spaces, where
+                                                    <em class="replaceable"><code>n</code></em> is the number of characters defined
+                                                    as the <span class="guilabel">Tab size</span> in the Editor page of
+                                                    WinMerge options (4 by default).
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="guilabel">Ch</span>: Character location of cursor and
+                                                    the total number of chars in the line.
+                                 </p>
+                                 <p><span class="guilabel">Ch</span> counts tabs as single tab
+                                                    characters.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="guilabel">EOL</span>: Linefeed style of the current
+                                                    line (shown only when the <span class="guilabel">Preserve original EOL
+                                                       chars</span> option is enabled in the Editor page of
+                                                    WinMerge options).
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </dd>
+                     <dt><span class="term">Read-only status</span></dt>
+                     <dd>
+                        <p><span class="guilabel">RO</span> is shown in the pane if the file is
+                                       set to read-only (as described in <a class="xref" href="Compare_dirs.html#protectingfiles" title="3.6.&nbsp;Protecting files">Protecting files</a>). Otherwise the pane is empty.
+                        </p>
+                     </dd>
+                     <dt><span class="term">File encoding</span></dt>
+                     <dd>
+                        <p>Codepage number for ANSI files, Unicode encoding type for
+                                       Unicode files.
+                        </p>
+                     </dd>
+                     <dt><span class="term">EOL style</span></dt>
+                     <dd>
+                        <p>EOL style of the file: <span class="guilabel">Win</span> for
+                                       Windows/DOS files (CRLF), <span class="guilabel">Unix</span> (LF),
+                                       <span class="guilabel">Mac</span> (CR), or Mixed.
+                        </p>
+                        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                           <table border="0" summary="Note">
+                              <tr>
+                                 <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td>
+                                 <th align="left">Note</th>
+                              </tr>
+                              <tr>
+                                 <td align="left" valign="top">
+                                    <p>When the per-line EOL style is used, the file EOL style is
+                                                     not shown (this pane is blank).
+                                    </p>
+                                 </td>
+                              </tr>
+                           </table>
+                        </div>
+                     </dd>
+                  </dl>
+               </div>
+               <p>When a File Compare window is open, the WinMerge window status bar
+                        shows one of these messages about the compared files:
+               </p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><span class="guilabel">Identical</span>: The files contain no
+                                       differences
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guilabel"><em class="replaceable"><code>n</code></em> Differences
+                                          Found</span>: The number of differences detected, displayed only
+                                       when no difference is selected.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guilabel">Difference <em class="replaceable"><code>x</code></em> of
+                                          <em class="replaceable"><code>n</code></em></span>: The selected difference's
+                                       sequence number in the total number of differences, starting with
+                                       1.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Compare_files_nav"></a>3.&nbsp;Navigating differences<a class="indexterm" name="d0e4343"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p>This section describes how to navigate and select differences in the
+                   File Compare window. Note that when you select a difference, it is always
+                   selected in both File panes.
+            </p>
+            <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+               <table border="0" summary="Tip">
+                  <tr>
+                     <td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.gif"></td>
+                     <th align="left">Tip</th>
+                  </tr>
+                  <tr>
+                     <td align="left" valign="top">
+                        <p>To save time, enable <span class="guilabel">Automatically scroll to first
+                                    difference</span> in the General page of WinMerge options. Then you
+                                 don't have to manually navigate to the first difference and select
+                                 it.
+                        </p>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="Compare_files_nav_functions"></a>3.1.&nbsp;Navigation functions<a class="indexterm" name="d0e4359"></a><a class="indexterm" name="d0e4364"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Here are the functions for navigating differences in the File
+                        Compare window, and their shortcuts in the toolbar and menus:
+               </p>
+               <div class="variablelist">
+                  <dl>
+                     <dt><span class="term">Difference in the Current Line/Select Line Difference<a class="indexterm" name="d0e4375"></a><a class="indexterm" name="d0e4378"></a></span></dt>
+                     <dd>
+                        <p>Enabled if you have clicked in (or selected) text within a
+                                       difference in a File pane. Selects the word differences within the
+                                       line. For example:
+                        </p>
+                        <div class="mediaobject"><img src="screenshots/linediff.png" width="562" alt="Select Line Difference example"></div>
+                        <p>If you want to select the difference block itself, use
+                                       <span class="command"><strong>Current Difference</strong></span> instead.
+                        </p>
+                        <p>Shortcuts: <span class="inlinemediaobject"><img src="screenshots/diff_inline_btn.png" height="15" alt="Difference in the Current Line button"></span> button, <span class="guimenu">Edit</span> &#8594; <span class="guimenuitem">Select Line Difference</span>, <span class="keycap"><strong>F4</strong></span>, context menu in File pane
+                                       within a difference.
+                        </p>
+                     </dd>
+                     <dt><span class="term">Next Difference<a class="indexterm" name="d0e4416"></a></span></dt>
+                     <dd>
+                        <p>Selects the next difference below your current cursor location
+                                       in the document (not necessarily relative to the current
+                                       difference). Use to step through differences sequentially from any
+                                       point. Available except when the last difference is currently
+                                       selected.
+                        </p>
+                        <p>Shortcuts: <span class="inlinemediaobject"><img src="screenshots/nextdiff_btn.png" height="15" alt="Next Difference button"></span> button, <span class="guimenu">Merge</span> &#8594; <span class="guimenuitem">Next Difference</span>, <span class="keycap"><strong>Alt</strong></span>+<span class="keycap"><strong>Down</strong></span> (or <span class="keycap"><strong>Down</strong></span> in merge mode).
+                        </p>
+                     </dd>
+                     <dt><span class="term">Previous Difference<a class="indexterm" name="d0e4451"></a></span></dt>
+                     <dd>
+                        <p>Selects the previous difference above your current cursor
+                                       location (not necessarily relative to the current difference). Use
+                                       to step backwards sequentially through differences. Available except
+                                       when the first difference is currently selected.
+                        </p>
+                        <p>Shortcuts: <span class="inlinemediaobject"><img src="screenshots/prevdiff_btn.png" height="15" alt="Previous Difference button"></span> button, <span class="guimenu">Merge</span> &#8594; <span class="guimenuitem">Previous Difference</span>, <span class="keycap"><strong>Alt</strong></span>+<span class="keycap"><strong>Up</strong></span> (or <span class="keycap"><strong>Up</strong></span> in merge mode).
+                        </p>
+                     </dd>
+                     <dt><span class="term">First Difference<a class="indexterm" name="d0e4486"></a></span></dt>
+                     <dd>
+                        <p>Use this to begin comparing or merging differences, or to
+                                       locate the first difference from any other location. Available
+                                       except when the first difference is currently selected. You can also
+                                       select a difference by double-clicking its text.
+                        </p>
+                        <p>Shortcuts: <span class="inlinemediaobject"><img src="screenshots/firstdiff_btn.png" height="15" alt="First Difference button"></span> button, <span class="guimenu">Merge</span> &#8594; <span class="guimenuitem">First Difference</span>, <span class="keycap"><strong>Alt</strong></span>+<span class="keycap"><strong>Home</strong></span>.
+                        </p>
+                     </dd>
+                     <dt><span class="term">Current Difference<a class="indexterm" name="d0e4518"></a></span></dt>
+                     <dd>
+                        <p>This function has two modes of action:</p>
+                        <div class="itemizedlist">
+                           <ul type="disc">
+                              <li>If your cursor is inside a difference but no
+                                                   difference is selected, this function selects the entire
+                                                   difference. This is a very handy way to select a difference
+                                                   using the keyboard.
+                              </li>
+                              <li>When there is a current difference, the function
+                                                   jumps to that location. This is handy if you have scrolled the
+                                                   selected difference out of view, and want to quickly return to
+                                                   its location.
+                              </li>
+                           </ul>
+                        </div>
+                        <p>Shortcuts: <span class="inlinemediaobject"><img src="screenshots/currentdiff_btn.png" height="15" alt="Current Difference button"></span> button, <span class="guimenu">Merge</span> &#8594; <span class="guimenuitem">Current Difference</span>, <span class="keycap"><strong>Alt</strong></span>+<span class="keycap"><strong>Enter</strong></span>.
+                        </p>
+                     </dd>
+                     <dt><span class="term">Last Difference (<span class="keycap"><strong>Alt</strong></span>+<span class="keycap"><strong>End</strong></span>)<a class="indexterm" name="d0e4564"></a></span></dt>
+                     <dd>
+                        <p>Enabled except when the last difference is currently
+                                       selected.
+                        </p>
+                        <p>Shortcuts: <span class="inlinemediaobject"><img src="screenshots/lastdiff_btn.png" height="15" alt="Last Difference button"></span> button, <span class="guimenu">Merge</span> &#8594; <span class="guimenuitem">Last Difference</span>, <span class="keycap"><strong>Alt</strong></span>+<span class="keycap"><strong>End</strong></span>.
+                        </p>
+                     </dd>
+                     <dt><span class="term">Go To<a class="indexterm" name="d0e4596"></a></span></dt>
+                     <dd>
+                        <p>Enables you to jump to either a line number or a difference
+                                       number (for example, difference 2 is the second difference). Opens
+                                       the Go To dialog, where you specify the number, which file to use
+                                       (either the left or right), and the type of location (either line or
+                                       difference).
+                        </p>
+                        <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+                           <table border="0" summary="Tip">
+                              <tr>
+                                 <td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.gif"></td>
+                                 <th align="left">Tip</th>
+                              </tr>
+                              <tr>
+                                 <td align="left" valign="top">
+                                    <p>The Go To line number can be useful when you need to merge
+                                                     the same change from one file to several target files. Jumping to
+                                                     a particular difference can be quicker than using
+                                                     <span class="guimenuitem">Find</span> to search text, or stepping
+                                                     through differences.
+                                    </p>
+                                 </td>
+                              </tr>
+                           </table>
+                        </div>
+                        <p>Shortcuts: <span class="guimenu">Edit</span> &#8594; <span class="guimenuitem">Go to</span>, <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>G</strong></span>, context menu in File pane and Location pane.
+                        </p>
+                     </dd>
+                     <dt><span class="term">Refresh</span></dt>
+                     <dd>
+                        <p>See <a class="xref" href="Compare_files.html#Compare_files_merge_functions" title="5.2.&nbsp;Merge functions">Merge functions</a>.
+                        </p>
+                     </dd>
+                  </dl>
+               </div>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Compare_files_syncpoints"></a>4.&nbsp;Syncronization points<a class="indexterm" name="d0e4633"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p>TBD</p>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Compare_files_merge"></a>5.&nbsp;Merging differences<a class="indexterm" name="d0e4641"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p>Merging copies differences from one File pane to the other: either
+                   left to right, or right to left. This is different from directly editing
+                   text using WinMerge's editing functions (described earlier in this
+                   topic).
+            </p>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="Compare_files_scan"></a>5.1.&nbsp;Rescanning files<a class="indexterm" name="d0e4649"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>By default, the <span class="guilabel">Automatic rescan</span> option is
+                        enabled in the Editor page of WinMerge options. Rescanning keeps your your
+                        compare and merge operations up to date. Without rescanning, WinMerge
+                        differences does not detect changes that might occur to files while you
+                        are comparing them, for example in an external editor.
+               </p>
+               <p>Rescanning occurs when you perform certain actions (like merging a
+                        difference or editing a file) during a file compare. If a file has
+                        changed, WinMerge displays a dialog advising you that another application
+                        has updated the file, and asks whether you want to reload the file.
+               </p>
+               <p>Click <span class="guibutton">Yes</span> to reload the file before
+                        proceeding, or <span class="guibutton">No</span> to ignore the changes and work
+                        with the earlier loaded version of the file.
+               </p>
+               <div class="important" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Important">
+                     <tr>
+                        <td rowspan="2" align="center" valign="top" width="25"><img alt="[Important]" src="images/important.gif"></td>
+                        <th align="left">Important</th>
+                     </tr>
+                     <tr>
+                        <td align="left" valign="top">
+                           <p>If <span class="guilabel">Automatic rescan</span> is disabled, or if you
+                                      suspect that a file might have changed, we strongly advise that you run
+                                      <span class="guimenuitem">Refresh</span> <span class="emphasis"><em>before</em></span>
+                                      performing any merge operation: click <span class="guimenu">Edit</span> &#8594; <span class="guimenuitem">Refresh</span> or the <span class="inlinemediaobject"><img src="screenshots/refresh_btn.png" width="16" alt="Refresh button"></span> toolbar button, or press
+                                      <span class="keycap"><strong>F5</strong></span>.
+                           </p>
+                           <p>If a merge result looks incorrect, click <span class="guimenu">Edit</span> &#8594; <span class="guimenuitem">Undo</span> or press <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Z</strong></span> to undo the merge. Then rescan the files and try merging
+                                      again.
+                           </p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="Compare_files_merge_functions"></a>5.2.&nbsp;Merge functions<a class="indexterm" name="d0e4712"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The merging functions can implicitly select differences based on a
+                        cursor location or text selection. For example, if you click anywhere in a
+                        difference and then click the <span class="guibutton">Copy Right</span> toolbar
+                        button, the entire difference block is merged. This makes it easy to merge
+                        many small differences. Similarly, if you select text that spans all or
+                        part of multiple differences, all the included differences are merged with
+                        a single merge command.
+               </p>
+               <p>If the result of a merge operation is not what you expected, you can
+                        click <span class="guibutton">Undo</span> to reverse the operation.
+               </p>
+               <p>Here are the merge functions and their shortcuts in the toolbar and
+                        menus:
+               </p>
+               <div class="variablelist">
+                  <dl>
+                     <dt><span class="term">Copy Right<a class="indexterm" name="d0e4733"></a></span></dt>
+                     <dd>
+                        <p>Copies one or more difference from left to right. Note that
+                                       differences do not need to be fully selected: At its simplest, this
+                                       means replacing text in the target difference with text in source
+                                       difference. But because differences can also contain empty lines,
+                                       new lines may be created or removed.
+                        </p>
+                        <p>Shortcuts: <span class="inlinemediaobject"><img src="screenshots/copyr_button.png" width="17" alt="Copy Right button"></span> button, <span class="guimenu">Merge</span> &#8594; <span class="guimenuitem">Copy to Right</span>, <span class="keycap"><strong>Alt</strong></span>+<span class="keycap"><strong>Right</strong></span> ( or <span class="keycap"><strong>Right</strong></span> in merge mode), context
+                                       menu in File pane within a difference, and in Diff pane.
+                        </p>
+                     </dd>
+                     <dt><span class="term">Copy Left<a class="indexterm" name="d0e4766"></a></span></dt>
+                     <dd>
+                        <p>Copies the current difference from the right to the left File
+                                       pane. See <span class="command"><strong>Copy Righ</strong></span>t description for
+                                       details.
+                        </p>
+                        <p>Shortcuts: <span class="inlinemediaobject"><img src="screenshots/copyl_button.png" width="17" alt="Copy Left button"></span> button, <span class="guimenu">Merge</span> &#8594; <span class="guimenuitem">Copy to Left</span>, <span class="keycap"><strong>Alt</strong></span>+<span class="keycap"><strong>Left</strong></span> (or <span class="keycap"><strong>Left</strong></span> in merge mode), context menu
+                                       in File pane within a difference, and in Diff pane.
+                        </p>
+                     </dd>
+                     <dt><span class="term">Copy Right and Advance<a class="indexterm" name="d0e4802"></a></span></dt>
+                     <dd>
+                        <p>Merges the current difference from the right to the left File
+                                       pane, then selects the next difference (if one exists). Equivalent
+                                       to <span class="command"><strong>Copy Right</strong></span> and <span class="command"><strong>Next
+                                             Difference</strong></span> in one step.
+                        </p>
+                        <p>Shortcuts: <span class="inlinemediaobject"><img src="screenshots/copyr_adv_btn.png" height="15" alt="Copy Right and Advance button"></span> button, <span class="guimenu">Merge</span> &#8594; <span class="guimenuitem">Copy to Left</span>, <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Alt</strong></span>+<span class="keycap"><strong>Right</strong></span>, context menu in File pane within a difference.
+                        </p>
+                     </dd>
+                     <dt><span class="term">Copy Left and Advance<a class="indexterm" name="d0e4840"></a></span></dt>
+                     <dd>
+                        <p>Merges the current difference from left to right, then selects
+                                       the next difference (if one exists). Equivalent to <span class="command"><strong>Copy
+                                             Left</strong></span> and <span class="command"><strong>Next Difference</strong></span> in one
+                                       step.
+                        </p>
+                        <p>Shortcuts: <span class="inlinemediaobject"><img src="screenshots/copyl_adv_btn.png" height="15" alt="Copy Left and Advance button"></span> button, <span class="guimenu">Merge</span> &#8594; <span class="guimenuitem">Copy to Left</span>, <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Alt</strong></span>+<span class="keycap"><strong>Left</strong></span>, context menu in File pane within a difference.
+                        </p>
+                     </dd>
+                     <dt><span class="term">All Right<a class="indexterm" name="d0e4878"></a></span></dt>
+                     <dd>
+                        <p>Copies all differences from the left to the right File pane.
+                                       Use to synchronize two files with one command. Similarly, you can
+                                       back out the entire merge by clicking the<span class="inlinemediaobject"><img src="screenshots/undo_btn.png" height="10.999999999999998" alt="Refresh button"></span> Undo or pressing <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Z</strong></span>.
+                        </p>
+                        <p>Shortcuts: <span class="inlinemediaobject"><img src="screenshots/allright_btn.png" height="15" alt="All Right button"></span> button, <span class="guimenu">Merge</span> &#8594; <span class="guimenuitem">Copy to Left</span>, <span class="keycap"><strong>Alt</strong></span>+<span class="keycap"><strong>Left</strong></span>, context menu in File pane within a difference.
+                        </p>
+                     </dd>
+                     <dt><span class="term">All Left<a class="indexterm" name="d0e4921"></a></span></dt>
+                     <dd>
+                        <p>Copies all differences from the right to the left File pane.
+                                       Effectively, replaces the content of the left File pane. See similar
+                                       to <span class="command"><strong>All Right</strong></span>.
+                        </p>
+                        <p>Shortcuts: <span class="inlinemediaobject"><img src="screenshots/allleft_btn.png" height="15" alt="All Left button"></span> button, <span class="guimenu">Merge</span> &#8594; <span class="guimenuitem">Copy to Left</span>, <span class="keycap"><strong>Alt</strong></span>+<span class="keycap"><strong>Left</strong></span>, context menu in File pane within a difference.
+                        </p>
+                     </dd>
+                     <dt><span class="term">Refresh<a class="indexterm" name="d0e4954"></a></span></dt>
+                     <dd>
+                        <p>Rescans files to update differences. Use after changes are
+                                       made to files, if automatic scanning is disabled (see <a class="xref" href="Compare_files.html#Compare_files_scan" title="5.1.&nbsp;Rescanning files">Rescanning files</a> for details).
+                        </p>
+                        <p>Shortcuts: <span class="inlinemediaobject"><img src="screenshots/refresh_btn.png" width="16" alt="Refresh button"></span> button, <span class="guimenu">View</span> &#8594; <span class="guimenuitem">Refresh</span>, <span class="keycap"><strong>F5</strong></span>.
+                        </p>
+                     </dd>
+                  </dl>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="ResolveConflictFiles"></a>5.3.&nbsp;Resolving conflict files<a class="indexterm" name="d0e4985"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>You can use WinMerge to resolve conflict files that some version
+                        control systems produce during their merge operations. A conflict file is
+                        created when a merge encounters differences that cannot be automatically
+                        resolved. It is a single file containing the incompletely merged content
+                        of the two files. WinMerge separates the conflict file into separate files
+                        and opens those files in file Compare window. You can then use WinMerge's
+                        compare and merge functions to resolve the conflicts and save the merged
+                        result file.
+               </p>
+               <div class="orderedlist">
+                  <ol type="1">
+                     <li>
+                        <p>Click <span class="guimenu">File</span> &#8594; <span class="guimenuitem">Open Conflict File</span>, and use the Open dialog to select the conflict file
+                                     in your file system. The conflict file opens in the File Compare
+                                     window:
+                        </p>
+                        <div class="itemizedlist">
+                           <ul type="disc">
+                              <li>
+                                 <p>The left File pane file header is titled, <span class="guilabel">Theirs
+                                                     File</span>. This side represents the file that is usually in
+                                                  the version control system's repository. This file usually cannot
+                                                  be edited, so WinMerge sets the left File pane to be read-only.
+                                                  This means that differences can be merged only from this file to
+                                                  the other file.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>The right File pane is titled, <span class="guilabel">Mine
+                                                     File</span>. This side is the working copy of the file. All
+                                                  changes should be done to this file, which is the result
+                                                  file.
+                                 </p>
+                                 <p>The <span class="guilabel">Mine File</span> side is set to modified
+                                                  after opening conflict file (you will notice the asterisk in the
+                                                  File pane header). This allows you to save the file quickly if the
+                                                  it does not require any changes. It also ensures that you do not
+                                                  forget to resolve the files. If you choose not to save the file,
+                                                  the original conflict file is not modified.
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li>
+                        <p>Use all the normal compare and merge functions described earlier
+                                     in this topic to resolve the conflicts in the Mine File pane.
+                        </p>
+                     </li>
+                     <li>
+                        <p>When you are done, click <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>S</strong></span> to save the <span class="guilabel">Mine File</span> side as the
+                                     result file. By default, the new version overwrites the original
+                                     conflict file. Alternatively, you can click <span class="guimenu">File</span> &#8594; <span class="guimenuitem">Save Right</span> &#8594; <span class="guimenuitem">Save As</span>, and choose a different file name.
+                        </p>
+                     </li>
+                  </ol>
+               </div>
+               <p>Many version control systems allow you to configure an external
+                        merge tool. If yours does, you might be able to have your version control
+                        system launch WinMerge automatically when a merge conflict occurs.
+               </p>
+               <p>You can also open a conflict file from the WinMerge command line,
+                        which accepts three filename parameters: <code class="option">Theirs</code>,
+                        <code class="option">Mine</code>, and optionally, <code class="option">Resolved</code> (if you
+                        want a different result file from the conflict file). For more
+                        information, see <a class="xref" href="Command_line.html" title="Command line">Command line</a>. Single path to the
+                        conflict file is also accepted in command line.
+               </p>
+            </div>
+         </div>
+      </div>
+      <div class="navfooter">
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="Compare_dirs.html">Prev</a>&nbsp;
+               </td>
+               <td width="20%" align="center">&nbsp;</td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="Compare_bin.html">Next</a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Comparing and merging folders&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Comparing binary files</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

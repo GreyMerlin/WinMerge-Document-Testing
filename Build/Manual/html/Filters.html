@@ -1,0 +1,1106 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Using Filters - WinMerge 2.12 Manual</title>
+      <meta name="generator" content="DocBook XSL Stylesheets V1.74.0">
+      <link rel="home" href="index.html" title="WinMerge 2.16 Help">
+      <link rel="up" href="index.html" title="WinMerge 2.16 Help">
+      <link rel="prev" href="Plugins.html" title="Plugins">
+      <link rel="next" href="Command_line.html" title="Command line">
+      <link rel="stylesheet" type="text/css" href="css/all.css">
+      <link rel="stylesheet" type="text/css" media="print" href="css/print.css">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Using Filters</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="Plugins.html">Prev</a>&nbsp;
+               </td>
+               <th width="60%" align="center">&nbsp;</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="Command_line.html">Next</a></td>
+            </tr>
+         </table>
+      </div>
+      <div class="article" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title"><a name="Filters"></a>Using Filters<a class="indexterm" name="d0e7704"></a></h2>
+               </div>
+            </div>
+            <hr>
+         </div>
+         <p>When you compare files or folders, you can use filters to narrow the
+            scope of the comparison. This can be useful when you want to simplify the
+            comparison result by eliminating differences that you are not interested in.
+            Filters are rules based on regular expressions. WinMerge uses the popular PCRE
+              (Perl Compatible Regular Expressions) regular expression engine.<a class="indexterm" name="d0e7715"></a><a class="indexterm" name="d0e7720"></a><a class="indexterm" name="d0e7723"></a></p>
+         <p>The basic function of filtering is simple: evaluate each item that would
+              normally be compared (a folder, file, or line within a file), and if the
+              filter expression matches the target item, apply the filter. Depending on the
+              type of filter, the item is either included or excluded in the
+              comparison.
+         </p>
+         <p>There are different WinMerge filters for folder compare and file compare
+              operations:
+         </p>
+         <div class="variablelist">
+            <dl>
+               <dt><span class="term">Folder comparison: File masks and file filters<a class="indexterm" name="d0e7736"></a></span></dt>
+               <dd>
+                  <p>You can specify files to include in a folder comparison by using
+                             simple file masks, or, for more complex filtering, by applying multiple
+                             rules specified in a file filter. You cannot apply both a file mask and
+                             a file filter in the same operation.
+                  </p>
+                  <p>Files and folders that are filtered are hidden in the result by
+                             default, which is typically what you want. You can click <span class="guimenu">View</span> &#8594; <span class="guimenuitem">Show Skipped Items</span> to unhide filtered items, but the Folder Compare window
+                             shows only minimal information about them. For example, you cannot tell
+                             whether a skipped file is a text file or binary.
+                  </p>
+               </dd>
+               <dt><span class="term">File comparisons: Line filters<a class="indexterm" name="d0e7755"></a></span></dt>
+               <dd>
+                  <p>Line filters are applied only to file compare operations. They let
+                             you ignore single line differences.
+                  </p>
+               </dd>
+            </dl>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Filters_Mask"></a>1.&nbsp;Using file masks<a class="indexterm" name="d0e7766"></a><a class="indexterm" name="d0e7769"></a><a class="indexterm" name="d0e7774"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p>You can use one or more <em class="glossterm">file masks</em> that specify
+                   file extensions to include in a folder comparison. All other files are
+                   omitted from your selection.
+            </p>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="Filters_MaskApply"></a>1.1.&nbsp;Defining and applying file masks<a class="indexterm" name="d0e7787"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Define and apply a file mask at the time you launch your folder
+                        compare operation:
+               </p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p>If you are using the Select Files or Folders dialog, after
+                                     choosing the <span class="guilabel">Left</span> and <span class="guilabel">Right</span>
+                                     folders, enter one or more file masks in the
+                                     <span class="guilabel">Filter</span> field. The masks are applied when you
+                                     start the folder compare operation.
+                        </p>
+                     </li>
+                     <li>
+                        <p>If you are using the WinMerge command line, use the
+                                     <code class="option">-f</code> flag to specify file masks (see the example in the
+                                     next section).
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+               <p>Remember, you cannot specify both a file mask and a file filter in
+                        the field or command line.
+               </p>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="Filters_MaskSyntax"></a>1.2.&nbsp;File mask syntax and example<a class="indexterm" name="d0e7818"></a><a class="indexterm" name="d0e7823"></a><a class="indexterm" name="d0e7828"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Use this syntax for file masks:</p><pre class="synopsis">*.[<em class="replaceable"><code>extension</code></em>][<em class="replaceable"><code>delimiter</code></em> *.<em class="replaceable"><code>extension</code></em> ...]</pre><p>Valid delimiters are spaces, commas, colons or semicolons.</p>
+               <p>A mask with no extension ( <code class="filename">*.</code> ) selects files
+                        without any extension, such as
+                        <code class="filename"><code class="filename">README</code></code>.
+               </p>
+               <div class="example"><a name="d0e7857"></a><p class="title"><b>Example&nbsp;1.&nbsp;File mask</b></p>
+                  <div class="example-contents">
+                     <p>In this command-line example, the folder compare operation
+                                includes only files with <code class="filename">xml</code> or
+                                <code class="filename">txt</code> extensions. All other files are omitted:
+                     </p>
+                     <p><strong class="userinput"><code>WinMergeU c:\project\docs c:\temp /f
+                                      *.xml;*.txt</code></strong></p>
+                  </div>
+               </div><br class="example-break"></div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Filters_FileFilter"></a>2.&nbsp;Using file filters<a class="indexterm" name="d0e7874"></a><a class="indexterm" name="d0e7879"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p><em class="glossterm">File filters</em> are text files with an extension
+                   of <code class="filename">flt</code>. They enable you to apply multiple filtering
+                   rules to a folder comparison. Unlike file masks, file filters can either
+                   include or exclude matches.
+            </p>
+            <p><a class="indexterm" name="d0e7892"></a>WinMerge installs a number of predefined file filters. If
+                   these file filters do not provide the filtering you need, you can create
+                   your own. To make that task easier, WinMerge also provides a template file
+                   named <code class="filename">FileFilter.tmpl</code>. This section describes how to
+                   apply file filters to comparisons, and documents the file filter syntax.
+                   <a class="xref" href="Filters.html#Filters_dlg" title="4.&nbsp;Using the Filters dialog">Using the Filters dialog</a> describes how to add, edit, and manage
+                   filters.
+            </p>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="Filters_FileFilterLoc"></a>2.1.&nbsp;File filter locations<a class="indexterm" name="d0e7906"></a><a class="indexterm" name="d0e7911"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>WinMerge automatically detects file filters in these
+                        locations:
+               </p>
+               <div class="variablelist">
+                  <dl>
+                     <dt><span class="term">Filters subfolder in the WinMerge installation folder</span></dt>
+                     <dd>
+                        <p>This is where the predefined file filters are installed. For
+                                       example, <code class="filename">C:\Program Files\WinMerge\Filters</code>. You
+                                       can create or copy filter files in this location to make them
+                                       available to all users on your system.
+                        </p>
+                        <p>Before creating a new file filter, see if the predefined ones
+                                       already contain what you need. If not, you might find useful rule
+                                       examples in the existing files.
+                        </p>
+                     </dd>
+                     <dt><span class="term">Default private filter folder</span></dt>
+                     <dd>
+                        <p>The location of this folder is defined in the System page of
+                                       WinMerge options. By default, it is specified as a subfolder in your
+                                       user profile folder (for example, <code class="filename">My
+                                          Documents\WinMerge\Filters</code> in Windows XP). Filters that
+                                       are created or copied here are normally visible only to you. If you
+                                       create new file filters, you can copy them here to keep them
+                                       private.
+                        </p>
+                     </dd>
+                  </dl>
+               </div>
+               <p>Before you can apply file filters that exist in any other folder,
+                        you must first install them.
+               </p>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="Filters_FileFilterApply"></a>2.2.&nbsp;Applying file filters<a class="indexterm" name="d0e7944"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>You can apply a file filter using any of these methods:</p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p>When you launch a folder compare from the Select Files or
+                                     Folders dialog:
+                        </p>
+                        <div class="orderedlist">
+                           <ol type="1">
+                              <li>
+                                 <p>After choosing the <span class="guilabel">Left</span> and
+                                                  <span class="guilabel">Right</span> folders, click
+                                                  <span class="guibutton">Select</span> next to the
+                                                  <span class="guilabel">Filter</span> field.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>In the Filters dialog, use the Filefilters tab to choose a
+                                                  file filter and load it in the <span class="guilabel">Filter</span>
+                                                  field.
+                                 </p>
+                                 <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                                    <table border="0" summary="Note">
+                                       <tr>
+                                          <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td>
+                                          <th align="left">Note</th>
+                                       </tr>
+                                       <tr>
+                                          <td align="left" valign="top">
+                                             <p>If a file filter is currently enabled, the selected file
+                                                                filter is already loaded in the <span class="guilabel">Filter</span>
+                                                                field.
+                                             </p>
+                                          </td>
+                                       </tr>
+                                    </table>
+                                 </div>
+                              </li>
+                              <li>
+                                 <p>Proceed with the compare operation. The file in the
+                                                  <span class="guilabel">Filter</span> field is applied when you start the
+                                                  operation.
+                                 </p>
+                              </li>
+                           </ol>
+                        </div>
+                     </li>
+                     <li>
+                        <p>To change file filtering after you have already launched a
+                                     folder compare operation (for example, applying a different filter or
+                                     disabling filtering):
+                        </p>
+                        <div class="orderedlist">
+                           <ol type="1">
+                              <li>
+                                 <p>Click <span class="guimenu">Tools</span> &#8594; <span class="guimenuitem">Filters</span>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>In the Filters dialog, configure your new file filter
+                                                  setting, and click <span class="guibutton">OK</span>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>The new filtering is not automatically applied when you
+                                                  close the Filters dialog: press <span class="keycap"><strong>F5</strong></span> to see the new
+                                                  results in the Folder Compare window.
+                                 </p>
+                              </li>
+                           </ol>
+                        </div>
+                     </li>
+                     <li>
+                        <p><a class="indexterm" name="d0e8016"></a>When you launch a folder compare from the WinMerge
+                                     command line, use the <code class="option">-f</code> flag to specify a file
+                                     filter.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+               <p>Remember, you cannot apply both a file mask and a file filter in the
+                        field or command line.
+               </p>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="Filters_FileFilterSyntax"></a>2.3.&nbsp;File filter syntax<a class="indexterm" name="d0e8030"></a><a class="indexterm" name="d0e8035"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>This section describes the syntax of WinMerge file filters and
+                        provides guidelines for writing them.
+               </p>
+               <p>The comment delimiter is <code class="code">##</code>. After a comment delimiter,
+                        all characters in a line are ignored. WinMerge ignores most whitespace
+                        characters in rules. However, a comment must always be preceded by one or
+                        more whitespace (space or tab) characters. To use <code class="code">##</code> as
+                        characters in a rule, omit the whitespace prefix.
+               </p>
+               <p>The first two required lines of a file filter are:</p>
+               <div class="variablelist">
+                  <dl>
+                     <dt><span class="term">name</span></dt>
+                     <dd>
+                        <p>The filter name that is listed in the Files dialog</p>
+                     </dd>
+                     <dt><span class="term">def</span></dt>
+                     <dd>
+                        <p>The type of filtering to be applied. Specify one of these
+                                       values:
+                        </p>
+                        <div class="variablelist">
+                           <dl>
+                              <dt><span class="term">include</span></dt>
+                              <dd>
+                                 <p>Includes everything except items matching the specified
+                                                      rule.
+                                 </p>
+                              </dd>
+                              <dt><span class="term">exclude</span></dt>
+                              <dd>
+                                 <p>Excludes everything except items matching the specified
+                                                      rule.
+                                 </p>
+                                 <p>When you choose the exclude method, you must also add a
+                                                      <span class="guilabel">d</span> (directory) rule that specifies the
+                                                      subfolders. It's usually a good idea to specify all
+                                                      subfolders, like this:
+                                 </p><pre class="screen">d: \\*$ ## Subfolders</pre></dd>
+                           </dl>
+                        </div>
+                        <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+                           <table border="0" summary="Tip">
+                              <tr>
+                                 <td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.gif"></td>
+                                 <th align="left">Tip</th>
+                              </tr>
+                              <tr>
+                                 <td align="left" valign="top">
+                                    <p>Don't confuse these terms. Remember, in file filters, an
+                                                     <span class="guilabel">include</span> rule does not specify what to
+                                                     include, it specifies what <span class="emphasis"><em>not</em></span> to include.
+                                                     Similarly, <span class="guilabel">exclude</span> does not specify what to
+                                                     exclude, it specifies what not to exclude.
+                                    </p>
+                                 </td>
+                              </tr>
+                           </table>
+                        </div>
+                     </dd>
+                  </dl>
+               </div>
+               <p>Next, your file should contain one or more filter rules. You can add
+                        as many rules as you like. There must be one rule per line, and each rule
+                        must be entirely on one line (no line breaks are allowed in a rule). Each
+                        rule consists of either an <span class="guilabel">f:</span> or a
+                        <span class="guilabel">d:</span> type designator, followed by a reqular expression,
+                        where:
+               </p>
+               <div class="variablelist">
+                  <dl>
+                     <dt><span class="term">f: <em class="replaceable"><code>regexp</code></em></span></dt>
+                     <dd>
+                        <p>matches for files, or</p>
+                     </dd>
+                     <dt><span class="term">d: <em class="replaceable"><code>regexp</code></em></span></dt>
+                     <dd>
+                        <p>matches for folders</p>
+                     </dd>
+                  </dl>
+               </div>
+               <p>Among the many regexp special characters, the following are
+                        particularly important in file filter rules:<a class="indexterm" name="d0e8124"></a><a class="indexterm" name="d0e8129"></a></p>
+               <div class="variablelist">
+                  <dl>
+                     <dt><span class="term">^ (beginning of line)</span></dt>
+                     <dd>
+                        <p>Frequently required for rules to work correctly.</p>
+                     </dd>
+                     <dt><span class="term">$ (end of line)</span></dt>
+                     <dd>
+                        <p>Frequently required for rules to work correctly. For
+                                       example:
+                        </p><pre class="screen">\.c$ ## matches only file names with the extension, <code class="filename">c</code>.
+\.c  ## matches any extension beginning with <code class="filename">c</code>, like <code class="filename">cpp</code> and <code class="filename">com</code>.</pre></dd>
+                     <dt><span class="term">\ (escape)</span></dt>
+                     <dd>
+                        <p>Forces special characters to match normal characters. For
+                                       example, to match a folder name, precede the folder backslash
+                                       delimiter with a backslash (<code class="code">\\</code>). To match the dot in a
+                                       file name, specify a backslash followed by a dot
+                                       (<code class="code">\.</code>).
+                        </p>
+                     </dd>
+                  </dl>
+               </div>
+               <p>No special characters or wildcards are used to match file names. To
+                        match all filenames of a certain type, simply omit the filename.
+               </p>
+               <p>Rules are case-insensitive. For example, <code class="code">f: \.bat&amp;</code>
+                        matches <code class="filename">winmerge.bat</code> and
+                        <code class="filename">compare.BAT</code>.
+               </p>
+               <div class="example"><a name="d0e8186"></a><p class="title"><b>Example&nbsp;2.&nbsp;File filter rule examples</b></p>
+                  <div class="example-contents">
+                     <p>Some simple file filter rules:</p><pre class="screen">f: \.cpp$ ## Match <code class="filename">*.cpp</code> files
+f: \.h$ ## Match <code class="filename">*.h</code> files
+f: ^My ## Match <code class="filename">My*.*</code> files
+f: Dlg\. ## Match <code class="filename">*Dlg.*</code> files
+d: \\test$ ## Match <code class="filename">test</code> folders
+d: ^\\Build$ ## Match <code class="filename">Build</code> folders
+d: Temp$ ## Match <code class="filename">*Temp</code> folders (for example, <code class="filename">FirstTemp</code>)
+d: Src ## Match <code class="filename">*Src*</code> folders</pre><p>Some rules with more complex regular expressions:</p><pre class="screen">f: ^\.#.*$ ## <code class="filename">.#filename.version</code> files
+f: Dlg\.c(pp)?$ ## <code class="filename">*Dlg.c</code> and <code class="filename">*Dlg.cpp</code> files
+f: ^I.*\.h$ ## <code class="filename">I*.h</code> files
+f: Srv[1-9]\.def$ ## <code class="filename">*Srv1.def</code> to <code class="filename">*Srv9.def</code> files
+f: ^[h,k,m] ## <code class="filename">h*.*</code>, <code class="filename">k*.*</code>, and <code class="filename">m*.*</code> files</pre></div>
+               </div><br class="example-break"></div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Filters_LineFilter"></a>3.&nbsp;Using line filters<a class="indexterm" name="d0e8254"></a><a class="indexterm" name="d0e8259"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p>In a file comparison, you can use line filters to ignore single lines.
+                   For example, you might use line filters to ignore comments or certain type
+                   of generated code, like version control system timestamps. Each line filter
+                   is a rule, and you can apply any number of line filters to a file
+                   comparison.
+            </p>
+            <p>To learn how to add, edit, and manage filters, see <a class="xref" href="Filters.html#Filters_dlg" title="4.&nbsp;Using the Filters dialog">Using the Filters dialog</a>.
+            </p>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="Filters_LineFilterApply"></a>3.1.&nbsp;Applying line filters
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>You can apply line filters using any of these methods:</p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p>When you launch a file compare from the Select Files or Folders
+                                     dialog
+                        </p>
+                        <div class="orderedlist">
+                           <ol type="1">
+                              <li>
+                                 <p>After choosing the <span class="guilabel">Left</span> and
+                                                  <span class="guilabel">Right</span> files, click
+                                                  <span class="guibutton">Select</span> next to the
+                                                  <span class="guilabel">Filter</span> field.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>In the Filters dialog, use the Linefilters tab to enable the
+                                                  line filters you want to use (if any), or to see what line filters
+                                                  are currently enabled.
+                                 </p>
+                                 <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                                    <table border="0" summary="Note">
+                                       <tr>
+                                          <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td>
+                                          <th align="left">Note</th>
+                                       </tr>
+                                       <tr>
+                                          <td align="left" valign="top">
+                                             <p>The <span class="guilabel">Filter</span> field does not indicate
+                                                                what line filters are enabled.
+                                             </p>
+                                          </td>
+                                       </tr>
+                                    </table>
+                                 </div>
+                              </li>
+                              <li>
+                                 <p>Proceed with the file compare operation. The enabled line
+                                                  filters are applied when you start the operation.
+                                 </p>
+                              </li>
+                           </ol>
+                        </div>
+                     </li>
+                     <li>
+                        <p>After you have already launched a file compare operation (for
+                                     example, to apply different filters or disabling filtering)
+                        </p>
+                        <div class="orderedlist">
+                           <ol type="1">
+                              <li>
+                                 <p>Click <span class="guimenu">Tools</span> &#8594; <span class="guimenuitem">Filters</span>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Open the Filefilters tab.</p>
+                              </li>
+                              <li>
+                                 <p>Check the individual line filters you want to apply, and
+                                                  uncheck filters that you don't want to apply.
+                                 </p>
+                                 <p>You can also add, edit, and remove filters from the list by
+                                                  using the <span class="guibutton">New</span>, <span class="guibutton">Edit</span>,
+                                                  and <span class="guibutton">Remove</span> buttons.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>To turn on line filtering, check the <span class="guilabel">Enable Line
+                                                     Filters</span>. To turn line filtering off, uncheck the
+                                                  option.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Click <span class="guibutton">OK</span> to dismiss the File Filters
+                                                  dialog.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Click <span class="keycap"><strong>F5</strong></span> to apply your changes and refresh
+                                                  the File Compare window.
+                                 </p>
+                              </li>
+                           </ol>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="Filters_LineFilterSyntax"></a>3.2.&nbsp;Line filter syntax<a class="indexterm" name="d0e8358"></a><a class="indexterm" name="d0e8363"></a><a class="indexterm" name="d0e8368"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>A line filter is a rule that is evaluated against each single-line
+                        difference in your compared files, if line filter rules are enabled. When
+                        a rule matches a single-line difference, the difference is ignored.
+               </p>
+               <p>Ignored differences are marked in the File Compare window with the
+                        <span class="guilabel">Ignored Difference</span> color (as defined in the Colors
+                        page of WinMerge Options). This enables you to distinguish ignored
+                        differences from other types. However, you cannot select or merge ignored
+                        difference.
+               </p>
+               <p>Line filter matching can be described in terms of two ideas:</p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p>When a rule matches any part of the line, the entire difference
+                                     is ignored. Therefore, you cannot filter just part of a line. For
+                                     example, suppose two files have the following single-line
+                                     difference:
+                        </p>
+                        <p><b>File1:&nbsp;</b></p><pre class="screen"># Jean Sibelius</pre><p><b>File2:&nbsp;</b></p><pre class="screen"># Janne Sibelius</pre><p>With no filtering, the line is detected as a difference. But if
+                                     we apply a line filter rule with the expression, <code class="code">^#</code>, the
+                                     lines are reported as identical, because the expression specifies only
+                                     the first character, which matches in both files.
+                        </p>
+                     </li>
+                     <li>
+                        <p>A rule is applied to a multi-line difference only if all the
+                                     lines match. For example, consider this two-line difference:
+                        </p>
+                        <p><b>File1:&nbsp;</b></p><pre class="screen"># Jean Sibelius
+# Pekka Himanen</pre><p><b>File2:&nbsp;</b></p><pre class="screen"># Janne Sibelius
+Pekka Himanen</pre><p>The same <code class="code">^#</code> rule matches the first line, but not
+                                     the second line. Therefore, the difference is not ignored.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+               <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Tip">
+                     <tr>
+                        <td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.gif"></td>
+                        <th align="left">Tip</th>
+                     </tr>
+                     <tr>
+                        <td align="left" valign="top">
+                           <p>It's usually good practice to use the beginning of line (
+                                      <code class="code">^</code> ) and end of line ( <code class="code">&amp;</code> ) markers to
+                                      control your patterns precisely, because the rule is applied if any part
+                                      of a line matches the expression.
+                           </p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="example"><a name="d0e8432"></a><p class="title"><b>Example&nbsp;3.&nbsp;Sample line filters</b></p>
+                  <div class="example-contents"><pre class="screen">^MYTAG$</pre><p>Filters lines that exactly match <code class="literal">MYTAG</code></p><pre class="screen">^::</pre><p>Filters lines beginning with <code class="literal">::</code></p><pre class="screen">^/\*.*\*/$</pre><p>Filters lines beginning with
+                                <code class="literal"><code class="constant">/*</code></code> and ending with
+                                <code class="literal">*/</code></p><pre class="screen">^[1-5]00</pre><p>Filters lines beginning with numbers 100, 200, 300, 400, and
+                                500
+                     </p>
+                  </div>
+               </div><br class="example-break"><div class="example"><a name="d0e8461"></a><p class="title"><b>Example&nbsp;4.&nbsp;Line filter rule matching CVS Id lines</b></p>
+                  <div class="example-contents">
+                     <p>CVS Id lines look like this:</p><pre class="screen">// $Id: Filters.xml 7591 2013-01-20 15:47:42Z christianlist $</pre><p>... and can be filtered with this rule:</p><pre class="screen">^// \WId: .*\$</pre></div>
+               </div><br class="example-break"><div class="example"><a name="d0e8472"></a><p class="title"><b>Example&nbsp;5.&nbsp;Filter line number comments in po files</b></p>
+                  <div class="example-contents">
+                     <p>po line number comments look like this:</p><pre class="screen">#: src/filename.c:766</pre><p>... and can be filtered with this rule:</p><pre class="screen">^#</pre></div>
+               </div><br class="example-break"></div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Filters_dlg"></a>4.&nbsp;Using the Filters dialog<a class="indexterm" name="d0e8486"></a><a class="indexterm" name="d0e8489"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p>This section describes the Filters dialog, which provides functions to
+                   create and manage file filters and line filters.
+            </p>
+            <p>To open the Filters dialog, use either of these methods:</p>
+            <div class="itemizedlist">
+               <ul type="disc">
+                  <li>
+                     <p>In the Select Files or Folders dialog, click
+                                <span class="guibutton">Select</span> to the right of the
+                                <span class="guilabel">Filter</span> field. You use this method when you want to
+                                apply a file filter to a folder compare operation.
+                     </p>
+                  </li>
+                  <li>
+                     <p>Click <span class="guimenu">Tools</span> &#8594; <span class="guimenuitem">Filters</span>. This method can be used at any time except when the
+                                Select Files or Folders dialog is open.
+                     </p>
+                  </li>
+               </ul>
+            </div>
+            <p>The Filters dialog has a tab for each type of WinMerge filter:</p>
+            <div class="variablelist">
+               <dl>
+                  <dt><span class="term">Filefilters</span></dt>
+                  <dd>
+                     <p>Choose this tab to work with file filters for folder compare
+                                  operations.
+                     </p>
+                  </dd>
+                  <dt><span class="term">Linefilters</span></dt>
+                  <dd>
+                     <p>Choose this tab to work with line filters for file compare
+                                  operations.
+                     </p>
+                  </dd>
+               </dl>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="Filters_FileFiltersTab"></a>4.1.&nbsp;Using the Filefilters tab<a class="indexterm" name="d0e8535"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The main part of this tab is a list of file filters that are
+                        available for folder compare operations. The list includes shared,
+                        private, and installed file filters that WinMerge knows about, as
+                        described in <a class="xref" href="Filters.html#Filters_FileFilterLoc" title="2.1.&nbsp;File filter locations">File filter locations</a>.
+               </p>
+               <div class="section" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="Filters_FileFilterEnabling"></a>4.1.1.&nbsp;Enabling and disabling file filters
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>You must enable a file filter to make it available in a folder
+                             comparison operation, or to disable a current filter to stop it from
+                             being used:
+                  </p>
+                  <div class="orderedlist">
+                     <ol type="1">
+                        <li>
+                           <p>Open the Filters dialog, if it is not already open.</p>
+                        </li>
+                        <li>
+                           <p>Select a file filter or
+                                          <span class="guimenuitem">&lt;None&gt;</span> from the list.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Click <span class="guibutton">OK</span> to dismiss the Filters
+                                          dialog.
+                           </p>
+                        </li>
+                     </ol>
+                  </div>
+                  <p>There are several ways to apply file filters after enabling them.
+                             For details, see <a class="xref" href="Filters.html#Filters_FileFilterApply" title="2.2.&nbsp;Applying file filters">Applying file filters</a>.
+                  </p>
+               </div>
+               <div class="section" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="Filters_FileFilterCfg"></a>4.1.2.&nbsp;Configuring file filters
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>Use these buttons to manage your <span class="guilabel">Filefilters</span>
+                             list and create new file filters:
+                  </p>
+                  <div class="variablelist">
+                     <dl>
+                        <dt><span class="term">Test</span></dt>
+                        <dd>
+                           <p>Select a file filter in the list and click
+                                            <span class="guibutton">Test</span> to quickly see how the filter works.
+                                            See <a class="xref" href="Filters.html#Filters_TestingDlg" title="4.1.4.&nbsp;Testing file filter rules">Testing file filter rules</a> for details.
+                           </p>
+                        </dd>
+                        <dt><span class="term">Install</span></dt>
+                        <dd>
+                           <p>Enables you to locate a file filter and adds it to the
+                                            Filters list. File filters that are not in either the shared or
+                                            default private folder are not detected unless you install
+                                            them.
+                           </p>
+                        </dd>
+                        <dt><span class="term">New</span></dt>
+                        <dd>
+                           <p>Creates a new copy of a file template in either the shared
+                                            or private filter folders, and opens it in your default editor.
+                                            Edit the template and add your rules, as described in <a class="xref" href="Filters.html#Filters_CreatingFile" title="4.1.3.&nbsp;Creating a file filter">Creating a file filter</a>.
+                           </p>
+                        </dd>
+                        <dt><span class="term">Edit</span></dt>
+                        <dd>
+                           <p>Select a file filter in the list and click
+                                            <span class="guibutton">Edit</span> to open the file in your default
+                                            editor.
+                           </p>
+                        </dd>
+                        <dt><span class="term">Delete</span></dt>
+                        <dd>
+                           <p>Select a file filter in the list and click
+                                            <span class="guibutton">Delete</span> to delete the file and remove it
+                                            from the list. Yes, the file is really deleted!
+                           </p>
+                        </dd>
+                     </dl>
+                  </div>
+                  <p>Your changes are saved when you click <span class="guibutton">OK</span> to
+                             dismiss the Filters dialog. Line filters are stored in the Windows
+                             registry.
+                  </p>
+               </div>
+               <div class="section" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="Filters_CreatingFile"></a>4.1.3.&nbsp;Creating a file filter
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>If the file filters that are installed with WinMerge do not
+                             provide the filtering you need, you can create your own:
+                  </p>
+                  <div class="orderedlist">
+                     <ol type="1">
+                        <li>
+                           <p>Click <span class="guimenu">Tools</span> &#8594; <span class="guimenuitem">Filters</span>. Or, from the Select Files or Folders dialog, click
+                                          <span class="guibutton">Select</span> to the right of the
+                                          <span class="guilabel">Filter</span> field.
+                           </p>
+                        </li>
+                        <li>
+                           <p><a name="Filters_New_step"></a>In the Filters dialog Filefilters tab, click
+                                          <span class="guibutton">New</span>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>In the Shared or Private Filter dialog, choose
+                                          <span class="guilabel">Shared Filter</span> or <span class="guilabel">Private
+                                             Filter</span> (see <a class="xref" href="Filters.html#Filters_FileFilterLoc" title="2.1.&nbsp;File filter locations">File filter locations</a> for
+                                          their uses) and click <span class="keycap"><strong>OK</strong></span>.
+                           </p>
+                           <p>The Select filename for new filter dialog opens in the shared
+                                          or private files folder on your system (if the private folder does
+                                          not exist, WinMerge creates it).
+                           </p>
+                        </li>
+                        <li>
+                           <p>In the Select filename for new filter dialog, enter a new file
+                                          name and click <span class="guibutton">Save</span>.
+                           </p>
+                           <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                              <table border="0" summary="Note">
+                                 <tr>
+                                    <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td>
+                                    <th align="left">Note</th>
+                                 </tr>
+                                 <tr>
+                                    <td align="left" valign="top">
+                                       <p>Don't choose an existing file name: to edit an existing
+                                                        file, go back to Step <a class="xref" href="Filters.html#Filters_New_step">2</a> and
+                                                        click Edit instead of New.
+                                       </p>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                           <p>WinMerge initializes the new file with the contents of the
+                                          <code class="filename">FileFilter.tmpl</code> tempate, and opens it in your
+                                          default text editor.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Follow the template instructions to edit the template,
+                                          updating the placeholder name and description and adding filter
+                                          rules as described in <a class="xref" href="Filters.html#Filters_FileFilterSyntax" title="2.3.&nbsp;File filter syntax">File filter syntax</a>.
+                                          Save the file in your text editor.
+                           </p>
+                           <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+                              <table border="0" summary="Tip">
+                                 <tr>
+                                    <td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.gif"></td>
+                                    <th align="left">Tip</th>
+                                 </tr>
+                                 <tr>
+                                    <td align="left" valign="top">
+                                       <p>If you want to quickly test a rule that you are defining,
+                                                        try clicking Test in the Filters dialog. See <a class="xref" href="Filters.html#Filters_TestingDlg" title="4.1.4.&nbsp;Testing file filter rules">Testing file filter rules</a> for details.
+                                       </p>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </li>
+                        <li>
+                           <p>If you created your file filter in one of the standard
+                                          <code class="filename">Filters</code> folders, and the Filters dialog does
+                                          not list your new file filter, try clicking
+                                          <span class="guibutton">OK</span> to close it, then click <span class="guimenu">Tools</span> &#8594; <span class="guimenuitem">Filters</span> again to reopen it. The
+                                          <span class="guilabel">Filefilters</span> list should now include the new
+                                          file filter.
+                           </p>
+                           <p>If you saved the file in an alternate location on your file
+                                          system), WinMerge cannot detect it unless you install it. To make a
+                                          file filter detectable anywhere on your system:
+                           </p>
+                           <div class="orderedlist">
+                              <ol type="a">
+                                 <li>
+                                    <p>Click <span class="guibutton">Install</span> in the Filters
+                                                       dialog.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>In the Locate filter file to install dialog, navigate to
+                                                       the <code class="filename">flt</code> file on your system, and click
+                                                       <span class="guibutton">Open</span>. The Filefilters list should now
+                                                       include the installed file filter.
+                                    </p>
+                                 </li>
+                              </ol>
+                           </div>
+                        </li>
+                     </ol>
+                  </div>
+               </div>
+               <div class="section" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="Filters_TestingDlg"></a>4.1.4.&nbsp;Testing file filter rules<a class="indexterm" name="d0e8734"></a><a class="indexterm" name="d0e8739"></a></h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>Use the Test Filter dialog to quickly test a file filter against
+                             sample data, to help you develop new rules or to understand how existing
+                             rules work. It can be easier than running a full compare
+                             operation.
+                  </p>
+                  <p>Starting from the Filters dialog:</p>
+                  <div class="orderedlist">
+                     <ol type="1">
+                        <li>
+                           <p>In the Filefilters tab, choose the file filter you want to
+                                          test.
+                           </p>
+                        </li>
+                        <li>
+                           <p>If you want to see the rules you will be testing,click
+                                          <span class="guibutton">Edit</span> now to open the file so that you can
+                                          view it during the next steps.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Click <span class="guibutton">Test</span>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>In the Test Filter dialog, choose the type of rule to
+                                          test:
+                           </p>
+                           <div class="itemizedlist">
+                              <ul type="disc">
+                                 <li>
+                                    <p>To test an <span class="guilabel">f:</span> file rule in your file
+                                                       filter, uncheck the <span class="guilabel">Folder Name</span>
+                                                       option.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>To test a <span class="guilabel">d:</span> folder rule, check the
+                                                       <span class="guilabel">Folder Name</span> option.
+                                    </p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Enter the text to test.</p>
+                           <p>The text should be appropriate for the type of rule you are
+                                          testing. For example, if you have checked the <span class="guilabel">Folder
+                                             Name</span> option, you probably want to enter a folder name,
+                                          such as \temp.
+                           </p>
+                           <p>The <span class="guilabel">Result</span> box displays your entry,
+                                          followed by its status: either
+                                          <code class="computeroutput">passed</code> or
+                                          <code class="computeroutput">failed</code>.
+                           </p>
+                        </li>
+                     </ol>
+                  </div>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="Filters_LineFiltersTab"></a>4.2.&nbsp;Using the Linefilters tab<a class="indexterm" name="d0e8806"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Use this tab to configure and enable line filters for file compare
+                        operations. The tab features a list of rules. Each rule contains a single
+                        regular expression. You can apply any combination of rules from the list
+                        to a file comparison.
+               </p>
+               <div class="section" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="Filters_LineFilterCfg"></a>4.2.1.&nbsp;Configuring line filters
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>Below the <span class="guilabel">Regular Expressions</span> list is an edit
+                             box and buttons that you can use to maintain the list at any time by
+                             adding, editing, and removing rules.
+                  </p>
+                  <p>To add a new rule:</p>
+                  <div class="orderedlist">
+                     <ol type="1">
+                        <li>
+                           <p>Click <span class="guibutton">New</span>. Your edit cursor is
+                                          automatically enabled in the edit box.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Enter an expression in the edit box below the
+                                          <span class="guilabel">Regular Expressions</span> list.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Click <span class="guibutton">Save</span> to load the expression in a
+                                          new line in the list.
+                           </p>
+                        </li>
+                     </ol>
+                  </div>
+                  <p>To edit an existing rule:</p>
+                  <div class="orderedlist">
+                     <ol type="1">
+                        <li>
+                           <p>Select the line and click <span class="guibutton">Edit</span>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Edit the expression in the edit box.</p>
+                        </li>
+                        <li>
+                           <p>Click <span class="guibutton">Save</span><span class="guibutton"> </span>when
+                                          you're done.
+                           </p>
+                        </li>
+                     </ol>
+                  </div>
+                  <p>To delete an existing rule, select (check) the rule and click
+                             <span class="guibutton">Remove</span>.
+                  </p>
+               </div>
+               <div class="section" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="Filters_LineFilterEnabling"></a>4.2.2.&nbsp;Enabling and disabling line filters<a class="indexterm" name="d0e8870"></a></h4>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="orderedlist">
+                     <ol type="1">
+                        <li>
+                           <p>In the <span class="guilabel">Regular Expressions</span> list, check
+                                          just the filters that you want to apply, and uncheck any filters you
+                                          do not want to apply.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Check or uncheck the <span class="guilabel">Enable Line Filters</span>
+                                          option. If you turn filtering on, all the rules that are currently
+                                          checked in the <span class="guilabel">Regular Expression</span> list are
+                                          used. If filtering is off, no rules are used even if they are
+                                          checked.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Click <span class="guibutton">OK</span> to dismiss the Filters dialog
+                                          and save your settings.
+                           </p>
+                        </li>
+                     </ol>
+                  </div>
+                  <p>There are several ways to apply file filters after enabling them.
+                             For details, see <a class="xref" href="Filters.html#Filters_LineFilterApply" title="3.1.&nbsp;Applying line filters">Applying line filters</a>.
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="AboutFilters_regexp"></a>5.&nbsp;Getting help with regular expressions<a class="indexterm" name="d0e8904"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p>Regular expressions can be very complex. Fortunately, most file
+                   filters in WinMerge involve simple extension expressions, as shown in the
+                   examples in this topic. The filter files installed with WinMerge include
+                   many other useful examples.
+            </p>
+            <p>Finally, there are lots of resources on the Web for help with regexps,
+                   including these sites:
+            </p>
+            <div class="variablelist">
+               <dl>
+                  <dt><span class="term">Good site devoted to regexps:</span></dt>
+                  <dd><a class="ulink" href="http://www.regular-expressions.info/" target="_top">http://www.regular-expressions.info/</a></dd>
+                  <dt><span class="term">Tutorial:</span></dt>
+                  <dd><a class="ulink" href="http://www.zvon.org/comp/r/tut-Regexp.html" target="_top">http://www.zvon.org/comp/r/tut-Regexp.html</a></dd>
+                  <dt><span class="term">PDF quick reference:</span></dt>
+                  <dd><a class="ulink" href="http://www.night-ray.com/regex.pdf" target="_top">http://www.night-ray.com/regex.pdf</a></dd>
+               </dl>
+            </div>
+         </div>
+      </div>
+      <div class="navfooter">
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="Plugins.html">Prev</a>&nbsp;
+               </td>
+               <td width="20%" align="center">&nbsp;</td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="Command_line.html">Next</a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Plugins&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Command line</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,801 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Plugins - WinMerge 2.12 Manual</title>
+      <meta name="generator" content="DocBook XSL Stylesheets V1.74.0">
+      <link rel="home" href="index.html" title="WinMerge 2.16 Help">
+      <link rel="up" href="index.html" title="WinMerge 2.16 Help">
+      <link rel="prev" href="Locales.html" title="Locale support">
+      <link rel="next" href="Filters.html" title="Using Filters">
+      <link rel="stylesheet" type="text/css" href="css/all.css">
+      <link rel="stylesheet" type="text/css" media="print" href="css/print.css">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Plugins</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="Locales.html">Prev</a>&nbsp;
+               </td>
+               <th width="60%" align="center">&nbsp;</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="Filters.html">Next</a></td>
+            </tr>
+         </table>
+      </div>
+      <div class="article" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title"><a name="Plugins"></a>Plugins<a class="indexterm" name="d0e6833"></a></h2>
+               </div>
+            </div>
+            <hr>
+         </div>
+         <p>WinMerge plugins are custom dlls or scriptlets, written in the COM API,
+            that preprocess data before a comparison. For example, you can use a plugin to
+            extract text data from MS Word files for WinMerge to compare.
+         </p>
+         <p>Each plugin is:<a class="indexterm" name="d0e6840"></a></p>
+         <div class="itemizedlist">
+            <ul type="disc">
+               <li>
+                  <p>A single dll or a scriptlet (<code class="filename">sct</code>) file
+                  </p>
+               </li>
+               <li>
+                  <p>Installed in the <code class="filename">MergePlugins</code>
+                           subfolder. A number of plugins can be installed for you by WinMerge.
+                  </p>
+               </li>
+               <li>
+                  <p>Easy to install: To install a plugin that is not included in the
+                           WinMerge installation, just copy the plugin file to <code class="filename">MergePlugins</code>. The plugin is available the
+                           next time you open WinMerge. You can find more plugins on the web, written
+                     	  by other developers.
+                  </p>
+               </li>
+            </ul>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e6862"></a>1.&nbsp;Plugin Types
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Plugins are grouped into three main categories:</p>
+            <div class="variablelist">
+               <dl>
+                  <dt><span class="term">Editor complement<a class="indexterm" name="d0e6871"></a></span></dt>
+                  <dd>
+                     <p>This type of plugin performs custom operations on selected text
+                                  in the active editor (File pane) of the File Compare window.
+                     </p>
+                  </dd>
+                  <dt><span class="term">Unpacker: transform a file to a text format<a class="indexterm" name="d0e6880"></a></span></dt>
+                  <dd>
+                     <p>This type of plugin transforms a compressed file to a viewable
+                                  format by decompressing it. The original file is not changed: a
+                                  temporary transformed file is created and loaded in WinMerge.
+                     </p>
+                     <p>Unpacker plugins operate on entire files, not to selected text
+                                  or diffs within files. Therefore, they are available only when you
+                                  launch file comparisons, from either the Folder Compare window or the
+                                  Select Files or Folders dialog. Unpacker plugins are not available in
+                                  the File Compare window.
+                     </p>
+                     <p>Sometimes the unpacked file can be repacked (see the details in
+                                  <a class="xref" href="Plugins.html#Plugins_available" title="4.&nbsp;Available plugins">Available plugins</a> to check whether a plugin
+                                  supports repacking). Then, you can merge and save the transformed
+                                  file. The packing is done automatically in this case. To be safe, we
+                                  suggest that you rename the transformed file when you save it.
+                     </p>
+                     <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                        <table border="0" summary="Note">
+                           <tr>
+                              <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td>
+                              <th align="left">Note</th>
+                           </tr>
+                           <tr>
+                              <td align="left" valign="top">
+                                 <p>When you compare folders, WinMerge can give different results
+                                                for compressed and uncompressed files. For example, files that are
+                                                identical when uncompressed might be different if they include the
+                                                creation date. WinMerge applies the unpacker in all situations, and
+                                                you are sure to have the same result when you compare a folder, or
+                                                when you merge two versions of a file.
+                                 </p>
+                              </td>
+                           </tr>
+                        </table>
+                     </div>
+                     <p>Example plugin: <a class="xref" href="Plugins.html#CompareMSExcelFiles" title="4.1.&nbsp;CompareMSExcelFiles.sct">CompareMSExcelFiles.sct</a>
+                                  Displays the text contents of a 
+                                  <span class="trademark">Microsoft</span>&reg;
+                                  <span class="application">Excel</span> file.
+                     </p>
+                  </dd>
+                  <dt><span class="term">Prediffer: preprocess files to hide some differences<a class="indexterm" name="d0e6908"></a></span></dt>
+                  <dd>
+                     <p>This type of plugin does not operate on the source files
+                                  displayed in the Compare window. It operates instead on temporary
+                                  copies of the files, and the copies are then scanned to create the
+                                  difference list.
+                     </p>
+                     <p>Example plugin: <a class="xref" href="Plugins.html#IgnoreColumns" title="4.5.&nbsp;IgnoreColumns.dll">IgnoreColumns.dll</a> ignores the
+                                  differences inside specified columns, while displaying the characters
+                                  in these columns.
+                     </p>
+                  </dd>
+               </dl>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e6918"></a>2.&nbsp;Suggested plugins and automatic modes
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>How is WinMerge able to apply the right plugin for a given file? Each
+                   plugin specifies a list of file extensions (also listed in each plugin's
+                   <a class="xref" href="Plugins.html#Plugins_available" title="4.&nbsp;Available plugins">Available plugins</a> section, under <em class="citetitle">File
+                      filter</em>). The extensions are used to associate one or more file
+                   types with the plugin: when a compared file's extension matches an extension
+                   in the plugin's list, the plugin is considered to be a <em class="firstterm">suggested
+                      plugin. </em></p>
+            <p>There are separate WinMerge options for the unpacking and prediffer
+                   types, described later in this topic, that enable you to apply the plugins
+                   either manually or automatically. There is no automatic mode for editor
+                   complement plugins.
+            </p>
+            <p>When you apply plugins to a selected file using automatic mode,
+                   WinMerge searches its list of suggested plugins for that file type, and
+                   applies the first plugin whose name matches. The search is performed in
+                   alphabetical order, so if there are multiple suggested plugins for a file
+                   type, only the first one found is applied.
+            </p>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e6934"></a>3.&nbsp;Applying plugins
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>The following subsections describe how to apply each type of plugin.
+                   The methods are different for each type of plugin, and also vary depending
+                   on whether you are comparing folders or files.
+            </p>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e6939"></a>3.1.&nbsp;Applying editor complement plugins in the File Compare
+                                 window
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>With your cursor in either File pane of the File Compare window,
+                        click <span class="guimenu">Plugins</span> &#8594; <span class="guisubmenu">Scripts</span> and choose one of these functions:
+               </p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="function">MakeUpper</code></p>
+                     </li>
+                     <li>
+                        <p><code class="function">MakeLower</code></p>
+                     </li>
+                     <li>
+                        <p><code class="function">SortAscending</code></p>
+                     </li>
+                     <li>
+                        <p><code class="function">SortDescending</code></p>
+                     </li>
+                     <li>
+                        <p><code class="function">ExecFilterCommand</code></p>
+                     </li>
+                     <li>
+                        <p><code class="function">InsertDate</code></p>
+                     </li>
+                     <li>
+                        <p><code class="function">InsertTime</code></p>
+                     </li>
+                  </ul>
+               </div>
+               <p>The functions are contributed to the
+                        <span class="guisubmenu">Scripts</span> menu by the <a class="xref" href="Plugins.html#EditorAddin" title="4.4.&nbsp;editor addin.sct">editor addin.sct</a> and <a class="xref" href="Plugins.html#Plugins_datetime" title="4.10.&nbsp;insert datetime.sct">insert datetime.sct</a>
+                        plugins.
+               </p>
+               <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                     <tr>
+                        <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td>
+                        <th align="left">Note</th>
+                     </tr>
+                     <tr>
+                        <td align="left" valign="top">
+                           <p>Editor complement plugins are not available in the Folder Compare
+                                      window.
+                           </p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e6991"></a>3.2.&nbsp;Applying unpacker plugins in the Folder Compare window
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Before applying unpacker plugins, you can set its mode to either
+                        automatic or manual mode.
+               </p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p>To set automatic mode for this type of plugin, click <span class="guimenu">Plugins</span> &#8594; <span class="guimenuitem">Automatic Unpacking</span>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>To set manual mode, click <span class="guimenu">Plugins</span> &#8594; <span class="guimenuitem">Manual Unpacking</span>.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+               <p>Remember to click <span class="keycap"><strong>F5</strong></span> to reload the Folder Compare
+                        window using the new setting.
+               </p>
+               <div class="section" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="d0e7020"></a>3.2.1.&nbsp;Using automatic mode
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>To apply plugins when automatic unpacking is set, simply launch a
+                             compare operation on a file in the Folder Compare window. If the file's
+                             type suggested unpacker plugin (if any) preprocesses the file before
+                             WinMerge opens it in the File Compare window.
+                  </p>
+                  <p>For example, suppose you right-click an MS Word
+                             <code class="filename">doc</code> file and choose
+                             <span class="guimenuitem">Compare</span> (also assume that the <a class="xref" href="Plugins.html#Plugins_msword" title="4.2.&nbsp;CompareMSWordFiles.sct">CompareMSWordFiles.sct</a> plugin is available). WinMerge converts the
+                             doc file (or rather, a copy of it ) to a plain text file and opens it in
+                             the File Compare window.
+                  </p>
+               </div>
+               <div class="section" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="d0e7035"></a>3.2.2.&nbsp;Using manual mode
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>Manual mode enables you to choose a different unpacker plugin than
+                             the one that is selected for you in automatic mode. You can also launch
+                             the compare using no plugin.
+                  </p>
+                  <p>To apply plugins when manual unpacking is set:</p>
+                  <div class="orderedlist">
+                     <ol type="1">
+                        <li>
+                           <p>Select the file you want to compare.</p>
+                        </li>
+                        <li>
+                           <p>Click <span class="guimenu">Plugins</span> &#8594; <span class="guimenuitem">Edit with Unpacker</span>.
+                           </p>
+                           <p>This menu item is enabled only if the selected file's type is
+                                          supported by an available unpacking plugin.
+                           </p>
+                        </li>
+                        <li>
+                           <p>In the Select Unpacker dialog:</p>
+                           <div class="orderedlist"><a name="select-unpacker-proc"></a><ol type="a">
+                                 <li>
+                                    <p>Configure automatic plugin selection or choose a plugin
+                                             manually:
+                                    </p>
+                                    <div class="itemizedlist">
+                                       <ul type="disc">
+                                          <li>
+                                             <p>To use automatic mode (which applies the first available
+                                                          plugin), verify that <span class="guilabel">&lt;None&gt;</span> is displayed in
+                                                          the <span class="guilabel">File unpacker</span> control.
+                                             </p>
+                                          </li>
+                                          <li>
+                                             <p>To choose a different plugin (if available), use the
+                                                          <span class="guilabel">File unpacker</span> control to choose the
+                                                          plugin.
+                                             </p>
+                                             <p>By default, this control lists only suggested plugins for the
+                                                          file type you selected to compare. To see all available plugins,
+                                                          enable the option, <span class="guilabel">Display all packers, don't check the
+                                                             extension</span>.
+                                             </p>
+                                          </li>
+                                          <li>
+                                             <p>To launch the compare without using any plugin, choose
+                                                          <span class="guimenuitem">&lt;None&gt;</span> in the <span class="guilabel">File
+                                                             unpacker</span> control.
+                                             </p>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <p>Click <span class="guibutton">OK</span> to close the Select Unpacker
+                                             dialog.
+                                    </p>
+                                 </li>
+                              </ol>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Click <span class="guibutton">OK</span> to close the Select Unpacker
+                                          dialog and launch the file comparison.
+                           </p>
+                        </li>
+                     </ol>
+                  </div>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e7106"></a>3.3.&nbsp;Applying unpacker plugins in the Select Files or Folders
+                                 dialog
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>You can use the Select Unpacker dialog to apply a plugin when you
+                        launch a file comparison from the Select Files or Folders dialog. See
+                        <a class="xref" href="Open_paths.html#Open_paths_unpacker" title="1.4.&nbsp;Selecting an unpacker for file comparisons">Selecting an unpacker for file comparisons</a> for details.
+               </p>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e7113"></a>3.4.&nbsp;Applying prediffer plugins in the Folder Compare window
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>With prediffer plugins, you set the mode (<em class="firstterm">Auto
+                           prediiffer</em> or <em class="firstterm">No prediffer</em>) for
+                        individual files. (Contrast this with unpacker plugins, where you set the
+                        mode for all files.) That is, some files in the same folder have different
+                        prediffer modes.
+               </p>
+               <p>To set the mode for one or more files in the Folder Compare window,
+                        right-click the files and choose <span class="guimenu">Plugin Settings</span> &#8594; <span class="guisubmenu">Prediffer Settings</span>, then choose one of the submenu options:
+               </p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><span class="guisubmenu">Auto Prediffer</span> selects the first
+                                     prediffer plugin available for the file type.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guisubmenu">No prediffer</span> means that no prediffer
+                                     plugin is used.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+               <p>Click <span class="keycap"><strong>F5</strong></span> to update the window.
+               </p>
+               <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                     <tr>
+                        <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td>
+                        <th align="left">Note</th>
+                     </tr>
+                     <tr>
+                        <td align="left" valign="top">
+                           <p>When you open a subfolder during a non-recursive compare, the mode
+                                      is always reset to <span class="guimenuitem">No prediffer</span>.
+                           </p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <p>When you open a file from the Folder Compare window, your prediffer
+                        setting for that file is applied before the File Compare window is
+                        opened.
+               </p>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e7156"></a>3.5.&nbsp;Applying prediffer plugins in the File Compare window
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>In the File Compare winodw, you can apply a prediffer plugin by
+                        clicking <span class="guimenu">Plugins</span> &#8594; <span class="guisubmenu">Prediffer</span> and choosing one of the plugins in the list. Suggested
+                        plugins are indicated at the top of the list. The files are compared again
+                        after the plugin is applied, so you don't need to rescan the files.
+               </p>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Plugins_available"></a>4.&nbsp;Available plugins<a class="indexterm" name="d0e7170"></a><a class="indexterm" name="d0e7173"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="CompareMSExcelFiles"></a>4.1.&nbsp;<code class="filename">CompareMSExcelFiles.sct<a class="indexterm" name="d0e7182"></a></code></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Displays the text contents of a <span class="trademark">Microsoft</span>&reg; <span class="application">Excel</span>
+                        file, stripping away all formatting and embedded objects.
+               </p>
+               <div class="segmentedlist">
+                  <div class="seglistitem">
+                     <div class="seg"><strong><span class="segtitle">Category: </span></strong>Unpacker
+                     </div>
+                     <div class="seg"><strong><span class="segtitle">File filter: </span></strong><code class="filename">*.xls</code><code class="filename">*.xlsx</code><code class="filename">*.xlsm</code><code class="filename">*.xlsb</code><code class="filename">*.xla</code><code class="filename">*.xlax</code><code class="filename">*.xltx</code><code class="filename">*.xltm</code></div>
+                     <div class="seg"><strong><span class="segtitle">Packing: </span></strong>No
+                     </div>
+                     <div class="seg"><strong><span class="segtitle">Settings dialog support: </span></strong>Yes
+                     </div>
+                     <div class="seg"><strong><span class="segtitle">: </span></strong><span class="trademark">Microsoft</span>&reg;
+                                    <span class="application">Excel</span></div>
+                  </div>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="Plugins_msword"></a>4.2.&nbsp;<code class="filename">CompareMSWordFiles.sct<a class="indexterm" name="d0e7237"></a></code></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Displays the text content of a <span class="trademark">Microsoft</span>&reg; <span class="application">Word</span>
+                        file, stripping away all formatting and embedded objects.
+               </p>
+               <div class="segmentedlist">
+                  <div class="seglistitem">
+                     <div class="seg"><strong><span class="segtitle">Category: </span></strong>Unpacker
+                     </div>
+                     <div class="seg"><strong><span class="segtitle">File filter: </span></strong><code class="filename">*.doc</code>, <code class="filename">*.docx</code>, <code class="filename">*.docm</code>, <code class="filename">*.dot</code>, <code class="filename">*.dotx</code>, <code class="filename">*.dotm</code></div>
+                     <div class="seg"><strong><span class="segtitle">Packing: </span></strong>No
+                     </div>
+                     <div class="seg"><strong><span class="segtitle">Settings dialog support: </span></strong>Yes
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="Plugins_powerpnt"></a>4.3.&nbsp;<code class="filename">CompareMSPowerPointFiles.sct<a class="indexterm" name="d0e7287"></a></code></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Displays the text content of a <span class="trademark">Microsoft</span>&reg; <span class="application">PowerPoint</span>
+                        file, stripping away all formatting and embedded objects.
+               </p>
+               <div class="segmentedlist">
+                  <div class="seglistitem">
+                     <div class="seg"><strong><span class="segtitle">Category: </span></strong>Unpacker
+                     </div>
+                     <div class="seg"><strong><span class="segtitle">File filter: </span></strong><code class="filename">*.ppt</code>, <code class="filename">*.pptx</code>, <code class="filename">*.pptm</code>, <code class="filename">*.ppa</code>, <code class="filename">*.ppam</code>, <code class="filename">*.pot</code>, <code class="filename">*.potx</code>, <code class="filename">*.potm</code></div>
+                     <div class="seg"><strong><span class="segtitle">Packing: </span></strong>No
+                     </div>
+                     <div class="seg"><strong><span class="segtitle">Settings dialog support: </span></strong>Yes
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="EditorAddin"></a>4.4.&nbsp;<code class="filename">editor addin.sct<a class="indexterm" name="d0e7343"></a></code></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Adds five functions to the <span class="guimenu">Plugins</span> &#8594; <span class="guisubmenu">Scripts</span> menu:
+               </p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li><span class="guimenuitem">MakeUpper</span> convert the selection to
+                                  UPPER CASE.
+                     </li>
+                     <li><span class="guimenuitem">MakeLower</span> convert the selection to
+                                  lower case.
+                     </li>
+                     <li><span class="guimenuitem">SortAscending</span> sort the selection 
+                                  in ascending order.
+                     </li>
+                     <li><span class="guimenuitem">SortDescending</span> sort the selection 
+                                  in descending order.
+                     </li>
+                     <li><span class="guimenuitem">ExecFilterCommand</span> replace the selection 
+                                  with the output of the specified filter command.
+                     </li>
+                  </ul>
+               </div>
+               <div class="segmentedlist">
+                  <div class="seglistitem">
+                     <div class="seg"><strong><span class="segtitle">Category: </span></strong>Editor complement
+                     </div>
+                     <div class="seg"><strong><span class="segtitle">Settings dialog support: </span></strong>No
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="IgnoreColumns"></a>4.5.&nbsp;<code class="filename">IgnoreColumns.dll<a class="indexterm" name="d0e7395"></a></code></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>This plugin ignores characters at specified columns. The first
+                        column is number 1
+               </p>
+               <p>Note that this plugin does not support files with tabs: the plugin
+                        does not fail, but all tabs are be treated as normal characters.
+               </p>
+               <p>To specify columns, use plugin settings dialog or rename the <code class="filename">dll</code> using
+                        following fields as parameters:
+               </p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>Delimiters between ranges: _ or ,</li>
+                     <li>Delimiters between min and max: <span class="emphasis"><em>anything
+                                        else</em></span></li>
+                     <li>Min and max are included.</li>
+                     <li>When max = min, max can be omitted.</li>
+                  </ul>
+               </div>
+               <div class="example"><a name="d0e7422"></a><p class="title"><b>Example&nbsp;1.&nbsp;<code class="filename">IgnoreColumns.dll</code> examples</b></p>
+                  <div class="example-contents">
+                     <div class="variablelist">
+                        <dl>
+                           <dt><span class="term"><code class="filename">IgnoreColumns _ 3 _ 10 - 20 _ 32 -
+                                                33.dll</code></span></dt>
+                           <dd>Ignore all characters at column 3, and in columns 10 to
+                                            20, and 32 to 33.
+                           </dd>
+                           <dt><span class="term"><code class="filename">IgnoreColumns_1,30 to 40.dll</code></span></dt>
+                           <dd>Ignore all the characters in column 1, and in columns 30
+                                            to 40.
+                           </dd>
+                        </dl>
+                     </div>
+                  </div>
+               </div><br class="example-break"><div class="segmentedlist">
+                  <div class="seglistitem">
+                     <div class="seg"><strong><span class="segtitle">Category: </span></strong>Prediffer
+                     </div>
+                     <div class="seg"><strong><span class="segtitle">File filter: </span></strong><code class="filename">*.txt</code></div>
+                     <div class="seg"><strong><span class="segtitle">Settings dialog support: </span></strong>Yes
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e7458"></a>4.6.&nbsp;<code class="filename">IgnoreCommentsC.dll<a class="indexterm" name="d0e7462"></a></code></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The plugin ignores comments within<code class="constant"> //</code>... and
+                        <code class="constant">/*</code> ... <code class="constant">*/</code> delimiters in C, C++,
+                        PHP and JavaScript files.
+               </p>
+               <div class="segmentedlist">
+                  <div class="seglistitem">
+                     <div class="seg"><strong><span class="segtitle">Category: </span></strong>Prediffer
+                     </div>
+                     <div class="seg"><strong><span class="segtitle">File filter: </span></strong><code class="filename">*.cpp</code>, <code class="filename">*.cxx</code>, <code class="filename">*.h</code>, <code class="filename">*.hxx</code>, <code class="filename">*.c</code>, <code class="filename">*.php</code>, <code class="filename">*.js</code>,
+                     </div>
+                     <div class="seg"><strong><span class="segtitle">Settings dialog support: </span></strong>No
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e7511"></a>4.7.&nbsp;<code class="filename">IgnoreFieldsComma.dll<a class="indexterm" name="d0e7515"></a></code></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>This plugin is for files with fields and commas as delimiters (CSV
+                        files, for example). It ignores the delimiter characters. The first field
+                        is number 1.
+               </p>
+               <p>To specify the delimiters, use plugin settings dialog or rename the <code class="filename">dll</code> using
+                        the same parameter fields used for <a class="xref" href="Plugins.html#IgnoreColumns" title="4.5.&nbsp;IgnoreColumns.dll">IgnoreColumns.dll</a>.
+               </p>
+               <div class="segmentedlist">
+                  <div class="seglistitem">
+                     <div class="seg"><strong><span class="segtitle">Category: </span></strong>Prediffer
+                     </div>
+                     <div class="seg"><strong><span class="segtitle">File filter: </span></strong><code class="filename">*.csv</code></div>
+                     <div class="seg"><strong><span class="segtitle">Settings dialog support: </span></strong>Yes
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e7543"></a>4.8.&nbsp;<code class="filename">IgnoreFieldsTab.dll<a class="indexterm" name="d0e7547"></a></code></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>This plugin is for files that use fields and tabs as delimiters
+                        (<span class="application">for examle, Excel</span> files saved in the <code class="filename">*.txt</code> format). It ignores the delimiter
+                        characters. The first field is number 1.
+               </p>
+               <p>To specify the delimiters, use plugin settings dialog or rename the <code class="filename">dll</code> using
+                        the same parameter fields used for <a class="xref" href="Plugins.html#IgnoreColumns" title="4.5.&nbsp;IgnoreColumns.dll">IgnoreColumns.dll</a>.
+               </p>
+               <div class="segmentedlist">
+                  <div class="seglistitem">
+                     <div class="seg"><strong><span class="segtitle">Category: </span></strong>Prediffer
+                     </div>
+                     <div class="seg"><strong><span class="segtitle">File filter: </span></strong><code class="filename">*.txt</code></div>
+                     <div class="seg"><strong><span class="segtitle">Settings dialog support: </span></strong>Yes
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e7581"></a>4.9.&nbsp;<code class="filename">IgnoreLeadingLineNumbers.dll<a class="indexterm" name="d0e7585"></a></code></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>This plugin ignores the leading line numbers in text files (for
+                        example, NC and BASIC files).
+               </p>
+               <div class="segmentedlist">
+                  <div class="seglistitem">
+                     <div class="seg"><strong><span class="segtitle">Category: </span></strong>Prediffer
+                     </div>
+                     <div class="seg"><strong><span class="segtitle">File filter: </span></strong><code class="filename">*.nc</code></div>
+                     <div class="seg"><strong><span class="segtitle">Settings dialog support: </span></strong>No
+                     </div>
+                     <div class="seg"><strong><span class="segtitle">Requirement: </span></strong><a class="xref" href="Plugins.html#MSVBVM60" title="5.2.&nbsp;Visual Basic runtime library">Visual Basic runtime library</a></div>
+                  </div>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="Plugins_datetime"></a>4.10.&nbsp;<code class="filename">insert datetime.sct<a class="indexterm" name="d0e7614"></a></code></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Adds two functions to the <span class="guimenu">Plugins</span> &#8594; <span class="guisubmenu">Scripts</span> menu:
+               </p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li><span class="guimenuitem">InsertDate</span> insert date in the
+                                  current locale format.
+                     </li>
+                     <li><span class="guimenuitem">InsertTime</span> insert time in the
+                                  current locale format.
+                     </li>
+                  </ul>
+               </div>
+               <div class="segmentedlist">
+                  <div class="seglistitem">
+                     <div class="seg"><strong><span class="segtitle">Category: </span></strong>Editor complement
+                     </div>
+                     <div class="seg"><strong><span class="segtitle">Settings dialog support: </span></strong>No
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e7647"></a>5.&nbsp;Requirements<a class="indexterm" name="d0e7650"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e7655"></a>5.1.&nbsp;Windows Script Host
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Some editor complement plugins require this optional component from
+                        <span class="trademark">Microsoft</span>&reg;.
+               </p>
+               <p>It should already be included in your version of Windows, 
+                  	  unless you use some really old pre Windows XP version.
+               </p>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="MSVBVM60"></a>5.2.&nbsp;<span class="application">Visual Basic</span> runtime library<a class="indexterm" name="d0e7670"></a><a class="indexterm" name="d0e7673"></a><a class="indexterm" name="d0e7678"></a><a class="indexterm" name="d0e7681"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Some plugins require <span class="application">the Visual Basic</span>
+                        runtime library to work.
+               </p>
+               <p>You can download the required file <code class="filename"><a class="ulink" href="http://www.dll-files.com/dllindex/dll-files.shtml?msvbvm60" target="_top">msvbvm60.dll</a></code>,
+                        or use the <a class="ulink" href="http://www.microsoft.com/downloads/details.aspx?familyid=7b9ba261-7a9c-43e7-9117-f673077ffb3c" target="_top">Run-Time
+                           Redistribution Pack</a> from <span class="trademark">Microsoft</span>&reg;. If you don't need the plugin,
+                        you can safely remove it.
+               </p>
+            </div>
+         </div>
+      </div>
+      <div class="navfooter">
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="Locales.html">Prev</a>&nbsp;
+               </td>
+               <td width="20%" align="center">&nbsp;</td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="Filters.html">Next</a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Locale support&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Using Filters</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

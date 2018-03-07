@@ -1,0 +1,1274 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Comparing and merging folders - WinMerge 2.12 Manual</title>
+      <meta name="generator" content="DocBook XSL Stylesheets V1.74.0">
+      <link rel="home" href="index.html" title="WinMerge 2.16 Help">
+      <link rel="up" href="index.html" title="WinMerge 2.16 Help">
+      <link rel="prev" href="Open_paths.html" title="Opening files and folders">
+      <link rel="next" href="Compare_files.html" title="Comparing and merging text files">
+      <link rel="stylesheet" type="text/css" href="css/all.css">
+      <link rel="stylesheet" type="text/css" media="print" href="css/print.css">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Comparing and merging folders</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="Open_paths.html">Prev</a>&nbsp;
+               </td>
+               <th width="60%" align="center">&nbsp;</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="Compare_files.html">Next</a></td>
+            </tr>
+         </table>
+      </div>
+      <div class="article" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title"><a name="Compare_dirs"></a>Comparing and merging folders<a class="indexterm" name="d0e2200"></a></h2>
+               </div>
+            </div>
+            <hr>
+         </div>
+         <p>This topic describes how to compare and merge folders using the Folder
+              Compare window.
+         </p>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Compare_dirs_starting"></a>1.&nbsp;Starting a folder compare operation
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>You can begin a folder compare operation from either the WinMerge
+                   window or a Command Prompt window.
+            </p>
+            <div class="variablelist">
+               <dl>
+                  <dt><span class="term">From the WinMerge window</span></dt>
+                  <dd>
+                     <p>Click <span class="guimenu">File</span> &#8594; <span class="guimenuitem">Open</span>. Use the Select Files or Folders dialog to specify the
+                                  left and right folders to compare. By default, the compare includes
+                                  all files in the folders, and is nonrecursive (does not include
+                                  subfolders). To change any of these options and for more details about
+                                  the Select Files or Folder dialog, see <a class="xref" href="Open_paths.html" title="Opening files and folders">Opening files and folders</a>.
+                     </p>
+                  </dd>
+                  <dt><span class="term">From a Command Prompt window</span></dt>
+                  <dd>
+                     <p>Run <span class="command"><strong>WinMergeU.exe</strong></span>, which is in your WinMerge
+                                  install directory. In your command arguments, include the left and
+                                  right folders to compare. By default, the compare includes all files
+                                  in the folders, and is nonrecursive. To change any of these options
+                                  and for information about other command options, see <a class="xref" href="Command_line.html" title="Command line">Command line</a>.
+                     </p>
+                  </dd>
+               </dl>
+            </div>
+            <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+               <table border="0" summary="Tip: Tips">
+                  <tr>
+                     <td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.gif"></td>
+                     <th align="left">Tips</th>
+                  </tr>
+                  <tr>
+                     <td align="left" valign="top">
+                        <div class="variablelist">
+                           <dl>
+                              <dt><span class="term">Recursive mode<a class="indexterm" name="d0e2243"></a></span></dt>
+                              <dd>
+                                 <p>Recursive mode is useful for detecting and manipulating
+                                                different files in an entire folder structure. However, it can be
+                                                slow if there are many subfolders and files. For deeply nested
+                                                directory structures, consider enabling the <a class="xref" href="Compare_dirs.html#Compare_dirs_treeview">Tree view<a class="indexterm" name="d0e2348"></a></a> for easier navigation of the
+                                                Compare window.
+                                 </p>
+                                 <p>Nonrecursive mode has the advantage of speed when there are
+                                                many subfolders that need not be examined. Also, the display can be
+                                                easier to manage because it shows items in only selected
+                                                folders.
+                                 </p>
+                              </dd>
+                              <dt><span class="term">Quick Contents comparisons</span></dt>
+                              <dd>
+                                 <p>The <span class="guilabel">Quick Contents</span> method for file
+                                                comparison, described in <a class="xref" href="Configuration.html" title="Options and configuration">Options and configuration</a>, can be
+                                                useful when you compare big binary files; and it is automatically
+                                                used to compare files bigger than 4 MB. Possible disadvantages are
+                                                that line filters do not work, and there is no difference counts
+                                                information in the Folder Compare window. This should not matter In
+                                                most cases, because such large files are usually binary.
+                                 </p>
+                                 <p>To use this method, configure it before your compare
+                                                operation: in the Compare page of the WinMerge options, click the
+                                                <span class="guilabel">File Compare method</span> drop-down menu and choose
+                                                <span class="guimenuitem">Quick Contents</span>.
+                                 </p>
+                              </dd>
+                              <dt><span class="term">For advanced users</span></dt>
+                              <dd>
+                                 <p>You can change the 4 MB file size limit of the
+                                                <span class="guilabel">Compare by Quick Contents</span>, for example if you
+                                                have a lot of very big text files. To do so, run the Windows
+                                                <span class="command"><strong>regedit</strong></span> command, navigate to this keyword, and
+                                                modify its value: 
+                                 </p><pre class="screen">HKEY_CURRENT_USER\Software\Thingamahoochie\WinMerge\Settings\QuickMethodLimit</pre><p>As
+                                                usual, be careful when editing the registry!
+                                 </p>
+                              </dd>
+                           </dl>
+                        </div>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e2287"></a>1.1.&nbsp;Folder Compare Progress window<a class="indexterm" name="d0e2290"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>When you start a folder compare operation, WinMerge displays this
+                        status window:
+               </p>
+               <div class="mediaobject"><img src="screenshots/foldercmp_progress.png" alt="Folder Compare Progress window"></div>
+               <p>If the compare operation is quick, you might not notice the Progress
+                        window, which closes as soon as WinMerge displays the Folder Compare
+                        result. The Progress window shows the number of files and folders to be
+                        included in the operation, and the number compared so far. The progress
+                        bar graphically represents the Items compared.
+               </p>
+               <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                     <tr>
+                        <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td>
+                        <th align="left">Note</th>
+                     </tr>
+                     <tr>
+                        <td align="left" valign="top">
+                           <p>Because the files compares are usually of different sizes, the
+                                      status data does not indicate the time used or remaining. For example, a
+                                      50/100 ratio does not necessarily mean that half of the compare
+                                      operation time is expired.
+                           </p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <p>You can click <span class="guibutton">Stop</span> to terminate the operation
+                        at any time before the compare operation finishes. The Folder Compare
+                        window is displayed with the results calculated at that time, omitting any
+                        uncompleted results.
+               </p>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Compare_dirs_window"></a>2.&nbsp;Folder Compare window<a class="indexterm" name="d0e2315"></a><a class="indexterm" name="d0e2320"></a><a class="indexterm" name="d0e2325"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p>The Folder Compare window shows the result of a folder compare. Two
+                   different views are available:
+            </p>
+            <div class="variablelist">
+               <dl>
+                  <dt><a name="Compare_dirs_tabview"></a><span class="term">Tabular view<a class="indexterm" name="d0e2336"></a></span></dt>
+                  <dd>
+                     <p>In tabular view, each file or folder in the result is listed in
+                                  a row. This is the default view. Here's an example:
+                     </p>
+                     <div class="mediaobject"><img src="screenshots/foldercomp1.png" width="600"></div>
+                  </dd>
+                  <dt><a name="Compare_dirs_treeview"></a><span class="term">Tree view<a class="indexterm" name="d0e2348"></a></span></dt>
+                  <dd>
+                     <p>In the tree view, folders are expandable and collapsible,
+                                  containing files and subfolders. The tree view is available only in
+                                  recursive compares. For example:
+                     </p>
+                     <div class="mediaobject"><img src="screenshots/treeview-01.png" width="599"></div>
+                     <div class="itemizedlist">
+                        <ul type="disc">
+                           <li>
+                              <p>To expand or collapse a single folder, click the plus or
+                                               minus control beside the folder icon, or double-click anywhere in
+                                               the row.
+                              </p>
+                           </li>
+                           <li>
+                              <p>To expand or collapse all folders in the view, click
+                                               <span class="guimenu">View</span> &#8594; <span class="guimenuitem">Expand All Subfolders</span> or <span class="guimenu">View</span> &#8594; <span class="guimenuitem">Collapse All Subfolders</span> in the menu.
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                  </dd>
+               </dl>
+            </div>
+            <p>During a recursive compare (that is, if you enabled the
+                   <code class="option">Include Subfolders</code> option in the Select Files or Folders
+                   dialog when you launched the compare), you can click <span class="guimenu">View</span> &#8594; <span class="guimenuitem">Tree Mode</span> command to switch between the two views. The <span class="guimenu">View</span> &#8594; <span class="guimenuitem">Tree Mode</span> command is disabled for non-recursive compares.
+            </p>
+            <p>In both views, the columns show different types of data for each
+                   result item. You can control the sorting of items in the view by clicking a
+                   column heading. This changes the sorting in two ways:
+            </p>
+            <div class="itemizedlist">
+               <ul type="disc">
+                  <li>
+                     <p>Toggles (reverses) the sort order of the column.</p>
+                  </li>
+                  <li>
+                     <p>Resorts all the rows in the view by the column.</p>
+                  </li>
+               </ul>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e2402"></a>2.1.&nbsp;Recursive and nonrecursive compare results<a class="indexterm" name="d0e2405"></a><a class="indexterm" name="d0e2410"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The Folder Compare window looks and behaves slightly differently for
+                        recursive and nonrecursive compares:
+               </p>
+               <div class="variablelist">
+                  <dl>
+                     <dt><span class="term">Recursive folder compare</span></dt>
+                     <dd>
+                        <p>The compare result includes all subfolders. You can control
+                                       the types of items displayed within the folders by choosing the
+                                       options in the <span class="guimenu">View</span> menu (for example,
+                                       <span class="guimenuitem">Show Identical Items</span>). The Folder column
+                                       is always empty: only the files within the folders are displayed. To
+                                       see an item's subfolder, look at its path in the Compare result
+                                       column. Folders that exist on only one side are displayed if one of
+                                       the <span class="guimenu">View</span> menu options, <span class="guimenuitem">Show Left
+                                          Unique Files</span> or <span class="guimenuitem">Show Left Unique
+                                          Files</span>, is enabled.
+                        </p>
+                     </dd>
+                     <dt><span class="term">Nonrecursive folder compare</span></dt>
+                     <dd>
+                        <p>The result includes only the files and subfolders at the top
+                                       level of the selected folders. However, you can browse to any
+                                       subfolder that you want to compare.
+                        </p>
+                     </dd>
+                  </dl>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e2445"></a>2.2.&nbsp;File and folder icons<a class="indexterm" name="d0e2448"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>In the Compare Folders window, files and folders are compared and
+                        divided into several categories. In each row, the category is clearly
+                        identified in the left column with one of these icons :
+               </p>
+               <table class="simplelist" border="0" summary="Simple list">
+                  <tr>
+                     <td><span class="inlinemediaobject"><img src="screenshots/equaltextfile.png" width="16"></span> Identical text files
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><span class="inlinemediaobject"><img src="screenshots/binary.png" width="16"></span> Identical binary files
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><span class="inlinemediaobject"><img src="screenshots/equal.png" width="16"></span> Identical files (type undetermined)
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><span class="inlinemediaobject"><img src="screenshots/notequaltextfile.png" width="16"></span> Different text files
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><span class="inlinemediaobject"><img src="screenshots/binarydiff.png" width="16"></span> Different binary files
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><span class="inlinemediaobject"><img src="screenshots/notequal.png" width="16"></span> Different files (type undetermined)
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><span class="inlinemediaobject"><img src="screenshots/foldersame.png" width="16"></span> Identical folders (in tree view only)
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><span class="inlinemediaobject"><img src="screenshots/folderdiff.png" width="16"></span> Different folders (in tree view only)
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><span class="inlinemediaobject"><img src="screenshots/lfolder.png" width="16"></span> Left-only folders
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><span class="inlinemediaobject"><img src="screenshots/rfolder.png" width="16"></span> Right-only folders
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><span class="inlinemediaobject"><img src="screenshots/lfile.png" width="16"></span> Left-only files
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><span class="inlinemediaobject"><img src="screenshots/rfile.png" width="16"></span> Right-only files
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><span class="inlinemediaobject"><img src="screenshots/folderskip.png" width="16"></span> Skipped (filtered) directories
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><span class="inlinemediaobject"><img src="screenshots/fileskip.png" width="16"></span> Skipped (filtered) files
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><span class="inlinemediaobject"><img src="screenshots/error.png" width="16"></span> Items that can't be compared; for example when
+                                another program has locked the file.
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><span class="inlinemediaobject"><img src="screenshots/aborted.png" width="16"></span> Aborted item. WinMerge did not finish comparing
+                                this item when the compare was stopped. The result is unknown.
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e2536"></a>2.3.&nbsp;Navigating the Folder Compare window
+                        </h3>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e2539"></a><p>You can use the mouse as well as <a class="link" href="Shortcut_keys.html" title="Appendix&nbsp;A.&nbsp;Shortcut keys">keyboard</a> and context menu shortcuts to
+                        navigate the Folder Compare window. You can also use the toolbar buttons.
+                        For example, the <span class="inlinemediaobject"><img src="screenshots/nextdiff_btn.png" height="15" alt="Next Difference button"></span> <span class="guimenuitem">Next Difference</span> button
+                        finds the next different file or folder and selects it.
+               </p>
+               <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                     <tr>
+                        <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td>
+                        <th align="left">Note</th>
+                     </tr>
+                     <tr>
+                        <td align="left" valign="top">
+                           <p>Unique files and folders are navigated in the same way as
+                                      different ones.
+                           </p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <p>You can select multiple files and folders. However, some operations
+                        (like <span class="command"><strong>Rename</strong></span>) are not available with multiple
+                        selections.
+               </p>
+               <p>Use the navigation buttons (<span class="guibutton">Next Difference</span>,
+                        <span class="guibutton">Previous Difference</span>, and so on) to step through
+                        differences in the compared files. Use WinMerge functions to merge
+                        contents by copying, moving, or delete one or more files or
+                        subfolders.
+               </p>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Compare_dirs_fileops"></a>3.&nbsp;File operations in Folder Compare<a class="indexterm" name="d0e2578"></a><a class="indexterm" name="d0e2583"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p>The Folder Compare window supports common operations on files, like
+                   editing, copying, deleting, moving, and renaming (moving is equivalent to a
+                   copy operation followed by a delete). You can use these file operations and
+                   some special WinMerge functions to merge the contents of folders. You can
+                   also open files using associated programs or external editors.
+            </p>
+            <p>The most convenient way to perform most of these tasks is to
+                   right-click one or more items and use the context menu, where all file
+                   operations are available.
+            </p>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e2592"></a>3.1.&nbsp;Copying files<a class="indexterm" name="d0e2595"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The most common file operation in the Folder Compare window is
+                        copying files from side to side. There are several forms of the WinMerge
+                        copy function: all of them copy only files that are different, because
+                        copying identical files is of no use in merging. The copy functions are
+                        available in the context menu, in the WinMerge menu, and in the
+                        toolbar:
+               </p>
+               <div class="section" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="d0e2602"></a>3.1.1.&nbsp;Context menu Copy shortcuts
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>In the Folder Compare window's context menu, the
+                             <span class="guimenuitem">Copy</span> item has a submenu with four
+                             shortcuts:
+                  </p>
+                  <div class="mediaobject"><img src="screenshots/ctx_menu_copy1.png" width="526" alt="Folder Compare window Copy context menu"></div>
+                  <div class="itemizedlist">
+                     <ul type="disc">
+                        <li>
+                           <p><span class="guimenuitem">Left to Right</span> and
+                                          <span class="guimenuitem">Right to Left</span> copy the selection (or just
+                                          the items in the selection that can be copied) from one side to the
+                                          other. In the example, the suffix <span class="guilabel">(2 of 4)</span>
+                                          indicates that only the two files that are different will be copied;
+                                          the identical files will not. These shortcuts available only if any
+                                          of the files you select is different: if you select only identical
+                                          files, the shortcuts are unavailable.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="guimenuitem">Left to...</span> and <span class="guimenuitem">Right
+                                             to...</span> enable you to specify a copy target directory in
+                                          your system, instead of a compared folder. When the Browse for
+                                          Folder dialog opens, navigate to the target directory on your system
+                                          (or create a new target folder) and click
+                                          <span class="guibutton">OK</span>.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="section" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="d0e2639"></a>3.1.2.&nbsp;Toolbar and menu Copy commands
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>In the Folder Compare toolbar, <span class="inlinemediaobject"><img src="screenshots/copyr_button.png" width="17" alt="Copy Right button"></span> <span class="guibutton">Copy Right</span> and
+                             <span class="inlinemediaobject"><img src="screenshots/copyl_button.png" width="17" alt="Copy Left button"></span> <span class="guibutton">Copy Left</span> accomplish the
+                             same task as the <span class="guimenuitem">Left to Right</span> and
+                             <span class="guimenuitem">Right to Left</span> context menu shortcuts: they
+                             copy from side to side only files that are valid to copy. However, these
+                             commands do not directly display the number of files to be copied;
+                             instead, they display a confirmation dialog where you can check a list
+                             of source and target file paths.
+                  </p>
+                  <p>In the WinMerge menu, <span class="guimenu">Merge</span> &#8594; <span class="guimenuitem">Copy to Right</span> and <span class="guimenu">Merge</span> &#8594; <span class="guimenuitem">Copy to Left</span> behave the same way as the toolbar Copy commands.
+                  </p>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e2684"></a>3.2.&nbsp;Deleting files<a class="indexterm" name="d0e2687"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>You can use the <span class="guimenuitem">Delete</span> context menu item
+                        to delete selected items in either or both sides. Like other file
+                        operations, <span class="guimenuitem">Delete</span> has a submenu with
+                        <span class="guimenuitem">Left</span>, <span class="guimenuitem">Right</span>, and
+                        <span class="guimenuitem">Both</span> shortcuts.
+               </p>
+               <div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Warning">
+                     <tr>
+                        <td rowspan="2" align="center" valign="top" width="25"><img alt="[Warning]" src="images/warning.gif"></td>
+                        <th align="left">Warning</th>
+                     </tr>
+                     <tr>
+                        <td align="left" valign="top">
+                           <p>We highly recommend that you keep the <span class="guilabel">Send deleted files
+                                         into Recycle Bin</span> option enabled See <a class="xref" href="Configuration.html" title="Options and configuration">Options and configuration</a>), so that you can undo deletions in case of
+                                      accidents. In addition, you should keep Recycle Bin enabled: the
+                                      WinMerge option does not work if you disable the Recycle Bin in Windows.
+                                      Again, you cannot undo file or folder deletion unless you use both the
+                                      WinMerge <span class="guilabel">Send deleted files into Recycle Bin</span> option
+                                      and the Windows Recycle Bin!
+                           </p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e2720"></a>3.3.&nbsp;Renaming files<a class="indexterm" name="d0e2723"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>To rename a file or folder, choose <span class="guimenuitem">Rename</span>
+                        in its context menu or press <span class="keycap"><strong>F2</strong></span>. Then change the name in
+                        the edit box and press <span class="keycap"><strong>Return</strong></span>, or press
+                        <span class="keycap"><strong>Esc</strong></span> to cancel. You can only rename a single file or
+                        folder. Note that renaming changes items in both sides: it is not
+                        currently possible to rename an item on just one side.
+               </p>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e2742"></a>3.4.&nbsp;Opening files<a class="indexterm" name="d0e2745"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>In the context menu, you can use either <span class="guimenuitem">Open
+                           Left</span> and <span class="guimenuitem">Open Right</span>, depending on
+                        which side you want to operate on. Each <span class="guimenuitem">Open</span>
+                        menu item has a submenu with these shortcuts:
+               </p>
+               <div class="variablelist">
+                  <dl>
+                     <dt><span class="term"><span class="guimenuitem">with Registered Application</span></span></dt>
+                     <dd>
+                        <p>Opens the file with the application (if any) that is
+                                       registered in Windows for the file's type.
+                        </p>
+                        <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+                           <table border="0" summary="Tip">
+                              <tr>
+                                 <td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.gif"></td>
+                                 <th align="left">Tip</th>
+                              </tr>
+                              <tr>
+                                 <td align="left" valign="top">
+                                    <p>This shortcut usually opens a folder in a new Windows
+                                                     Explorer.
+                                    </p>
+                                 </td>
+                              </tr>
+                           </table>
+                        </div>
+                     </dd>
+                     <dt><span class="term">with External Editor</span></dt>
+                     <dd>
+                        <p>Opens the file with an external editor. The default editor is
+                                       Notepad, but you can configure a different one in WinMerge
+                                       options.
+                        </p>
+                     </dd>
+                     <dt><span class="term"><span class="guimenuitem">with...</span></span></dt>
+                     <dd>
+                        <p>Opens the <span class="guilabel">Open With</span> dialog, where you can
+                                       specify an application to open your file with.
+                        </p>
+                     </dd>
+                  </dl>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e2788"></a>3.5.&nbsp;Copying pathnames or filenames<a class="indexterm" name="d0e2791"></a><a class="indexterm" name="d0e2796"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The context menu <span class="guimenuitem">Copy Pathname</span> and
+                        <span class="guimenuitem">Copy Filenames</span> shortcuts copy the pathname or
+                        filename of selected items to the Windows clipboard. You can then paste
+                        the copied information into a file or application, for example to create a
+                        list of changed files or a change log.
+               </p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><span class="guimenuitem">Copy Pathnames</span> has a menu with three
+                                     shortcuts, similar to other file operations. It copies the full
+                                     pathnames of one or more selected items to the clipboard, one per
+                                     line.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guimenuitem">Copy Filenames</span> copies only filenames
+                                     without paths.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="protectingfiles"></a>3.6.&nbsp;Protecting files<a class="indexterm" name="d0e2823"></a><a class="indexterm" name="d0e2828"></a><a class="indexterm" name="d0e2831"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>To protect the files and folders on either side of a compare from
+                        changes, enable the <span class="guimenu">File</span> &#8594; <span class="guimenuitem">Left Read-only</span> or <span class="guimenu">File</span> &#8594; <span class="guimenuitem">Right Read-only</span> check box.
+               </p>
+               <div class="important" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Important">
+                     <tr>
+                        <td rowspan="2" align="center" valign="top" width="25"><img alt="[Important]" src="images/important.gif"></td>
+                        <th align="left">Important</th>
+                     </tr>
+                     <tr>
+                        <td align="left" valign="top">
+                           <p>Setting the read-only option protects files and folders only in
+                                      the current compare view; it does not affect their Windows file
+                                      attributes.
+                           </p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <p>This protected status is inherited by files that you open in the
+                        folder compare. For example, if you compare two folders, set one side
+                        read-only, and open two files for comparing, the open file on the
+                        protected side is write-protected. Similarly, you cannot copy a file from
+                        the unprotected side to the protected side.
+               </p>
+               <p>The <span class="guilabel">RO</span> code in the left or right side's pane in
+                        the status bar (near the bottom right of the window) indicates that the
+                        side is currently read-only.
+               </p>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e2860"></a>3.7.&nbsp;Refreshing selected items in the view<a class="indexterm" name="d0e2863"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>A full refresh of large folders can take a long time. In WinMerge
+                        2.2 and earlier, you always had to do a full refresh to update files after
+                        editing them outside WinMerge. Starting in Version 2.4, WinMerge can
+                        refresh just selected items: choose <span class="guimenuitem">Refresh</span>
+                        from the context menu or <span class="guimenu">View</span> &#8594; <span class="guimenuitem">Refresh Selected</span> from the main menu.
+               </p>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e2877"></a>3.8.&nbsp;Archiving files<a class="indexterm" name="d0e2880"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Use the context menu <span class="guimenu">Zip</span> menu item to create a
+                        new archive file containing the items you select.
+               </p>
+               <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                     <tr>
+                        <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td>
+                        <th align="left">Note</th>
+                     </tr>
+                     <tr>
+                        <td align="left" valign="top">
+                           <p>Archive support requires that you have installed the WinMerge
+                                      7-Zip plugin.
+                           </p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <p>The Zip menu item has a submenu with four shortcuts:</p>
+               <div class="variablelist">
+                  <dl>
+                     <dt><span class="term">Left</span></dt>
+                     <dd>
+                        <p>Adds left-side files and folders recursively to the archive
+                                       file
+                        </p>
+                     </dd>
+                     <dt><span class="term">Right</span></dt>
+                     <dd>
+                        <p>Adds right-side files and folders recursively to the archive
+                                       file
+                        </p>
+                     </dd>
+                     <dt><span class="term">Both</span></dt>
+                     <dd>
+                        <p>Adds files and folders recursively from both sides to the
+                                       archive file. Because the filenames are same, they are added to
+                                       different subfolders, named <code class="filename">Original</code> and <code class="filename">Altered</code>, inside the archive: left-side
+                                       files are put to <code class="filename">Original</code>,
+                                       and right-side files are put into <code class="filename">Altered</code>.
+                        </p>
+                     </dd>
+                     <dt><span class="term">Differences</span></dt>
+                     <dd>
+                        <p>Like <span class="guimenuitem">Both</span>, but adds only different
+                                       files (including unique files) from both sides.
+                        </p>
+                     </dd>
+                  </dl>
+               </div>
+               <p>When you select one of the <span class="guimenu">Zip</span> shortcuts, the
+                        Save As dialog prompts you for the archive filename and type. WinMerge
+                        cannot add files to existing archive files: it always creates a new
+                        archive file.
+               </p>
+               <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Tip">
+                     <tr>
+                        <td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.gif"></td>
+                        <th align="left">Tip</th>
+                     </tr>
+                     <tr>
+                        <td align="left" valign="top">
+                           <p>WinMerge can compare the contents of archive files that have the
+                                      same name on both sides: WinMerge looks for the <code class="filename">Original</code> and <code class="filename">Altered</code> subfolders, and compares the
+                                      contents of those two folders.
+                           </p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <p>If a folder compare includes the contents of an archive file, any
+                        changes made to the included files in WinMerge (for example, using an
+                        <span class="guimenuitem">Open</span> file operation to edit the file) are saved
+                        in the archive file. But you cannot update archive contents by using the
+                        WinMerge <span class="guimenuitem">Copy</span>, <span class="guimenuitem">Move</span>,
+                        or <span class="guimenuitem">Delete</span> file operations. Instead, create a
+                        new archive file using one of the <span class="guimenuitem">Zip</span>
+                        shortcuts.
+               </p>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Compare_dirs_browsing"></a>4.&nbsp;Browsing folders in the Folder Compare window<a class="indexterm" name="d0e2970"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p>This section discusses ways to browse folders that are listed in a
+                   Compare Folder window. When you browse a folder, you perform a completely
+                   new compare operation. Its result overwrites the current result in the
+                   window.
+            </p>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e2977"></a>4.1.&nbsp;Browsing folders in a nonrecursive compare
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Even though a nonrecursive folder compare does not include the
+                        contents of subfolders, the subfolders themselves are listed as files in
+                        the result. Similarly, the compared folder's parent folder is listed as a
+                        file at the top of the table. By opening these folders directly in the
+                        Folder Compare window, you can selectively browse a directory tree. This
+                        approach &#8212; comparing just the subdirectories you are interested in &#8212; can
+                        be more efficient than performing a recursive compare on the entire
+                        directory tree.
+               </p>
+               <div class="variablelist">
+                  <dl>
+                     <dt><span class="term">Browsing the parent folder</span></dt>
+                     <dd>
+                        <p>To compare the <span class="inlinemediaobject"><img src="screenshots/folderup.png"></span> parent folder (the <span class="guilabel">..</span>
+                                       path at the top), double-click its row, or select the row and press
+                                       <span class="keycap"><strong>Enter</strong></span>.
+                        </p>
+                        <p>Sometimes the parent folder cannot be opened (for example if
+                                       you do not have permissions to access it). These two icons indicate
+                                       whether a parent folder can be opened:
+                        </p>
+                        <table class="simplelist" border="0" summary="Simple list">
+                           <tr>
+                              <td><span class="inlinemediaobject"><img src="screenshots/folderup.png"></span> Parent folder can be opened.
+                              </td>
+                           </tr>
+                           <tr>
+                              <td><span class="inlinemediaobject"><img src="screenshots/folderup_disable.png"></span> Parent folder cannot be opened.
+                              </td>
+                           </tr>
+                        </table>
+                     </dd>
+                  </dl>
+               </div>
+               <div class="variablelist">
+                  <dl>
+                     <dt><span class="term">Browsing a single subfolder that exists on both sides</span></dt>
+                     <dd>
+                        <p>To compare a single subfolder that exists on both sides,
+                                       double-click the folder in the folder compare window.
+                        </p>
+                     </dd>
+                  </dl>
+               </div>
+               <div class="variablelist">
+                  <dl>
+                     <dt><span class="term">Browsing a single subfolder that exists only one side</span></dt>
+                     <dd>
+                        <p>If you browse to a subfolder that exists only the left or
+                                       right side, WinMerge can create a new, matching folder on the other
+                                       side. See <a class="xref" href="Compare_dirs.html#CompareDirs_browse_unique" title="4.2.&nbsp;Browsing unique folders">Browsing unique folders</a> for
+                                       details.
+                        </p>
+                     </dd>
+                  </dl>
+               </div>
+               <div class="variablelist">
+                  <dl>
+                     <dt><span class="term">Browsing two different subfolders</span></dt>
+                     <dd>
+                        <p>You cannot compare two subfolders (that is, selecting two
+                                       rows) where the subfolders on each side are different. Only if you
+                                       have previously compared identical folders (for example, by browsing
+                                       a single subfolder in a compare result) can you compare two
+                                       subfolders. First select the two folders in the Folder Compare
+                                       window, as shown in the following figure:
+                        </p>
+                        <div class="mediaobject"><img src="screenshots/foldercomp_2same.png" width="572" alt="Folder Compare window, two folders selected"></div>
+                        <p>The order of selection is significant: the folder you select
+                                       first is the left folder in the result; the second selected folder
+                                       becomes the right folder in the result.
+                        </p>
+                        <p>With the two folders selected, right-click and choose
+                                       <span class="guimenuitem">Compare</span> (or click <span class="guimenu">Merge</span> &#8594; <span class="guimenuitem">Compare</span> in the menu).
+                        </p>
+                        <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+                           <table border="0" summary="Tip">
+                              <tr>
+                                 <td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.gif"></td>
+                                 <th align="left">Tip</th>
+                              </tr>
+                              <tr>
+                                 <td align="left" valign="top">
+                                    <p>Again, the <span class="guimenuitem">Compare</span> operation is
+                                                     available only when the current left and right folder paths are
+                                                     identical in the Folder Compare window, as shown in the preceding
+                                                     screen shot. For example, it is not available if the current
+                                                     window compares two different folders.
+                                    </p>
+                                 </td>
+                              </tr>
+                           </table>
+                        </div>
+                     </dd>
+                  </dl>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="CompareDirs_browse_unique"></a>4.2.&nbsp;Browsing unique folders<a class="indexterm" name="d0e3063"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>In WinMerge 2.6 and earlier, you could not browse to unique folders
+                        (folders that exist only in one side of a compare result), because
+                        WinMerge cannot compare an existing folder to a non-existing folder. To
+                        copy anything from a unique folder in WinMerge, you had to first create a
+                        copy of the entire folder structure.
+               </p>
+               <p>However, you might prefer not to copy the whole folder structure.
+                        Starting in Version 2.8, WinMerge provides an alternate way to create a
+                        new, empty folder instead. This enables you to copy just the elements you
+                        want from the original, unique folder to the created empty folder. This
+                        procedure demonstrates:
+               </p>
+               <div class="orderedlist">
+                  <ol type="1">
+                     <li>
+                        <p>Browse to the unique folder (select the folder and press
+                                     <span class="keycap"><strong>Enter,</strong></span> double-click it, or right-click it and choose
+                                     <span class="guimenuitem">Compare</span>). For example:
+                        </p>
+                        <div class="mediaobject"><img src="screenshots/foldercmp_unique1.png" width="590" alt="Folder Compare window, comparing unique folder"></div>
+                        <p>A WinMerge message informs you that the folder exists on only
+                                     one side and cannot be opened. The message then prompts you to confirm
+                                     whether you want to create a matching folder and open it as the other
+                                     side of the compare result.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Click <span class="guibutton">Yes</span> to confirm
+                                     (<span class="guibutton">No</span> cancels the compare). In the new compare
+                                     result, the unique folder is opened on the left side, and the new
+                                     empty created folder is on the right:
+                        </p>
+                        <div class="mediaobject"><img src="screenshots/foldercmp_unique2.png" width="590" alt="Folder Compare window after browsing to unique and created folders"></div>
+                        <p>In the compare result, you can copy or move items (for example,
+                                     using the right-click context menu) from the unique folder to the
+                                     created folder.
+                        </p>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Compare_dirs_customizing"></a>5.&nbsp;Customizing the Folder Compare window<a class="indexterm" name="d0e3110"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p>This section describes how to control the way Folder Compare window
+                   displays results. You can customize the view by showing, hiding, and
+                   reordering the table columns.
+            </p>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e3117"></a>5.1.&nbsp;Showing and hiding types of files<a class="indexterm" name="d0e3120"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The <span class="guimenu">View</span> menu contains these shortcuts to show or
+                        hide types of items. Enable (check) a menu option to show the item;
+                        disable it to hide the item.
+               </p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><span class="guimenuitem">Show Identical Items</span>: Files detected
+                                     as identical
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guimenuitem">Show Different Items</span>: Files detected
+                                     as different
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guimenuitem">Show Left Unique Items</span>: Files and
+                                     directories present only in left side
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guimenuitem">Show Right Unique Items</span>: Files and
+                                     directories present only in right side
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guimenuitem">Show Skipped Items</span>: Files and
+                                     directories omitted by file filters
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guimenuitem">Show Binary Files</span>: Files detected as
+                                     binaries
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e3161"></a>5.2.&nbsp;Changing column sorting
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The rows in the Folder Compare window are ordered according to the
+                        sort order of a particular column. This sort column is indicated by a
+                        small arrow in its heading. The arrow points up if the column is sorted in
+                        ascending order, down if descending. The Folder Compare example at the top
+                        of this topic is sorted by the Filename column, in ascending order.
+               </p>
+               <p>To choose another order column, simply click in that column's
+                        heading. The selected column is set to its default sort order and all the
+                        rows are reordered by that column's sort order.
+               </p>
+               <p>To change the sort direction of a column that is already the sort
+                        column, click in its header again. That is, clicking in a sort column
+                        header reverses its order (toggling between ascending and descending
+                        order).
+               </p>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e3170"></a>5.3.&nbsp;Adding, removing, and reordering columns
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>To modify the columns that are displayed in the Folder Compare
+                        window:
+               </p>
+               <div class="orderedlist">
+                  <ol type="1">
+                     <li>
+                        <p>Right-click any column heading and choose <span class="guimenuitem">Customize
+                                        Columns</span>. Or, click <span class="guimenu">Tools</span> &#8594; <span class="guimenuitem">Customize Columns</span></p>
+                     </li>
+                     <li>
+                        <p>The Display Columns dialog contains a list of all the available
+                                     column names, each with a check box. Configure the columns using any
+                                     combination of these actions:
+                        </p>
+                        <div class="itemizedlist">
+                           <ul type="disc">
+                              <li>
+                                 <p>Check the columns you want to display (note that selecting
+                                                  the item in the list is not enough)
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Uncheck the columns you want to hide.</p>
+                              </li>
+                              <li>
+                                 <p>To change the order of columns, select one or more items and
+                                                  click <span class="guibutton">Move Up</span> or <span class="guibutton">Move
+                                                     Down</span>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Click <span class="guibutton">Defaults</span> if you want to restore
+                                                  the default WinMerge column configuration, overriding your custom
+                                                  configuration.
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li>
+                        <p>Click <span class="guibutton">OK</span>.
+                        </p>
+                     </li>
+                  </ol>
+               </div>
+               <p><a class="indexterm" name="d0e3219"></a>The following columns in the Display Columns dialog are
+                        displayed by default in the Folder Compare window:
+               </p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><span class="guilabel">Filename (default)</span>: Name of compared item.
+                                     In a nonrecursive compare, this column includes both files and
+                                     folders; in a recursive compare, it does not include folders: instead,
+                                     folders are listed in the Folder column.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guilabel">Folder</span>: Path of compared subfolder,
+                                     relative to the compared folder. For a nonrecursive compare this
+                                     column is always empty: folders are listed in the
+                                     <span class="guilabel">Filename</span> column instead.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guilabel">Comparison result</span>: Verbose comparison
+                                     result (see also <span class="guilabel">Short Result</span>).
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guilabel">Left Date</span>, <span class="guilabel">Right Date</span>:
+                                     Modification dates of item in each side. The newer of the two dates
+                                     (or the date for any unique item) is prefixed with an asterisk ( *
+                                     ).
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guilabel">Extension</span>: File extension, handy for
+                                     sorting.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+               <p>The following additional columns are available in the Display
+                        Columns dialog:
+               </p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><span class="guilabel">Short Result</span>: Displays the
+                                     <span class="guilabel">Comparison result</span> column in a brief (Right only)
+                                     form.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guilabel">Binary</span>: Column contains an asterisk ( * )
+                                     when the file is a binary file. This is handy for sorting and for use
+                                     with the <span class="guilabel">Short Result</span> column.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guilabel">Left Attributes</span>, <span class="guilabel">Right
+                                        Attributes</span>: Shows file attributes.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guilabel">Left Creation Time</span>, <span class="guilabel">Right
+                                        Creation Time</span>: Item creation time.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guilabel">Left Encoding</span>, <span class="guilabel">Right
+                                        Encoding</span>: File encoding. Shows the codepage number for ANSI
+                                     files and Unicode encoding for Unicode files.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guilabel">Left File Version</span>, <span class="guilabel">Right File
+                                        Version</span>: Version number from the file, if present. Note
+                                     that the version is read only for some binary file types known to
+                                     usually have a version resource.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guilabel">Left Size</span>, <span class="guilabel">Right Size</span>:
+                                     File size in bytes.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guilabel">Left Size (Short)</span>, <span class="guilabel">Right Size
+                                        (Short)</span>: Shorter versions of file sizes, rounded to KB, MB,
+                                     or GB.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guilabel">Newer File</span>: Shows which side is
+                                     newer.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guilabel">Differences</span>: Number of differences found
+                                     between files, excluding possibly ignored differences.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guilabel">Ignored Diff</span>: Number of ignored differences
+                                     within files. These are differences ignored by line filters.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guilabel">Left EOL</span>, <span class="guilabel">Right EOL</span>:
+                                     Shows the EOL (linefeed) style of files.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e3348"></a>5.4.&nbsp;Hiding items
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>You can quickly hide one or more selected items by using the
+                        <span class="guimenuitem">Hide Items</span> context menu shortcut. The items
+                        remain hidden until you refresh the view (press <span class="keycap"><strong>F5</strong></span>) or
+                        click <span class="guimenu">View</span> &#8594; <span class="guimenuitem">Show Hidden Items</span>.
+               </p>
+               <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Tip">
+                     <tr>
+                        <td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.gif"></td>
+                        <th align="left">Tip</th>
+                     </tr>
+                     <tr>
+                        <td align="left" valign="top">
+                           <p>Get to know <span class="guimenuitem">Hide Items</span>: it can save you
+                                      a lot of time by eliminating items that you already handled, or that are
+                                      not currently of interest, from the view. For example, you might hide
+                                      files after merging them, making it easier to see what items are left to
+                                      merge.
+                           </p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="CompareDirs_winshell"></a>6.&nbsp;Using Windows shell commands from the Folder Compare window
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>You can right-click a selection in the
+                   Folder Compare window and launch Windows shell commands directly from the
+                   context menu.
+            </p>
+            <p>If the selection occurs on both sides, you can choose either the
+                   <span class="guimenu">Left shell menu</span> or <span class="guimenu">Right shell menu</span>;
+                   if the item occurs only on one side, only that side's shell menu is
+                   available.
+            </p>
+            <div class="caution" style="margin-left: 0.5in; margin-right: 0.5in;">
+               <table border="0" summary="Caution">
+                  <tr>
+                     <td rowspan="2" align="center" valign="top" width="25"><img alt="[Caution]" src="images/caution.gif"></td>
+                     <th align="left">Caution</th>
+                  </tr>
+                  <tr>
+                     <td align="left" valign="top">
+                        <p>Please consider that shell menu commands run entirely outside of
+                                 WinMerge. Consequently, WinMerge might not respond to some operations in
+                                 the same way as operations performed inside WinMerge. For example, if you
+                                 delete a file through this integration instead of using the WinMerge
+                                 <span class="command"><strong>Delete</strong></span> command, the change is not automatically shown
+                                 in the Folder Compare window (you have to manually refresh the window to
+                                 see the change).
+                        </p>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+      </div>
+      <div class="navfooter">
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="Open_paths.html">Prev</a>&nbsp;
+               </td>
+               <td width="20%" align="center">&nbsp;</td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="Compare_files.html">Next</a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Opening files and folders&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Comparing and merging text files</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

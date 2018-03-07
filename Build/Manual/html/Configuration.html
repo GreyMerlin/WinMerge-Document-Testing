@@ -1,0 +1,2001 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Options and configuration - WinMerge 2.12 Manual</title>
+      <meta name="generator" content="DocBook XSL Stylesheets V1.74.0">
+      <link rel="home" href="index.html" title="WinMerge 2.16 Help">
+      <link rel="up" href="index.html" title="WinMerge 2.16 Help">
+      <link rel="prev" href="Compare_images.html" title="Comparing image files">
+      <link rel="next" href="Locales.html" title="Locale support">
+      <link rel="stylesheet" type="text/css" href="css/all.css">
+      <link rel="stylesheet" type="text/css" media="print" href="css/print.css">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Options and configuration</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="Compare_images.html">Prev</a>&nbsp;
+               </td>
+               <th width="60%" align="center">&nbsp;</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="Locales.html">Next</a></td>
+            </tr>
+         </table>
+      </div>
+      <div class="article" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title"><a name="Configuration"></a>Options and configuration<a class="indexterm" name="d0e5081"></a></h2>
+               </div>
+            </div>
+            <hr>
+         </div>
+         <p>The Options dialog enables you to customize many WinMerge features. To
+              set WinMerge options:
+         </p>
+         <div class="orderedlist">
+            <ol type="1">
+               <li>
+                  <p>Click <span class="guimenu">Edit</span> &#8594; <span class="guimenuitem">Options</span> in the menu or the <span class="inlinemediaobject"><img src="screenshots/options_btn.png" width="16" alt="WinMerge Options button"></span> <span class="guibutton">Options</span> button in the
+                           toolbar.
+                  </p>
+                  <p>The Options dialog contains a number of pages, each containing a
+                           group of related options. You can open any page by clicking its title in
+                           the <span class="guilabel">Categories</span> list, on the left side of the
+                           dialog.
+                  </p>
+               </li>
+               <li>
+                  <p>Configure the options you want to change using one or both of these
+                           methods:
+                  </p>
+                  <div class="itemizedlist">
+                     <ul type="disc">
+                        <li>
+                           <p>Directly in the options pages.</p>
+                        </li>
+                        <li>
+                           <p>Importing an options <code class="filename">.ini</code> file that you
+                                        exported previously (see <a class="xref" href="Configuration.html#Configuration_importexport" title="1.&nbsp;Importing and Exporting options">Importing and Exporting options</a>
+                                        for details).
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </li>
+               <li>
+                  <p>When you have set all your options, click <span class="guibutton">OK</span>
+                           to save them and dismiss the dialog.
+                  </p>
+               </li>
+            </ol>
+         </div>
+         <p>This topic describes the options in detail. There is a section for each
+              page in the Options dialog.
+         </p>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Configuration_importexport"></a>1.&nbsp;Importing and Exporting options<a class="indexterm" name="d0e5137"></a><a class="indexterm" name="d0e5140"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p>If you change options frequently for different compare or merge
+                   scenarios, or if you want to share your settings with other WinMerge users,
+                   consider saving your settings by exporting them to an options file. Then,
+                   whenever you want to use those settings, you can simply import the options
+                   file instead of setting options manually.
+            </p>
+            <div class="variablelist">
+               <dl>
+                  <dt><span class="term">To export options</span></dt>
+                  <dd>
+                     <p>When you have set your options the way you want them, click
+                                  <span class="guibutton">Export</span>. In the Select file for export dialog,
+                                  specify a path and name for your options file (the type
+                                  <code class="filename">ini</code> is automatically appended), and click
+                                  <span class="guibutton">Save</span>.
+                     </p>
+                     <p>In the generated text <code class="filename">ini</code> file, each line
+                                  contains a name-value pair that defines a single option.
+                     </p>
+                  </dd>
+                  <dt><span class="term">To import options</span></dt>
+                  <dd>
+                     <p>When you want to reuse your saved options, click
+                                  <span class="guibutton">Import</span>. In the Select file for import dialog,
+                                  navigate to the saved <code class="filename">ini</code> file and click
+                                  <span class="guibutton">Open</span>.
+                     </p>
+                     <p>The values in your imported options file replace all existing
+                                  settings.
+                     </p>
+                  </dd>
+               </dl>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Configuration_general"></a>2.&nbsp;General page
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>The General page has these options:</p>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5188"></a>2.1.&nbsp;Automatically scroll to first difference<a class="indexterm" name="d0e5191"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Disabled</code> (default): Compare window opens to the
+                                     top of the folder or file, with no difference selected.
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Enabled</code>: When it first opens, the Compare
+                                     window selects the first difference, scrolling to the location if
+                                     necessary.
+                        </p>
+                        <div class="itemizedlist">
+                           <ul type="circle">
+                              <li>
+                                 <p>For a folder compare, selects the first different file or
+                                                  folders.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>For a file compare, selects the first difference block in
+                                                  the files.
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5212"></a>2.2.&nbsp;Close Windows with <span class="keycap"><strong>ESC</strong></span><a class="indexterm" name="d0e5217"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Enabled</code> (default): Lets you use the
+                                     <span class="keycap"><strong>ESC</strong></span> key to close WinMerge windows. Pressing
+                                     <span class="keycap"><strong>ESC</strong></span> once closes one window, so with one File Compare
+                                     window open, it takes three key presses to close WinMerge: first the
+                                     File Compare window, then the Folder Compare window, and finally the
+                                     WinMerge window.
+                        </p>
+                        <p>Note that in the WinMerge command line, the
+                                     <em class="parameter"><code>-e</code></em> parameter enables you to close WinMerge by
+                                     pressing <span class="keycap"><strong>ESC</strong></span> just once.
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Disabled</code>: Pressing <span class="keycap"><strong>ESC</strong></span> does
+                                     not close any WinMerge windows.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5248"></a>2.3.&nbsp;Automatically verify paths in Open-dialog
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Enabled</code> (default): The Select Files or Folders
+                                     dialog checks both paths as you enter them. The
+                                     <span class="guibutton">OK</span> button remains disabled until both paths are
+                                     validated. Note that this checking can cause some delay.
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Disabled</code>: The <span class="guibutton">OK</span> button
+                                     in the Select Files or Folders dialog is always enabled, and attempts
+                                     to open any paths you specify. Since there is no delay during
+                                     validation, this can speed up the selection of paths. However, if the
+                                     path cannot be opened, an error dialog is displayed.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5268"></a>2.4.&nbsp;Allow only one instance to run<a class="indexterm" name="d0e5271"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Disabled</code> (default): You can run multiple
+                                     WinMerge instances. For example, if WinMerge is currently running and
+                                     you click the WinMerge desktop shortcut, a new WinMerge window is
+                                     opened.
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Enabled</code>: Limits the WinMerge program to one
+                                     instance:
+                        </p>
+                        <div class="itemizedlist">
+                           <ul type="circle">
+                              <li>
+                                 <p>If WinMerge is currently running and you try to start a new
+                                                  instance, no new application window is opened: the current
+                                                  WinMerge window is used instead.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>If you start a new instance with paths (for example on the
+                                                  command line), a new Compare window is opened in the existing
+                                                  WinMerge window.
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5294"></a>2.5.&nbsp;Ask when closing multiple windows
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Disabled</code> (default): If you exit WinMerge while
+                                     multiple Compare windows are open, WinMerge prompts you to confirm
+                                     whether to close all the windows.
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Enabled</code>: If you click
+                                     <span class="guibutton">Exit</span> and there are no pending file changes,
+                                     WinMerge closes immediately.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5311"></a>2.6.&nbsp;Preserve file time in file compare<a class="indexterm" name="d0e5314"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Disabled</code> (default): If you save changes to a
+                                     file in WinMerge, the timestamp of the file is updated.
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Enabled</code>: If you save changes to a file in
+                                     WinMerge, the timestamp of the file is not changed in your file
+                                     system.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5330"></a>2.7.&nbsp;Show "Select Files or Folders" Dialog on Startup<a class="indexterm" name="d0e5333"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Disabled</code> (default): The WinMerge window opens
+                                     when you launch WinMerge. You must then click <span class="guimenu">File</span> &#8594; <span class="guimenuitem">Open</span> to open Select Files or Folders.
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Enabled</code>: The Select Files or Folders dialog
+                                     opens along with the WinMerge window when you launch WinMerge.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5355"></a>2.8.&nbsp;Close "Select Files or Folders" Dialog on clicking OK button<a class="indexterm" name="d0e5358"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Disabled</code> (default): TBD
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Enabled</code>: TBD
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5372"></a>2.9.&nbsp;Open-dialog Auto-Completion<a class="indexterm" name="d0e5375"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Choose one of these options:</p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><span class="guilabel">Disabled</span> (default): No autocompletion is
+                                     performed when you enter paths in the Select Files or Folders
+                                     dialog.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guilabel">From file system</span>: Checks paths as you type.
+                                     It attempts to locate paths in the file system that match the letters
+                                     you type, and if a matching path is found, completes the path.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guilabel">From MRU list</span>: Checks paths only from the
+                                     most recently used (MRU) list. This is handy when you have a limited
+                                     set of paths to compare.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5396"></a>2.10.&nbsp;Language<a class="indexterm" name="d0e5399"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>See <a class="xref" href="Locales.html#Locales_changing" title="2.&nbsp;Changing the WinMerge interface language">Changing the WinMerge interface language</a>.
+               </p>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5406"></a>2.11.&nbsp;Reset
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>WinMerge allows you to suppress some common message boxes. For
+                        example, when two identical files are opened, the message box titled,
+                        <span class="guilabel">The files are identical</span>, is normally opened. If you
+                        don't want this box to display any more, you can enable (check) the option
+                        in that message box to not show the message again.
+               </p>
+               <p>Later, you might decide that you want to see those messages again.
+                        If so, click the <span class="guibutton">Reset</span> button to make the message
+                        boxes display again.
+               </p>
+               <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                     <tr>
+                        <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td>
+                        <th align="left">Note</th>
+                     </tr>
+                     <tr>
+                        <td align="left" valign="top">
+                           <p>We recommend that you not suppress messages when updating WinMerge
+                                      to a newer version. The installer enables their display automatically,
+                                      but if you don't use the installer, then remember to enable message
+                                      display by using the <span class="guibutton">Reset</span> button.
+                           </p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Configuration_compare"></a>3.&nbsp;Compare General page
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>The options in this page enable you to change some of the ways that
+                   WinMerge detects differences, such as comparing only file size, or ignoring
+                   some types of differences, like case.
+            </p>
+            <div class="important" style="margin-left: 0.5in; margin-right: 0.5in;">
+               <table border="0" summary="Important">
+                  <tr>
+                     <td rowspan="2" align="center" valign="top" width="25"><img alt="[Important]" src="images/important.gif"></td>
+                     <th align="left">Important</th>
+                  </tr>
+                  <tr>
+                     <td align="left" valign="top">
+                        <p>Customizing difference detection can be useful during comparisons,
+                                 when you might not be interested in some differences. However, these
+                                 options also affect merging. For example, if you ignore whitespace
+                                 changes, then indentation changes in source code files are not preserved
+                                 when you merge.
+                        </p>
+                        <p>For this reason, before you merge any differences, we strongly
+                                 recommend resetting the options on this page to their default settings,
+                                 especially the ignore options. To reset all the options on this page,
+                                 click the <span class="guibutton">Defaults</span> button.
+                        </p>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5438"></a>3.1.&nbsp;About ignore options<a class="indexterm" name="d0e5441"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>A number of options in the Compare page (described later in this
+                        section) enable you to ignore certain differences. Ignored differences are
+                        treated in special ways in WinMerge:
+               </p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p>They are marked with the Ignored Difference color.</p>
+                     </li>
+                     <li>
+                        <p>Ignored differences cannot be merged</p>
+                     </li>
+                     <li>
+                        <p>Ignored differences are not included in difference counts</p>
+                     </li>
+                     <li>
+                        <p>Files containing only ignored differences are marked as
+                                     identical in a folder comparison
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5459"></a>3.2.&nbsp;Whitespace<a class="indexterm" name="d0e5462"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Whitespace is the space between words and lines. It is represented
+                        in text files by special, nonprinting characters like spaces, tabs, and
+                        linefeeds. The significance of whitespace depends on how you want to read
+                        or process differences. It might be important to detect all changes in
+                        whitespace. Conversely, you might prefer to treat all whitespace the same
+                        whether one space, two spaces, an indent, or a tab. And in some structured
+                        documents (like comma-separated lists), you might want to disregard all
+                        whitespace.
+               </p>
+               <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                     <tr>
+                        <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td>
+                        <th align="left">Note</th>
+                     </tr>
+                     <tr>
+                        <td align="left" valign="top">
+                           <p>The effects of whitespace on changes within lines are visible only
+                                      when <code class="option">View line differences</code> is enabled. This is in
+                                      contrast to difference blocks, which are always highlighted.
+                           </p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="example"><a name="d0e5475"></a><p class="title"><b>Example&nbsp;1.&nbsp;Lines with different whitespace</b></p>
+                  <div class="example-contents">
+                     <p>One space between words:</p><pre class="screen">Two Words</pre><p>Two spaces between words:</p><pre class="screen">Two  Words</pre><p>Tab between words:</p><pre class="screen">Two	Words</pre><p>No spaces between words:</p><pre class="screen">TwoWords</pre></div>
+               </div><br class="example-break"><p>You can control whitespace detection by choosing one of these
+                        options:
+               </p>
+               <div class="variablelist">
+                  <dl>
+                     <dt><span class="term">Compare</span></dt>
+                     <dd>
+                        <p>All whitespace is compared (default). If you are not sure
+                                       which option your document requires, this is probably the safest
+                                       choice. In the example, all lines are detected as different.
+                        </p>
+                     </dd>
+                     <dt><span class="term">Ignore change</span></dt>
+                     <dd>
+                        <p>Compares differences in whitespace. In the example, the first
+                                       three lines have different whitespace, but are detected as
+                                       identical: tabs and multiple are treated as if they are single
+                                       space. The last line has no whitespace, so the difference is
+                                       <span class="emphasis"><em>not</em></span> ignored (in effect, the words in the last
+                                       two lines are different):
+                        </p>
+                     </dd>
+                     <dt><span class="term">Ignore all</span></dt>
+                     <dd>
+                        <p>Ignores all whitespace characters, except linefeeds (so lines
+                                       are detected and preserved in a merge). All lines in the example are
+                                       detected as identical.
+                        </p>
+                     </dd>
+                  </dl>
+               </div>
+               <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note: Related topics">
+                     <tr>
+                        <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td>
+                        <th align="left">Related topics</th>
+                     </tr>
+                     <tr>
+                        <td align="left" valign="top">
+                           <p>The effects of whitespace settings on line differences is
+                                      described in <a class="xref" href="Compare_files.html#CompareFiles_linediff-highlight" title="2.1.3.&nbsp;Line difference highlighting">Line difference highlighting</a>.
+                           </p>
+                           <p>The Options dialog Editor page contains related options that
+                                      control how whitespace is used to detect breaks between words. See <a class="xref" href="Configuration.html#Configuration_viewlinediffs" title="7.5.&nbsp;View line differences">View line differences</a> for details.
+                           </p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5529"></a>3.3.&nbsp;Ignore blank lines<a class="indexterm" name="d0e5532"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Disabled</code> (default): Empty lines in the source
+                                     files are detected and represented in the File Compare window as blank
+                                     lines with the Deleted Difference colors.
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Enabled</code>: Empty lines in the source files are
+                                     ignored. They are represented in the File Compare window as blank
+                                     lines with the Ignored Difference colors. However the difference
+                                     cannot be merged.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5548"></a>3.4.&nbsp;Ignore case<a class="indexterm" name="d0e5551"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Disabled</code> (default): Comparisons are
+                                     case-sensitive. For example, <code class="literal">LowerCase</code>,
+                                     <code class="literal">LOWERCASE</code>, and <code class="literal">lowercase</code> are all
+                                     different.
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Enabled</code>: Differences between lowercase and
+                                     uppercase letters are ignored.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5574"></a>3.5.&nbsp;Ignore carriage return differences (Windows/Unix/Mac)<a class="indexterm" name="d0e5577"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Disabled</code> (default): End of line (EOL) style
+                                     differences are detected. For example, if you compare two lines that
+                                     have the same contents but different line endings, the lines are
+                                     considered to be different. When this happens, WinMerge displays a
+                                     dialog prompting you to confirm whether to detect or ignore the
+                                     difference.
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Enabled</code>: EOL differences are ignored.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5593"></a>3.6.&nbsp;Ignore codepage differences<a class="indexterm" name="d0e5596"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Disabled</code> (default): TBD
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Enabled</code>: Codepage differences are ignored.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5612"></a>3.7.&nbsp;Enable moved block detection<a class="indexterm" name="d0e5615"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Disabled</code> (default): WinMerge does not detect
+                                     when differences are due to moved lines.
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Enabled</code>: WinMerge tries to detect lines that
+                                     are moved (in different locations in each file). Moved blocks are
+                                     indicated by the <span class="guilabel">Moved</span> and <span class="guilabel">Selected
+                                        Moved</span> difference colors. If the Location bar is displayed,
+                                     corresponding difference locations in the left and right location bars
+                                     are connected with a line. Showing moved blocks can make it easier to
+                                     visualize changes in files, if there are not too many.
+                        </p>
+                        <p>For an example, see the Location pane description in <a class="xref" href="Compare_files.html" title="Comparing and merging text files">Comparing and merging text files</a>.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5639"></a>3.8.&nbsp;Match similar lines<a class="indexterm" name="d0e5642"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Disabled</code> (default): Lines within difference
+                                     blocks are shown as they occur in the source files.
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Enabled</code>: WinMerge tries to detect lines within
+                                     a difference blocks that are similar, and adds blank lines in the File
+                                     panes to align them. This option is most effective when lines are
+                                     quite similar; less effective if lines are too different.
+                        </p>
+                        <p>For an example, see the <em class="citetitle">Similar lines</em>
+                                     description in <a class="xref" href="Compare_files.html#CompareFiles_diffcolors" title="2.1.2.&nbsp;Difference highlighting">Difference highlighting</a>.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5663"></a>3.9.&nbsp;Filter Comments<a class="indexterm" name="d0e5666"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Disabled</code> (default): WinMerge compares comments
+                                     in code, along with other content.
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Enabled</code>: This option optimizes comparisons by
+                                     detecting comments in certain programming language file types (such as
+                                     C++ and Java), and ignoring them.
+                        </p>
+                        <p>The recognized file types and their comment markers are defined
+                                     in the file, <code class="filename">IgnoreSectionMarkers.ini</code>, at the top
+                                     of the WinMerge installation directory.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Configuration_compare_folder"></a>4.&nbsp;Compare Folder page
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="Configuration_compmethod"></a>4.1.&nbsp;File Compare method<a class="indexterm" name="d0e5694"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>This option lets you determine how complete your file comparisons
+                        are. Choose one of these five choices:
+               </p>
+               <div class="variablelist">
+                  <dl>
+                     <dt><span class="term">Full Contents</span></dt>
+                     <dd>
+                        <p>Default: Full comparison of files by content, with all the
+                                       bells and whistles. This method invokes plugins and uses the
+                                       diffutils engine for fully accurate differencing and moved block
+                                       detection. This is the most complete and recommended method.
+                        </p>
+                     </dd>
+                     <dt><span class="term">Quick Contents</span></dt>
+                     <dd>
+                        <p>Slimmed-down comparison of files by content. This method uses
+                                       streamlined file comparison code which skips plugins and moved block
+                                       detection. This method is faster than <span class="guilabel">Full
+                                          Contents</span>, because it does not load the files.
+                        </p>
+                        <p>Its drawback is that line filters are not applied when
+                                       comparing. For example, this method sees file as different even if
+                                       line filters are set to ignore all differences in the files.
+                        </p>
+                     </dd>
+                     <dt><span class="term">Binary Contents</span></dt>
+                     <dd>
+                        <p>TBD</p>
+                     </dd>
+                     <dt><span class="term">Modified Date<a class="indexterm" name="d0e5728"></a></span></dt>
+                     <dd>
+                        <p>Compares only the modification dates on the files, so it is
+                                       far faster than either of the contents methods. But obviously, it is
+                                       only as accurate as the modification dates.
+                        </p>
+                     </dd>
+                     <dt><span class="term"><span class="guilabel">Modified Date and Size</span></span></dt>
+                     <dd>
+                        <p>Similar to <span class="guilabel">Modified Date</span>, but also checks
+                                       file sizes when dates are identical.
+                        </p>
+                     </dd>
+                     <dt><span class="term">Size<a class="indexterm" name="d0e5749"></a></span></dt>
+                     <dd>
+                        <p>Compares only file sizes, so it is fast but not as accurate as
+                                       the contents methods.
+                        </p>
+                     </dd>
+                  </dl>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5757"></a>4.2.&nbsp;Stop after first difference<a class="indexterm" name="d0e5760"></a><a class="indexterm" name="d0e5765"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>This option is enabled only when the <span class="guilabel">Quick
+                           Contents</span> compare method is selected.
+               </p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Disabled</code> (default): WinMerge examines all
+                                     differences in the files.
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Enabled</code>: This option optimizes comparisons by
+                                     examining files only until the first difference is found, instead
+                                     always scanning the entire files.
+                        </p>
+                        <p>The drawback is that WinMerge may be unable to identify binary
+                                     files as binary. This is likely to happen if the first difference is
+                                     near the beginning of the file. If you know what kind of files you are
+                                     comparing (for example, which are binary files), this option can be a
+                                     good way to speed up comparisons. However, don't enable this option if
+                                     you are not sure what kind of files you are comparing.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5788"></a>4.3.&nbsp;Ignore time differences less than 3 seconds<a class="indexterm" name="d0e5791"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Disabled</code> (default): Files with different
+                                     timestamps are detected as different.
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Enabled</code>: Sometimes (for example, when you use
+                                     network shares) small differences in timestamps are not significant.
+                                     To get more meaningful results in such situations, this option enables
+                                     you to ignore time differences smaller than three seconds.
+                        </p>
+                        <p>This option works only with the <span class="guimenuitem">Modified
+                                        Date</span> and <span class="guimenuitem">Modified Date and
+                                        Size</span> compare methods (described in <a class="xref" href="Configuration.html#Configuration_compmethod" title="4.1.&nbsp;File Compare method">File Compare method</a>). It has no effect with other
+                                     methods.
+                        </p>
+                        <div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+                           <table border="0" summary="Warning">
+                              <tr>
+                                 <td rowspan="2" align="center" valign="top" width="25"><img alt="[Warning]" src="images/warning.gif"></td>
+                                 <th align="left">Warning</th>
+                              </tr>
+                              <tr>
+                                 <td align="left" valign="top">
+                                    <p>This option should be enabled only when the time difference is
+                                                   detected. Otherwise, it can cause incorrect compare results.
+                                    </p>
+                                 </td>
+                              </tr>
+                           </table>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5820"></a>4.4.&nbsp;Include unique subfolders contents<a class="indexterm" name="d0e5823"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Disabled</code> (default): TBD
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Enabled</code>: TBD
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5839"></a>4.5.&nbsp;Include unique subfolders contents<a class="indexterm" name="d0e5842"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Disabled</code> (default): TBD
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Enabled</code>: TBD
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5858"></a>4.6.&nbsp;Automatically expand all subfolders<a class="indexterm" name="d0e5861"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Disabled</code> (default): TBD
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Enabled</code>: TBD
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5877"></a>4.7.&nbsp;Ignore Reparse Points<a class="indexterm" name="d0e5880"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Disabled</code> (default): TBD
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Enabled</code>: TBD
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5896"></a>4.8.&nbsp;Quick compare limit (MB)<a class="indexterm" name="d0e5899"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Disabled</code>: Is not active unless the Compare method 
+                           		  is set to Quick Contents.
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Enabled</code>: Is active when the Compare method 
+                           		  is set to Quick Contents.
+                        </p>
+                        <p>This option sets the limit when WinMerge should stop comparing.
+                           		  If the limit is set to for instance 4 MB, then WinMerge will only read 
+                           		  the first 4 MB of a file. If no differences are founf before the 
+                           		  Quick Compare limit is reached, then the files will be marked as identical.
+                           		  
+                        </p>
+                        <div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+                           <table border="0" summary="Warning">
+                              <tr>
+                                 <td rowspan="2" align="center" valign="top" width="25"><img alt="[Warning]" src="images/warning.gif"></td>
+                                 <th align="left">Warning</th>
+                              </tr>
+                              <tr>
+                                 <td align="left" valign="top">
+                                    <p>This option should be enabled only when you are sure any differences 
+                                       			are in the first part of the file.
+                                                   Otherwise, it can cause incorrect compare results.
+                                    </p>
+                                 </td>
+                              </tr>
+                           </table>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5920"></a>4.9.&nbsp;Number of compare threads<a class="indexterm" name="d0e5923"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>TBD</p>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Configuration_compare_binary"></a>5.&nbsp;Compare Binary page
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5931"></a>5.1.&nbsp;Binary File Patterns<a class="indexterm" name="d0e5934"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>TBD</p>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Configuration_compare_image"></a>6.&nbsp;Compare Image page
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5942"></a>6.1.&nbsp;Image File Patterns<a class="indexterm" name="d0e5945"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>TBD</p>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Configuration_editor"></a>7.&nbsp;Editor page<a class="indexterm" name="d0e5953"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="Configuration_syntaxhighlight"></a>7.1.&nbsp;Syntax highlighting<a class="indexterm" name="d0e5961"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Enabled</code> (default): WinMerge can syntax
+                                     highlight many programming language and web formats. To see the
+                                     formats that are supported by default, click <span class="guimenu">View</span> &#8594; <span class="guimenuitem">Syntax Highlight</span>.
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Disabled</code>: Syntax highlighting consumes some
+                                     processing power, so if WinMerge screen updating seems to be slow,
+                                     turning off this option might help.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e5983"></a>7.2.&nbsp;Automatic rescan<a class="indexterm" name="d0e5986"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Disabled</code> (default): WinMerge rescans
+                                     automatically when you merge a difference, or if you manually rescan
+                                     (for example, click the <span class="guibutton">Rescan</span> button).
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Enabled</code>: Forces WinMerge to rescan after every
+                                     edit event (a change to files, like typing).
+                        </p>
+                        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                           <table border="0" summary="Note">
+                              <tr>
+                                 <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td>
+                                 <th align="left">Note</th>
+                              </tr>
+                              <tr>
+                                 <td align="left" valign="top">
+                                    <p>To avoid slowing down your editing, WinMerge delays automatic
+                                                   rescanning a little: it waits one second after each edit event.
+                                                   Because each new edit event resets the timer, no rescans occur until
+                                                   you pause or stop editing.
+                                    </p>
+                                 </td>
+                              </tr>
+                           </table>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e6008"></a>7.3.&nbsp;Preserve original EOL chars<a class="indexterm" name="d0e6011"></a><a class="indexterm" name="d0e6016"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Disabled</code> (default): Assumes that files are
+                                     meant to be Windows files. If a file does not use the standard Windows
+                                     line ending, WinMerge considers this to be an error. It silently
+                                     changes the line endings to the Windows style instead of detecting
+                                     them as differences. Thus, the File Compare window status bar shows
+                                     the EOL style as <span class="guilabel">Win</span>.
+                        </p>
+                        <p>For most situations you should leave this option disabled: the
+                                     default behavior works even when comparing two files that have
+                                     different line ending styles.
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Enabled</code>: Prevents WinMerge from automatically
+                                     changing line endings, so that it detects different EOL styles for
+                                     every line. This might be useful for handling files from systems with
+                                     different EOL styles (for example, Windows and Unix).
+                        </p>
+                        <div class="important" style="margin-left: 0.5in; margin-right: 0.5in;">
+                           <table border="0" summary="Important">
+                              <tr>
+                                 <td rowspan="2" align="center" valign="top" width="25"><img alt="[Important]" src="images/important.gif"></td>
+                                 <th align="left">Important</th>
+                              </tr>
+                              <tr>
+                                 <td align="left" valign="top">
+                                    <p>This is an advanced option for users who are familiar with EOL
+                                                   bytes and who want to compare files with different EOL styles inside
+                                                   <span class="emphasis"><em>one</em></span> file. We recommend that you not enable this
+                                                   option unless you need this advanced functionality. Remember, this
+                                                   option is not required to compare two files with different EOL
+                                                   styles.
+                                    </p>
+                                 </td>
+                              </tr>
+                           </table>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e6043"></a>7.4.&nbsp;Tab options<a class="indexterm" name="d0e6046"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="variablelist">
+                  <dl>
+                     <dt><span class="term">Tab size</span></dt>
+                     <dd>
+                        <p>Width of a tab space. Specify a value
+                                       <em class="replaceable"><code>n</code></em> : the resulting width is equivalent to
+                                       that of <em class="replaceable"><code>n</code></em> characters. Default: 4. The
+                                       maximum value is 64.
+                        </p>
+                     </dd>
+                     <dt><span class="term">Tab insert options</span></dt>
+                     <dd>
+                        <p>Determines what kind of character is used when you insert a
+                                       tab in text. Only one of these options can be enabled:
+                        </p>
+                        <div class="itemizedlist">
+                           <ul type="disc">
+                              <li>
+                                 <p><span class="guilabel">Insert Tabs</span> (default): Uses a single
+                                                    tab character.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="guilabel">Insert Spaces</span>: Uses one or more
+                                                    spaces (determined by the <code class="option">Tab size</code>) instead of
+                                                    a tab character. For example, with the default tab size, four
+                                                    spaces are inserted.
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </dd>
+                  </dl>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="Configuration_viewlinediffs"></a>7.5.&nbsp;View line differences<a class="indexterm" name="d0e6087"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>These settings enable and configure the detection of <em class="glossterm">line
+                           differences</em> (changes within the lines of difference
+                        blocks):
+               </p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Enabled</code> (default): WinMerge highlights
+                                     differences within lines. Also enables the <span class="guimenu">View</span> &#8594; <span class="guimenuitem">View Line Differences</span> menu item.
+                        </p>
+                        <p>Choose one of these suboptions:</p>
+                        <div class="itemizedlist">
+                           <ul type="circle">
+                              <li>
+                                 <p><span class="guilabel">Character level</span>: Highlights individual
+                                                  characters that are different. This option can be useful if you
+                                                  are looking for changes within words, or for file formats that do
+                                                  not have clear word breaks.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="guilabel">simiWord-level</span> (default): Highlights
+                                                  entire words that are different.
+                                 </p>
+                                 <div class="itemizedlist">
+                                    <ul type="square">
+                                       <li>
+                                          <p><span class="guilabel">Break at whitespace</span> (default):
+                                                               Words are assumed to be separated by whitespace characters.
+                                                               This usually works for typical text files.
+                                          </p>
+                                       </li>
+                                       <li>
+                                          <p><span class="guilabel">Break at whitespace or punctuation</span>:
+                                                               Considers both whitespace and punctuation characters to be
+                                                               word breaks. This can useful for handling lists that are
+                                                               separated with punctuation (like comma-separated
+                                                               lists).
+                                          </p>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li>
+                        <p><code class="option">Disabled</code>: WinMerge does not highlight line
+                                     differences, and all settings for the level and whitespace options are
+                                     ignored. Also disables the <span class="guimenu">View</span> &#8594; <span class="guimenuitem">View Line Differences</span> menu item.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+               <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note: Related topic">
+                     <tr>
+                        <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td>
+                        <th align="left">Related topic</th>
+                     </tr>
+                     <tr>
+                        <td align="left" valign="top">
+                           <p><a class="xref" href="Compare_files.html#CompareFiles_linediff-highlight" title="2.1.3.&nbsp;Line difference highlighting">Line difference highlighting</a> explains in
+                                      more detail how WinMerge detects and marks line differences.
+                           </p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Configuration_colors"></a>8.&nbsp;Colors page<a class="indexterm" name="d0e6153"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p>Use this page if you want to change any of the difference colors used
+                   in the File Compare window. You can set the background, deleted, and text
+                   color.
+            </p>
+            <p>To change a color, click in its box to open a standard Color chooser
+                   dialog. Choose one of the predefined colors or define your own custom color,
+                   then click <span class="guibutton">OK</span> to load the new color in the
+                   box.
+            </p>
+            <p>At any time, you can click <span class="guibutton">Defaults</span> to reload
+                   the installed color scheme.
+            </p>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Configuration_textcolors"></a>9.&nbsp;Text Colors page<a class="indexterm" name="d0e6173"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p>Use this page to change the colors used for text. First, check the
+                   option, <span class="guilabel">Use customized text colors</span>. This activates the
+                   text options. There is an option for three kinds of text: whitespace,
+                   regular text, and selected text. For each kind of text , you can choose a
+                   color for the background and the text.
+            </p>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Configuration_syntaxcolors"></a>10.&nbsp;Syntax Colors page<a class="indexterm" name="d0e6186"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p>By default, the WinMerge File Compare window marks the syntax of
+                   certain kinds of source code, as described in <a class="xref" href="Configuration.html#Configuration_syntaxhighlight" title="7.1.&nbsp;Syntax highlighting">Syntax highlighting</a>. This page lists the syntax
+                   elements that are recognized, and enables you to change their text color and
+                   weight.
+            </p>
+            <p>At any time, you can click <span class="guibutton">Defaults</span> to reload
+                   the installed color scheme.
+            </p>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Configuration_markercolors"></a>11.&nbsp;Maker Colors page<a class="indexterm" name="d0e6203"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p>TBD</p>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Configuration_archive"></a>12.&nbsp;Archive Support page<a class="indexterm" name="d0e6213"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p>This page contains options for configuring archive support
+                   using 7-Zip.
+            </p>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e6220"></a>12.1.&nbsp;Enable archive file support<a class="indexterm" name="d0e6223"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>This option controls how WinMerge handles archive files (based on
+                        7-Zip integration).
+               </p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Enabled</code> (default): WinMerge recognizes 7-Zip
+                                     archives.
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Disabled</code>: Turns off 7-Zip archive
+                                     integration.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e6241"></a>12.2.&nbsp;Detect archive type from file signature<a class="indexterm" name="d0e6244"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Disabled</code> (default): WinMerge recognizes only
+                                     archives whose file extension is known on your system (for example, in
+                                     the registry or through a file association).
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Enabled</code>: WinMerge can recognize archive files
+                                     even if their file extension is not known. To recognize an archive,
+                                     WinMerge searches the beginning of the file for the archive signature
+                                     bytes.
+                        </p>
+                        <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+                           <table border="0" summary="Tip">
+                              <tr>
+                                 <td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.gif"></td>
+                                 <th align="left">Tip</th>
+                              </tr>
+                              <tr>
+                                 <td align="left" valign="top">
+                                    <p>You can use this option to enable WinMerge to recognize Open
+                                                     Office files.
+                                    </p>
+                                 </td>
+                              </tr>
+                           </table>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Configuration_system"></a>13.&nbsp;System page
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e6264"></a>13.1.&nbsp;Send deleted files to Recycle Bin<a class="indexterm" name="d0e6267"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Enabled</code> (default): Files and folders that you
+                                     delete in a Folder Compare window are moved to the Recycle Bin, if it
+                                     is available.
+                        </p>
+                        <div class="important" style="margin-left: 0.5in; margin-right: 0.5in;">
+                           <table border="0" summary="Important">
+                              <tr>
+                                 <td rowspan="2" align="center" valign="top" width="25"><img alt="[Important]" src="images/important.gif"></td>
+                                 <th align="left">Important</th>
+                              </tr>
+                              <tr>
+                                 <td align="left" valign="top">
+                                    <p>Remember: if the Recycle Bin on your system has been
+                                                   deactivated, this option does not work, and deleted files are
+                                                   lost!
+                                    </p>
+                                 </td>
+                              </tr>
+                           </table>
+                        </div>
+                     </li>
+                     <li>
+                        <p><code class="option">Disabled</code>: Files and folders deleted in a
+                                     directory compare actually deleted.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="Configuration_external_editor"></a>13.2.&nbsp;External editor<a class="indexterm" name="d0e6289"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The WinMerge File Compare window provides common editing functions.
+                        If you prefer using your favorite, full-featured editor, you can configure
+                        WinMerge to open an external editor from the Folder Compare context
+                        menu.
+               </p>
+               <p>Installation configures Notepad as the default external editor,
+                        because it is found on all Windows systems. To configure a different
+                        external editor, enter the full path to its executable file.
+               </p>
+               <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Tip">
+                     <tr>
+                        <td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.gif"></td>
+                        <th align="left">Tip</th>
+                     </tr>
+                     <tr>
+                        <td align="left" valign="top">
+                           <p>Along with the path, you can include any command line parameters
+                                      supported by the external tool, in this format:
+                                      <span class="command"><strong><em class="replaceable"><code>path to executable</code></em></strong></span>
+                                      <code class="option">-option1</code> <code class="option">-option2</code>
+                                      <code class="option"><em class="replaceable"><code>...</code></em></code></p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <p>To use the configured external editor, right-click a file in the
+                        Folder Compare window and choose <span class="guimenuitem">Open Left</span> &#8594; <span class="guimenuitem">with External Editor</span> or <span class="guimenuitem">Open Right</span> &#8594; <span class="guimenuitem">with External Editor</span>.
+               </p>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e6328"></a>13.3.&nbsp;Filter Folder<a class="indexterm" name="d0e6331"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Use this field to specify your own private folder for file filters.
+                        By default this folder is your user profile directory (for example,
+                        <code class="filename">My Documents</code> on Windows XP, or
+                        <code class="filename">Documents</code> on Windows Vista). When you create a file
+                        filter, it is automatically added to this folder.
+               </p>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e6344"></a>13.4.&nbsp;Temporary files folder<a class="indexterm" name="d0e6347"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Specify the folder where WinMerge stores temporary files. Either one
+                        of these options is available:
+               </p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p>System's temp folder (default): For example, this might be
+                                     <code class="filename">C:\Windows\Temp</code> on your system.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Custom folder: Click <span class="guibutton">Browse</span> and select a
+                                     different folder where you have write access.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Configuration_backup"></a>14.&nbsp;Backup Files page<a class="indexterm" name="d0e6368"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p>This page allows you to control how WinMerge creates backup
+                   files.
+            </p>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e6373"></a>14.1.&nbsp;Create backup files in
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Specify when WinMerge should create backup files. You can enable or
+                        disable each of these options independently:
+               </p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><span class="guilabel">Folder compare</span> (disabled by default):
+                                     Backup files are create whenever files are overwritten
+                                     (copied).
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guilabel">File compare</span> (enabled by default): Backup
+                                     files are created whenever files are saved.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e6389"></a>14.2.&nbsp;Create backup files into
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Specify where backup files are created. Only one of these options
+                        can be enabled:
+               </p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><span class="guilabel">Original file's folder</span> (enabled by
+                                     default): Backup files are created in the same folder as the source
+                                     file. This is usually a good choice. The down side is that cleaning up
+                                     backup files in big folders can take a lot of work.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guilabel">Global backup folder</span> (disabled by default):
+                                     All backup files are created in one global folder. This makes them
+                                     easy to clean up. But, if there are multiple source files with same
+                                     file name, then the most recent backup file overwrites the previous
+                                     one of the same name.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e6405"></a>14.3.&nbsp;Backup filename
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>When WinMerge creates a backup file, it appends an extension to the
+                        source file name. You can choose either or both of these extension
+                        schemes:
+               </p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><span class="guilabel">Append .bak -extension</span> (enabled by
+                                     default): For example, the <code class="filename">file.txt</code> is backed up
+                                     to <code class="filename">file.txt.bak</code>.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guilabel">File compare</span> (enabled by default):
+                                     Timestamps are almost always unique, so this option usually avoids
+                                     duplicating backup file names when the source files have the same
+                                     names.
+                        </p>
+                        <p>Also, storing a copy of a file each time you save it provides a
+                                     way to track changes to the file. However, you should consider that
+                                     this option can create a lot of files.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Configuration_vcs"></a>15.&nbsp;Version Control page<a class="indexterm" name="d0e6432"></a><a class="indexterm" name="d0e6437"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p>Use this page to enable or disable checkouts through an installed
+                   version control system (VCS) that you select here. If you enable this
+                   integration with one of the supported systems, WinMerge opens the checkout
+                   dialog for that VCS when you save a versioned file in WinMerge.
+            </p>
+            <div class="itemizedlist">
+               <ul type="disc">
+                  <li>
+                     <p><span class="guilabel">None</span> (default): When you save a file in
+                                WinMerge, there are no interactions with any version control
+                                system.
+                     </p>
+                  </li>
+                  <li>
+                     <p><span class="guilabel">Visual SourceSafe (less than 5.0)</span></p>
+                     <p>Also enter the path to <code class="filename">SS.EXE</code>.
+                     </p>
+                  </li>
+                  <li>
+                     <p><span class="guilabel">Visual SourceSafe (5.0 and above)</span></p>
+                  </li>
+                  <li>
+                     <p><span class="guilabel">Rational ClearCase</span></p>
+                     <p>Also enter the path to <code class="filename">cleartool.exe</code>.
+                     </p>
+                  </li>
+               </ul>
+            </div>
+            <p>See <a class="xref" href="Version_control.html#VersionControl_vcs" title="2.&nbsp;Using WinMerge with version control systems">Using WinMerge with version control systems</a> for details about using this
+                   feature.
+            </p>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Configuration_codepage"></a>16.&nbsp;Codepage page<a class="indexterm" name="d0e6479"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p>WinMerge detects handles file encoding transparently, and in most
+                     cases you should not need to change the default settings.This page allows
+                     you to specify the codepages of certain file formats, should you need to.  
+            </p>
+            <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+               <table border="0" summary="Note">
+                  <tr>
+                     <td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.gif"></td>
+                     <th align="left">Note</th>
+                  </tr>
+                  <tr>
+                     <td align="left" valign="top">
+                        <p>A full explanation of text encoding and Windows codepages is beyond
+                                   the scope of WinMerge documentation. Fortunately, there is lots of
+                                   information about them on the Internet. For example, here are some
+                                   places to start:
+                        </p>
+                        <div class="itemizedlist">
+                           <ul type="disc">
+                              <li>
+                                 <p><a class="ulink" href="http://en.wikipedia.org/wiki/Code_pages" target="_top">Wikipedia:
+                                                 Code pages</a>, <a class="ulink" href="http://en.wikipedia.org/wiki/Character_encoding" target="_top">Character
+                                                 encoding</a></p>
+                              </li>
+                              <li>
+                                 <p><a class="ulink" href="http://www.microsoft.com/globaldev/reference/wincp.mspx" target="_top">Microsoft:
+                                                 Code Pages Supported by Windows</a></p>
+                              </li>
+                           </ul>
+                        </div>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e6501"></a>16.1.&nbsp;Default codepage for non-Unicode files
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <p>Choose one of these radio buttons to set the default codepage that
+                        WinMerge uses when handling ANSI files:
+               </p>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><span class="guilabel">System codepage</span> (default):The codepage used
+                                     by your Windows system. This default is usually the best choice.
+                                     However if you know that you are comparing files that do not use the
+                                     system codepage, consider one of the other options.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guilabel">According to WinMerge User Interface</span>: The
+                                     encoding used by your installation of WinMerge.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="guilabel">Custom codepage</span>: Enter the codepage number
+                                     explicitly. For example, <strong class="userinput"><code>UTF-8</code></strong> or
+                                     <strong class="userinput"><code>ISO-8851-1</code></strong>.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e6529"></a>16.2.&nbsp;Detect codepage info for these files: .html .rc .xml
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="important" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Important">
+                     <tr>
+                        <td rowspan="2" align="center" valign="top" width="25"><img alt="[Important]" src="images/important.gif"></td>
+                        <th align="left">Important</th>
+                     </tr>
+                     <tr>
+                        <td align="left" valign="top">
+                           <p>Uncheck this option in <code class="filename">WinMerge.exe</code>.
+                                      Characters conversions can result in lossy conversions and the risk is
+                                      very high. <code class="filename">WinMerge.exe</code> can display files only with
+                                      your current codepage.
+                           </p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="itemizedlist">
+                  <ul type="disc">
+                     <li>
+                        <p><code class="option">Disabled</code> (default): WinMerge does not read
+                                     codepage information from the source files. It uses the default
+                                     codepage setting instead.
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="option">Enabled</code>: WinMerge detects the codepage for
+                                     these extensions : <code class="filename">html</code>,
+                                     <code class="filename">rc</code> (resource files for VC++)
+                                     and <code class="filename">xml</code>. The detected codepage
+                                     overrides the setting for the default codepage option.
+                        </p>
+                        <p>This option is of interest when your documents use a codepage
+                                     that is different from the codepage of your Windows
+                                     configuration.
+                        </p>
+                        <p>For example, you might merge two Slovak or two Japanese files in
+                                     an English environment. With this option enabled (and with the
+                                     required fonts), your Slovak, or Japanese, the files are displayed
+                                     using Slovak, or Japanese, characters.
+                        </p>
+                        <p>WinMerge also detects a codepage difference between the
+                                     left/right files. To avoid lossy conversions when you merge, copy, or
+                                     paste, we suggest that you ignore the codepage information.
+                        </p>
+                        <div class="caution" style="margin-left: 0.5in; margin-right: 0.5in;">
+                           <table border="0" summary="Caution">
+                              <tr>
+                                 <td rowspan="2" align="center" valign="top" width="25"><img alt="[Caution]" src="images/caution.gif"></td>
+                                 <th align="left">Caution</th>
+                              </tr>
+                              <tr>
+                                 <td align="left" valign="top">
+                                    <p>When you copy or paste text to an external application, the
+                                                   external application must use the same codepage as WinMerge does.
+                                                   Refer to the documentation for your external editor. For copying to
+                                                   WinMerge, Internet Explorer offers codepage selection. If your
+                                                   external editor does not support custom codepages, disable this
+                                                   option.
+                                    </p>
+                                 </td>
+                              </tr>
+                           </table>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Configuration_shell-integ"></a>17.&nbsp;Shell Integration page
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="Configuration_winexplorer-integ"></a>17.1.&nbsp;Explorer<a class="indexterm" name="d0e6577"></a></h3>
+                     </div>
+                  </div>
+               </div>
+               <p>The <code class="option">Add to context menu</code> option enables you to
+                        launch WinMerge directly from Windows Explorer, comparing items that you
+                        have selected there. It is enabled or disabled by default during WinMerge
+                        installation. If enabled, you can also enable one or both of these
+                        options:
+               </p>
+               <div class="variablelist">
+                  <dl>
+                     <dt><span class="term">Enable advanced menu</span></dt>
+                     <dd>
+                        <div class="itemizedlist">
+                           <ul type="disc">
+                              <li>
+                                 <p><code class="option">Disabled</code> (default): Only the
+                                                    <span class="guimenuitem">WinMerge</span> shortcut is included in the
+                                                    Windows Explorer context menu.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><code class="option">Enabled</code>: Replaces the
+                                                    <span class="guimenuitem">WinMerge</span> shortcut in the Explorer
+                                                    context menu with <span class="guimenuitem">Compare</span>
+                                                    shortcuts.
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </dd>
+                  </dl>
+               </div>
+               <p><a class="xref" href="Open_paths.html#OpenPaths_shell-integ" title="2.&nbsp;Launching WinMerge operations in Windows Explorer">Launching WinMerge operations in Windows Explorer</a> describes how to use the
+                        WinMerge and Compare shortcuts.
+               </p>
+            </div>
+         </div>
+      </div>
+      <div class="navfooter">
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="Compare_images.html">Prev</a>&nbsp;
+               </td>
+               <td width="20%" align="center">&nbsp;</td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="Locales.html">Next</a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Comparing image files&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Locale support</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,239 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Locale support - WinMerge 2.12 Manual</title>
+      <meta name="generator" content="DocBook XSL Stylesheets V1.74.0">
+      <link rel="home" href="index.html" title="WinMerge 2.16 Help">
+      <link rel="up" href="index.html" title="WinMerge 2.16 Help">
+      <link rel="prev" href="Configuration.html" title="Options and configuration">
+      <link rel="next" href="Plugins.html" title="Plugins">
+      <link rel="stylesheet" type="text/css" href="css/all.css">
+      <link rel="stylesheet" type="text/css" media="print" href="css/print.css">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Locale support</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="Configuration.html">Prev</a>&nbsp;
+               </td>
+               <th width="60%" align="center">&nbsp;</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="Plugins.html">Next</a></td>
+            </tr>
+         </table>
+      </div>
+      <div class="article" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title"><a name="Locales"></a>Locale support<a class="indexterm" name="d0e6618"></a></h2>
+               </div>
+            </div>
+            <hr>
+         </div>
+         <p>The WinMerge user interface is in English by default, but you can
+            localize your installation to other languages for which translations have been
+            contributed. Localizing WinMerge changes text strings that are displayed in
+            the interface, including menus, dialogs, tooltips, and messages, to the
+              language you choose.
+         </p>
+         <p>Note that localization does not extend beyond the translation of
+              strings. For example, it does not affect how numbers are divided or how words
+              are alphabetized. (Those issues should be addressed in the conventional
+              Windows manner by using the Regional settings in the Control Panel.)
+         </p>
+         <p>Localizing your WinMerge installation involves these two basic
+              steps:
+         </p>
+         <div class="orderedlist">
+            <ol type="1">
+               <li>
+                  <p><a class="xref" href="Locales.html#Locales_config_files" title="1.&nbsp;Configuring the localization">Configuring the localization</a>: Make one or more language
+                           files available to WinMerge.
+                  </p>
+               </li>
+               <li>
+                  <p><a class="xref" href="Locales.html#Locales_changing" title="2.&nbsp;Changing the WinMerge interface language">Changing the WinMerge interface language</a>: Choose one of the configured
+                           language files.
+                  </p>
+               </li>
+            </ol>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Locales_config_files"></a>1.&nbsp;Configuring the localization
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>Configuring a localization simply involves making its translation file
+                   available to WinMerge, either during or after the installation.
+            </p>
+            <div class="itemizedlist">
+               <ul type="disc">
+                  <li>
+                     <p>It's easiest to configure a language file during WinMerge
+                                installation. The instructions in <a class="xref" href="Install.html#Installing_usinginstaller" title="3.&nbsp;Using the installer (recommended)">Using the installer (recommended)</a> describe how to use the Select
+                                Components page to install one or more translation files.
+                     </p>
+                  </li>
+                  <li>
+                     <p>If you did not configure a language file when you installed
+                                WinMerge (or did not use the installer at all), there is no need to
+                                re-install WinMerge. You can get the latest translation files from the
+                                WinMerge site and configure it yourself:
+                     </p>
+                     <div class="orderedlist">
+                        <ol type="1">
+                           <li>Create a folder named <code class="filename">Languages</code> under the WinMerge installation directory
+                                            (where <code class="filename">WinMergeU.exe</code> is located), if it does
+                                            not already exist.
+                           </li>
+                           <li>Go to the <a class="ulink" href="http://winmerge.org/downloads/" target="_top">WinMerge download</a> site.
+                                          Download one of the archived binary files (either Zip or 7z format)
+                                          for the current WinMerge version, and save it to your file
+                                          system.
+                           </li>
+                           <li>Open the downloaded archive, and locate the
+                                          <code class="filename">*.po</code> files, where * is a language (for example,
+                                          <code class="filename">Swedish.po</code> for the Swedish translation).
+                                          Extract the language files you want to the
+                                          <code class="filename">Languages</code> subfolder in your WinMerge
+                                          installation directory.
+                           </li>
+                        </ol>
+                     </div>
+                     <p>The language files are now available the next time you run
+                                WinMerge.
+                     </p>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Locales_changing"></a>2.&nbsp;Changing the WinMerge interface language
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>If you have configured one or more translation files, as described in
+                   the preceding section, you can change the localization of WinMerge to any of
+                   them:
+            </p>
+            <div class="orderedlist">
+               <ol type="1">
+                  <li>Run WinMerge.</li>
+                  <li>Select <span class="guimenuitem">Options</span> from the
+                             <span class="guimenu">Edit</span> menu.
+                  </li>
+                  <li>Select your language and click
+                             <span class="guibutton">OK</span> in the Options dialog General page.
+                  </li>
+               </ol>
+            </div>
+            <p>The language of the WinMerge user interface is instantly
+                   updated.
+            </p>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e6706"></a>3.&nbsp;Available WinMerge localizations<a class="indexterm" name="d0e6709"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p>WinMerge localizations contributed to date include the following
+                   translations:
+            </p>
+            <div class="itemizedlist">
+               <ul type="disc">
+                  <li>Basque</li>
+                  <li>Bulgarian</li>
+                  <li>Catalan</li>
+                  <li>Chinese (both Simplified and Traditional)</li>
+                  <li>Croatian</li>
+                  <li>Czech</li>
+                  <li>Danish</li>
+                  <li>Dutch</li>
+                  <li>French</li>
+                  <li>Galician</li>
+                  <li>German</li>
+                  <li>Greek</li>
+                  <li>Hungarian</li>
+                  <li>Italian</li>
+                  <li>Japanese</li>
+                  <li>Korean</li>
+                  <li>Norwegian</li>
+                  <li>Persian</li>
+                  <li>Polish</li>
+                  <li>Portuguese</li>
+                  <li>Portuguese (Brazilian)</li>
+                  <li>Romanian</li>
+                  <li>Russian</li>
+                  <li>Serbian</li>
+                  <li>Slovak</li>
+                  <li>Slovenian</li>
+                  <li>Spanish</li>
+                  <li>Swedish</li>
+                  <li>Turkish</li>
+                  <li>Ukrainian</li>
+               </ul>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e6805"></a>4.&nbsp;Reporting errors in translation<a class="indexterm" name="d0e6808"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p>Please submit any errors you find in translations as bugs to our
+                   <a class="ulink" href="http://sourceforge.net/p/winmerge/bugs/" target="_top">bug-list</a>.
+                   It would be great if you also provide a corrected version of the translated
+                   text.
+            </p>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e6816"></a>5.&nbsp;Submitting a new translation<a class="indexterm" name="d0e6819"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p>If you would like to add your language to the list, then please read the <a class="ulink" href="http://winmerge.org/translations/" target="_top">translation documentation</a>
+                   on the WinMerge Web site to learn how. Most of the translations are incomplete,
+                   so your help improving them would be appreciated. Translating (or improving
+                   translation) does not require you to have all the compile tools or to know
+                   about WinMerge internals. You just need to follow the instructions in the preceding
+                   link. And if you have problems, ask for help from us in one of the <a class="ulink" href="http://forums.winmerge.org/" target="_top">WinMerge forums</a>.
+            </p>
+         </div>
+      </div>
+      <div class="navfooter">
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="Configuration.html">Prev</a>&nbsp;
+               </td>
+               <td width="20%" align="center">&nbsp;</td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="Plugins.html">Next</a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Options and configuration&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Plugins</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

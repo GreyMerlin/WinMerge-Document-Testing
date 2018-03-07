@@ -1,0 +1,641 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Frequently asked questions - WinMerge 2.12 Manual</title>
+      <meta name="generator" content="DocBook XSL Stylesheets V1.74.0">
+      <link rel="home" href="index.html" title="WinMerge 2.16 Help">
+      <link rel="up" href="index.html" title="WinMerge 2.16 Help">
+      <link rel="prev" href="Version_control.html" title="Using WinMerge with other tools">
+      <link rel="next" href="Shortcut_keys.html" title="Appendix&nbsp;A.&nbsp;Shortcut keys">
+      <link rel="stylesheet" type="text/css" href="css/all.css">
+      <link rel="stylesheet" type="text/css" media="print" href="css/print.css">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Frequently asked questions</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="Version_control.html">Prev</a>&nbsp;
+               </td>
+               <th width="60%" align="center">&nbsp;</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="Shortcut_keys.html">Next</a></td>
+            </tr>
+         </table>
+      </div>
+      <div class="article" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title"><a name="Faq"></a>Frequently asked questions
+                  </h2>
+               </div>
+            </div>
+            <hr>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e9684"></a>1.&nbsp;General questions
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <div class="qandaset">
+               <table border="0" summary="Q and A Set">
+                  <col align="left" width="1%">
+                  <tbody>
+                     <tr class="question">
+                        <td align="left" valign="top"><a name="d0e9688"></a><a name="d0e9689"></a><p><b>1.1.</b></p>
+                        </td>
+                        <td align="left" valign="top">
+                           <p>Does WinMerge run on older Windows versions?</p>
+                        </td>
+                     </tr>
+                     <tr class="answer">
+                        <td align="left" valign="top"></td>
+                        <td align="left" valign="top">
+                           <p><a class="indexterm" name="d0e9694"></a><a class="indexterm" name="d0e9697"></a><a class="indexterm" name="d0e9702"></a>Beginning with Version 2.14, WinMerge ended support for
+                              	    older 32-bit Windows systems, including Windows 9x, ME, and NT4.
+                              	    In addition, WinMerge version 2.16 does not support Windows 2000.
+                           </p>
+                           <p>Previously, WinMerge provided an ANSI (8-bit) executable,
+                                            <code class="filename">WinMerge.exe</code>, that was designed around the
+                                          old Windows codepages. <code class="filename">WinMerge.exe</code> internally
+                              stored only the ANSI characters supported by the Windows codepage.
+                                          This executable had severe limitations for working with Unicode: if
+                                          you opened a Unicode file, the characters were converted to the
+                                          Windows ANSI codepage. Because there are over 100,000 Unicode
+                                          characters, and only 256 can be represented in the ANSI character
+                                          set, data loss could occur. Conversion might be approximate (for
+                                          example, accents are lost) or impossible: characters were replaced
+                                          by question marks ( <code class="literal">?</code> ).
+                           </p>
+                           <p><code class="filename">WinMerge.exe</code> also could not open files with
+                                          names outside the current ANSI codepage. For example, on an English
+                                          system, <code class="filename">WinMerge.exe</code> could not open a file with
+                                          a Hebrew name.
+                           </p>
+                           <p>WinMerge developed the Unicode-enabled
+                                            <code class="filename">WinMergeU.exe</code> executable to work with newer,
+                                          Unicode-based Windows systems. <code class="filename">WinMergeU.exe</code>
+                                          has none of the limitations of the ANSI executable.
+                           </p>
+                           <p><code class="filename">WinMergeU.exe</code> has been installed by default
+                                          for some time, and since few ANSI-based Windows systems remain, the
+                                          value of maintaining <code class="filename">WinMerge.exe</code> is miminal.
+                                          As of Version 2.14, WinMerge no longer includes
+                                            <code class="filename">WinMerge.exe</code> in the installer.  
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="question">
+                        <td align="left" valign="top"><a name="d0e9744"></a><a name="d0e9745"></a><p><b>1.2.</b></p>
+                        </td>
+                        <td align="left" valign="top">
+                           <p>I want to compare folders, but I cannot select a folder in the
+                                        Browse dialog.<a class="indexterm" name="d0e9748"></a></p>
+                        </td>
+                     </tr>
+                     <tr class="answer">
+                        <td align="left" valign="top"></td>
+                        <td align="left" valign="top">
+                           <p>Browse in the folder contents to the folder you want to compare.
+                                        Do not select any of the files or subfolders, just click
+                                        <span class="guibutton">Open</span> when <code class="literal">Folder Selection</code>
+                                        is displayed in the <span class="guilabel">File name</span> field. If you
+                                        already selected a files or subfolders, just type a random string in
+                                        the <span class="guilabel">File name</span> field and click
+                                        <span class="guibutton">Open</span>. If the file name you enter is not found,
+                                        WinMerge opens the folder.
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="question">
+                        <td align="left" valign="top"><a name="d0e9771"></a><a name="d0e9772"></a><p><b>1.3.</b></p>
+                        </td>
+                        <td align="left" valign="top">
+                           <p>Do you have any plans to support other operating systems besides
+                                        Windows?
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="answer">
+                        <td align="left" valign="top"></td>
+                        <td align="left" valign="top">
+                           <p>Cross-platform support is being considered for WinMerge 3.x, 
+                                        which is being discussed in our <a class="ulink" href="http://forums.winmerge.org/viewforum.php?f=9" target="_top">WinMerge 3</a> forum.
+                                        Please join in, if you are interested.
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="question">
+                        <td align="left" valign="top"><a name="d0e9781"></a><a name="d0e9782"></a><p><b>1.4.</b></p>
+                        </td>
+                        <td align="left" valign="top">
+                           <p>Why is there no CVS integration?<a class="indexterm" name="d0e9785"></a><a class="indexterm" name="d0e9790"></a></p>
+                        </td>
+                     </tr>
+                     <tr class="answer">
+                        <td align="left" valign="top"></td>
+                        <td align="left" valign="top">
+                           <p>Providing an integration with CVS is of questionable value
+                                        because there already are so many good CVS clients. However, WinMerge
+                                        does provide an integration with the diff function of one of those
+                                        clients, TortoiseCVS (as described in <a class="xref" href="Version_control.html" title="Using WinMerge with other tools">Using WinMerge with other tools</a>). Also, WinMerge can resolve conflict
+                                        files (see <a class="xref" href="Compare_files.html#ResolveConflictFiles" title="5.3.&nbsp;Resolving conflict files">Resolving conflict files</a>).
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="question">
+                        <td align="left" valign="top"><a name="d0e9802"></a><a name="d0e9803"></a><p><b>1.5.</b></p>
+                        </td>
+                        <td align="left" valign="top">
+                           <p>What is an MRU list?<a class="indexterm" name="d0e9806"></a></p>
+                        </td>
+                     </tr>
+                     <tr class="answer">
+                        <td align="left" valign="top"></td>
+                        <td align="left" valign="top">
+                           <p>MRU is an abbreviation for &#8220;<span class="quote">Most Recently Used</span>&#8221;,
+                                        and refers to the history lists in the Select Files or Folders dialog.
+                                        The list contain the last twenty paths used on each side.
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="question">
+                        <td align="left" valign="top"><a name="d0e9815"></a><a name="d0e9816"></a><p><b>1.6.</b></p>
+                        </td>
+                        <td align="left" valign="top">
+                           <p>Can WinMerge open OpenOffice files?<a class="indexterm" name="d0e9819"></a></p>
+                        </td>
+                     </tr>
+                     <tr class="answer">
+                        <td align="left" valign="top"></td>
+                        <td align="left" valign="top">
+                           <p>OpenOffice files are archives. To be able to open them in
+                                        WinMerge, you have to configure archive support:
+                           </p>
+                           <div class="itemizedlist">
+                              <ul type="disc">
+                                 <li>
+                                    <p>In WinMerge, click the <span class="guibutton">Options</span> button
+                                                     (or click <span class="guimenu">Edit</span> &#8594; <span class="guimenuitem">Options</span>). In the Archive Support page, enable the
+                                                     <span class="guilabel">Detect archive type from file signature</span>
+                                                     option
+                                    </p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr class="question">
+                        <td align="left" valign="top"><a name="d0e9841"></a><a name="d0e9842"></a><p><b>1.7.</b></p>
+                        </td>
+                        <td align="left" valign="top">
+                           <p>Why do large files sometimes show up as different in the Folder
+                                        Compare window, but identical in the File Compare window?
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="answer">
+                        <td align="left" valign="top"></td>
+                        <td align="left" valign="top">
+                           <p>This is because WinMerge always uses the <span class="guilabel">Quick
+                                           Contents</span> file compare method for large files. This method
+                                        enables WinMerge to compare large files more efficiently. To test if
+                                        this is causing the behavior you're seeing, you can try raising the
+                                        <span class="guilabel">Quick Contents</span> threshold for large files. See the
+                                        discussion of this method in <a class="xref" href="Compare_dirs.html#Compare_dirs_starting" title="1.&nbsp;Starting a folder compare operation">Starting a folder compare operation</a>
+                                        to learn how.
+                           </p>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e9856"></a>2.&nbsp;File comparing
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <div class="qandaset">
+               <table border="0" summary="Q and A Set">
+                  <col align="left" width="1%">
+                  <tbody>
+                     <tr class="question">
+                        <td align="left" valign="top"><a name="d0e9860"></a><a name="d0e9861"></a><p><b>2.1.</b></p>
+                        </td>
+                        <td align="left" valign="top">
+                           <p>Why do my files have all lines marked as different (colored),
+                                        even though I know all the lines are not different?
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="answer">
+                        <td align="left" valign="top"></td>
+                        <td align="left" valign="top">
+                           <p>Maybe your files have different line ending styles (for example,
+                                        Windows and Unix). By default, WinMerge compares line ending styles.
+                                        To disable it, click <span class="guimenu">Edit</span> &#8594; <span class="guimenuitem">Options</span>. In the Compare page, enable (check) the option,
+                                        <span class="guilabel">Ignore carriage return differences</span>.
+                           </p>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e9876"></a>3.&nbsp;Questions about editor
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <div class="qandaset">
+               <table border="0" summary="Q and A Set">
+                  <col align="left" width="1%">
+                  <tbody>
+                     <tr class="question">
+                        <td align="left" valign="top"><a name="d0e9880"></a><a name="d0e9881"></a><p><b>3.1.</b></p>
+                        </td>
+                        <td align="left" valign="top">
+                           <p>I see question marks instead of letters in files.</p>
+                        </td>
+                     </tr>
+                     <tr class="answer">
+                        <td align="left" valign="top"></td>
+                        <td align="left" valign="top">
+                           <p>This is what we call a <em class="glossterm">lossy
+                                           conversion</em>.
+                           </p>
+                           <p>For ANSI files, this is probably due to code-page problems. To
+                                        troubleshoot, click <span class="guimenu">Edit</span> &#8594; <span class="guimenuitem">Options</span>. Then in the Codepages page, see if the option
+                                        <span class="guilabel">Detect codepage info</span> is checked. If it is,
+                                        deselect the option, click <span class="guibutton">OK</span>, and see if that
+                                        helps.
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="question">
+                        <td align="left" valign="top"><a name="d0e9905"></a><a name="d0e9906"></a><p><b>3.2.</b></p>
+                        </td>
+                        <td align="left" valign="top">
+                           <p>I cannot select proportional fonts for editor.</p>
+                        </td>
+                     </tr>
+                     <tr class="answer">
+                        <td align="left" valign="top"></td>
+                        <td align="left" valign="top">
+                           <p>Unfortunately, WinMerge supports only non-proportional
+                                        fonts.
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="question">
+                        <td align="left" valign="top"><a name="d0e9912"></a><a name="d0e9913"></a><p><b>3.3.</b></p>
+                        </td>
+                        <td align="left" valign="top">
+                           <p>What is <em class="glossterm">delay of automatic rescan</em>? Why it
+                                        is needed?
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="answer">
+                        <td align="left" valign="top"></td>
+                        <td align="left" valign="top">
+                           <p>When <span class="guilabel">Automatic Rescan</span> is enabled (in the
+                                        Editor page of Options), WinMerge delays rescanning while you edit
+                                        files. That is, no rescanning occurs until shortly after you stop
+                                        typing. Without this delay, WinMerge would rescan after every typed
+                                        character, making the editing process too slow. The delay especially
+                                        improves editing bigger files, which can take several seconds to
+                                        rescan.
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="question">
+                        <td align="left" valign="top"><a name="d0e9925"></a><a name="d0e9926"></a><p><b>3.4.</b></p>
+                        </td>
+                        <td align="left" valign="top">
+                           <p>Can I print files from the File panes in the Compare Files
+                                        window?
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="answer">
+                        <td align="left" valign="top"></td>
+                        <td align="left" valign="top">
+                           <p>Yes, there is basic printing support: click <span class="guimenu">File</span> &#8594; <span class="guimenuitem">Print</span>.
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="question">
+                        <td align="left" valign="top"><a name="d0e9938"></a><a name="d0e9939"></a><p><b>3.5.</b></p>
+                        </td>
+                        <td align="left" valign="top">
+                           <p>Can I hide similar lines in a file comparison, so that only
+                                        different lines are visible?
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="answer">
+                        <td align="left" valign="top"></td>
+                        <td align="left" valign="top">
+                           <p>Yes, you can show only different lines by clicking <span class="guimenu">View</span> &#8594; <span class="guimenuitem">Diff Context</span> &#8594; <span class="guimenuitem">0 lines</span>.
+                           </p>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e9953"></a>4.&nbsp;WinMerge as external compare or diff-tool
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <div class="qandaset">
+               <table border="0" summary="Q and A Set">
+                  <col align="left" width="1%">
+                  <tbody>
+                     <tr class="question">
+                        <td align="left" valign="top"><a name="d0e9957"></a><a name="d0e9958"></a><p><b>4.1.</b></p>
+                        </td>
+                        <td align="left" valign="top">
+                           <p>I want WinMerge to close with a single <span class="keycap"><strong>ESC</strong></span>
+                                        press after I'm done?
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="answer">
+                        <td align="left" valign="top"></td>
+                        <td align="left" valign="top">
+                           <p>Open WinMerge from the command line, and include the
+                                        <code class="option">-e</code> switch.
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="question">
+                        <td align="left" valign="top"><a name="d0e9970"></a><a name="d0e9971"></a><p><b>4.2.</b></p>
+                        </td>
+                        <td align="left" valign="top">
+                           <p>I don't want to see the <span class="guilabel">Files Are Identical</span>
+                                        message when I compare identical files, I just want WinMerge to
+                                        quit.
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="answer">
+                        <td align="left" valign="top"></td>
+                        <td align="left" valign="top">
+                           <p>Use the <code class="option">-x</code> command line switch.
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="question">
+                        <td align="left" valign="top"><a name="d0e9983"></a><a name="d0e9984"></a><p><b>4.3.</b></p>
+                        </td>
+                        <td align="left" valign="top">
+                           <p>How can I avoid filling the Select Files or Folders dialog
+                                        history lists with temporary paths?
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="answer">
+                        <td align="left" valign="top"></td>
+                        <td align="left" valign="top">
+                           <p>Have your external program invoke WinMerge with the
+                                        <code class="option">/ub</code> option, which tells WinMerge to not add the files
+                                        to the MRU.
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="question">
+                        <td align="left" valign="top"><a name="d0e9993"></a><a name="d0e9994"></a><p><b>4.4.</b></p>
+                        </td>
+                        <td align="left" valign="top">
+                           <p>But the program I'm using doesn't allow command line
+                                        parameters!
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="answer">
+                        <td align="left" valign="top"></td>
+                        <td align="left" valign="top">
+                           <p>Create a batch file that contains one of these lines (but not
+                                        both):
+                           </p>
+                           <div class="itemizedlist">
+                              <ul type="disc">
+                                 <li><pre class="screen">CALL "<em class="replaceable"><code>&lt;winmerge path&gt;\WinMerge</code></em>" /e /u %1 %2</pre></li>
+                                 <li><pre class="screen">start "WinMerge" "<em class="replaceable"><code>&lt;winmerge path&gt;</code></em>" /e /u %1 %2</pre></li>
+                              </ul>
+                           </div>
+                           <p>Call this batch file from your program.</p>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e10015"></a>5.&nbsp;Archive support
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <div class="qandaset">
+               <table border="0" summary="Q and A Set">
+                  <col align="left" width="1%">
+                  <tbody>
+                     <tr class="question">
+                        <td align="left" valign="top"><a name="d0e10019"></a><a name="d0e10020"></a><p><b>5.1.</b></p>
+                        </td>
+                        <td align="left" valign="top">
+                           <p>How can I open the Perry-style patch files that WinMerge
+                                        developers use when submitting patches?<a class="indexterm" name="d0e10023"></a></p>
+                        </td>
+                     </tr>
+                     <tr class="answer">
+                        <td align="left" valign="top"></td>
+                        <td align="left" valign="top">
+                           <p>Perry-style patches are zip files containing original and
+                                        changed files in different directories. WinMerge has internal support
+                                        (surprise!) for handling these files: just launch a compare operation,
+                                        selecting the zip file for both the left and right sides. WinMerge
+                                        opens the contents of the zip file in a Folder Compare window,
+                                        comparing the original and changed files.
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="question">
+                        <td align="left" valign="top"><a name="d0e10029"></a><a name="d0e10030"></a><p><b>5.2.</b></p>
+                        </td>
+                        <td align="left" valign="top">
+                           <p>Can WinMerge open archive files with non-standard
+                                        file-extensions? (For example .jar files as zip-files)
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="answer">
+                        <td align="left" valign="top"></td>
+                        <td align="left" valign="top">
+                           <p>Yes: click the <span class="guibutton">Options</span> button (or click
+                                        <span class="guimenu">Edit</span> &#8594; <span class="guimenuitem">Options</span>). In the Archive Support page, enable the
+                                        <span class="guilabel">Detect archive type from file signature</span>
+                                        option.
+                           </p>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="Faq_encoding"></a>6.&nbsp;Text encoding (codepages)<a class="indexterm" name="d0e10051"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <div class="qandaset">
+               <table border="0" summary="Q and A Set">
+                  <col align="left" width="1%">
+                  <tbody>
+                     <tr class="question">
+                        <td align="left" valign="top"><a name="d0e10057"></a><a name="Faq_detectencoding"></a><p><b>6.1.</b></p>
+                        </td>
+                        <td align="left" valign="top">
+                           <p><a name="Faq_detectencoding_text"></a>How do I tell if my file is coded
+                                        in the local Windows (ANSI) codepage?
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="answer">
+                        <td align="left" valign="top"></td>
+                        <td align="left" valign="top">
+                           <p>Open the file in Windows Notepad (for example, click <span class="guimenu">Start</span> &#8594; <span class="guisubmenu">(All) Programs</span> &#8594; <span class="guisubmenu">Accessories</span> &#8594; <span class="guimenuitem">Notepad</span>). Click <span class="guimenu">File</span> &#8594; <span class="guimenuitem">Save As</span>, and in the Save As dialog, scroll to the
+                                        <span class="guilabel">Encoding</span> item at the dropdown list. The possible
+                                        values include:
+                           </p>
+                           <div class="itemizedlist">
+                              <ul type="disc">
+                                 <li>
+                                    <p><span class="guilabel">ANSI</span>: The file is apparently in the
+                                                     local Windows codepage. If the file is entirely in English and
+                                                     normal punctuation, then the file is also in ASCII.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p><span class="guilabel">Unicode</span>: The file is probably in the
+                                                     default Windows Unicode encoding, UCS-2LE.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p><span class="guilabel">UTF-8</span>: The file is in the
+                                                     cross-platform Unicode encoding, UTF-8.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p><span class="guilabel">Unicode big endian</span>: The file is in a
+                                                     different Unicode encoding that is little used or supported in
+                                                     Windows, probably UCS-2BE.
+                                    </p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e10104"></a>7.&nbsp;Patch files<a class="indexterm" name="d0e10107"></a><a class="indexterm" name="d0e10112"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <div class="qandaset">
+               <table border="0" summary="Q and A Set">
+                  <col align="left" width="1%">
+                  <tbody>
+                     <tr class="question">
+                        <td align="left" valign="top"><a name="d0e10118"></a><a name="d0e10119"></a><p><b>7.1.</b></p>
+                        </td>
+                        <td align="left" valign="top">
+                           <p>Is there way to create patch files from the command line?</p>
+                        </td>
+                     </tr>
+                     <tr class="answer">
+                        <td align="left" valign="top"></td>
+                        <td align="left" valign="top">
+                           <p>No. It might be added in later versions. Until then, you can use
+                                        the Win32 port of <code class="filename">diffutils</code>. The latest version
+                                        of <code class="filename">diffutils</code> (and patch) can be downloaded from
+                                        <span class="application">the SourceForge GnuWin32</span> project page:
+                                        <a class="ulink" href="http://sourceforge.net/projects/gnuwin32/" target="_top">
+                                           http://sourceforge.net/projects/gnuwin32</a>.
+                           </p>
+                        </td>
+                     </tr>
+                     <tr class="question">
+                        <td align="left" valign="top"><a name="d0e10137"></a><a name="d0e10138"></a><p><b>7.2.</b></p>
+                        </td>
+                        <td align="left" valign="top">
+                           <p>Can patches be applied using WinMerge?</p>
+                        </td>
+                     </tr>
+                     <tr class="answer">
+                        <td align="left" valign="top"></td>
+                        <td align="left" valign="top">
+                           <p>You can apply patches using the experimental plugin ApplyPatch.sct.
+                                        The extensions of patches supported by the plugin are .diff or .patch.
+                                        
+                           </p>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+      <div class="navfooter">
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="Version_control.html">Prev</a>&nbsp;
+               </td>
+               <td width="20%" align="center">&nbsp;</td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="Shortcut_keys.html">Next</a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Using WinMerge with other tools&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Appendix&nbsp;A.&nbsp;Shortcut keys</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

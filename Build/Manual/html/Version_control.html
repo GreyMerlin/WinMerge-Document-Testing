@@ -1,0 +1,419 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Using WinMerge with other tools - WinMerge 2.12 Manual</title>
+      <meta name="generator" content="DocBook XSL Stylesheets V1.74.0">
+      <link rel="home" href="index.html" title="WinMerge 2.16 Help">
+      <link rel="up" href="index.html" title="WinMerge 2.16 Help">
+      <link rel="prev" href="Command_line.html" title="Command line">
+      <link rel="next" href="Faq.html" title="Frequently asked questions">
+      <link rel="stylesheet" type="text/css" href="css/all.css">
+      <link rel="stylesheet" type="text/css" media="print" href="css/print.css">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Using WinMerge with other tools</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="Command_line.html">Prev</a>&nbsp;
+               </td>
+               <th width="60%" align="center">&nbsp;</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="Faq.html">Next</a></td>
+            </tr>
+         </table>
+      </div>
+      <div class="article" lang="en">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title"><a name="Version_control"></a>Using WinMerge with other tools<a class="indexterm" name="d0e9363"></a></h2>
+               </div>
+            </div>
+            <hr>
+         </div>
+         <p>Comparing and merging files are often subtasks in a larger change
+            management process. For that reason, WinMerge is often used not just by
+            itself, but also in conjunction with other tools. In addition, diff and merge
+            utilities provide different features, so it's sometimes handy to combine
+              different tools. This topic describes the primary methods for using WinMerge
+              with other tools.
+         </p>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e9368"></a>1.&nbsp;Using the command-line interface (CLI)
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>The WinMerge command-line interface (CLI), described in <a class="xref" href="Command_line.html" title="Command line">Command line</a>, enables you to run WinMerge from a Command Prompt
+                   window, from scripts, or from another tool or program. Basically, any
+                   program that allows you to call an external executable with at least one
+                   path, can be used to launch a WinMerge operation.
+            </p>
+            <p>Here are just a few examples:</p>
+            <div class="itemizedlist">
+               <ul type="disc">
+                  <li>
+                     <p>A batch file can launch WinMerge and enable users to specify
+                                parameters interactively:
+                     </p>
+                     <div class="literallayout">
+                        <p>start&nbsp;"WinMerge"&nbsp;/B&nbsp;"C:\Program&nbsp;Files\WinMerge\WinMergeU.exe"&nbsp;/e&nbsp;/s&nbsp;/u&nbsp;/dl&nbsp;%3&nbsp;/dr&nbsp;%5&nbsp;%6&nbsp;%7</p>
+                     </div>
+                  </li>
+                  <li>
+                     <p>The Subversion client allows you to call an external diff program
+                                and pass parameters, like this:
+                     </p>
+                     <div class="literallayout">
+                        <p>$&nbsp;svn&nbsp;diff&nbsp;--diff-cmd&nbsp;"C:\Program&nbsp;Files\WinMerge\WinMergeU.exe"&nbsp;-x&nbsp;"-dl&nbsp;-dr"&nbsp;myfile&nbsp;</p>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+            <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+               <table border="0" summary="Tip">
+                  <tr>
+                     <td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="images/tip.gif"></td>
+                     <th align="left">Tip</th>
+                  </tr>
+                  <tr>
+                     <td align="left" valign="top">
+                        <p>Similarly, many GUI tools (like version control clients and IDEs)
+                                 that include built-in diff tools enable you to configure WinMerge as their
+                                 default diff tool, instead. The next section describes how to use WinMerge
+                                 this way with TortoiseSVN, TortoiseCVS, and ClearCase. For other tools,
+                                 like Eclipse and Perforce, check their documentation or search the
+                                 Internet for details and examples.
+                        </p>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+         <div class="section" lang="en">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="VersionControl_vcs"></a>2.&nbsp;Using WinMerge with version control systems<a class="indexterm" name="d0e9394"></a></h2>
+                  </div>
+               </div>
+            </div>
+            <p>You can configure WinMerge to interact with a few supported version
+                   control systems (VCS) in two ways. This section describes the two types of
+                   VCS integration and provides an example of each.
+            </p>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e9401"></a>2.1.&nbsp;Checking out versioned files from WinMerge
+                        </h3>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e9404"></a><p>When you save a file in WinMerge and the file is a versioned
+                        ClearCase or Visual Source Safe element, WinMerge can open the VCS's
+                        checkout dialog for you. This makes it easy to check out files as you are
+                        working in WinMerge. However, WinMerge does not provide checkin or history
+                        tools, so remember to check the files in later using the VCS
+                        interface.
+               </p>
+               <p>This integration is available after WinMerge installation. To enable
+                        or disable the integration, click <span class="guimenu">Edit</span> &#8594; <span class="guimenuitem">Options</span>, open the Version Control integration page, and choose the
+                        appropriate option.
+               </p>
+               <div class="example"><a name="d0e9417"></a><p class="title"><b>Example&nbsp;1.&nbsp;Visual Source Safe integration</b></p>
+                  <div class="example-contents">
+                     <p>Here is a sample file checkout using the VSS integration.</p>
+                     <div class="orderedlist">
+                        <ol type="1">
+                           <li>
+                              <p>Launch a WinMerge file or folder comparison whose left or
+                                             right target is under version control.
+                              </p>
+                           </li>
+                           <li>
+                              <p>In WinMerge, edit a version-controlled file.</p>
+                           </li>
+                           <li>
+                              <p>Save your changes. WinMerge detects that the file is
+                                             read-only, and assumes that it is under Visual Source Safe version
+                                             control. WinMerge opens a Visual Source Save dialog, like
+                                             this:
+                              </p>
+                              <div class="mediaobject"><img src="screenshots/sourcesafe1.png"></div>
+                           </li>
+                           <li>
+                              <p>In the <span class="guilabel">Database</span> dropdown list, choose the
+                                             correct Visual SourceSafe database if there is more than one on your
+                                             system.
+                              </p>
+                           </li>
+                           <li>
+                              <p>The <span class="guilabel">Project</span> field shows the selected
+                                             file's location relative to the Visual SourceSafe database path.
+                                             Verify that the path is correct: most errors are caused by the wrong
+                                             project path. If you change folders, remember to change the project
+                                             path, too!
+                              </p>
+                           </li>
+                           <li>
+                              <p>Enter your password if required. WinMerge remembers your
+                                             password for the current session, but for your security does not
+                                             store it. Therefore, you don't need to retype the password during a
+                                             session, but you must retype the password each time you open
+                                             WinMerge.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Optionally, enable one or both of these options:</p>
+                              <div class="itemizedlist">
+                                 <ul type="disc">
+                                    <li>
+                                       <p><span class="guilabel">Link to Destination VSS
+                                                             project</span></p>
+                                    </li>
+                                    <li>
+                                       <p><span class="guilabel">Apply to all items</span>. This option
+                                                          enables you to check out multiple files in a single directory
+                                                          when you copy files in a folder compare operation.
+                                       </p>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </li>
+                        </ol>
+                     </div>
+                     <p>Unfortunately, VSS provides very little information about error
+                                conditions beyond the fact that they occur. If an operation fails,
+                                causes might include any of the following conditions:
+                     </p>
+                     <div class="itemizedlist">
+                        <ul type="disc">
+                           <li>
+                              <p>Another user might have the file checked out with exclusive
+                                             access.
+                              </p>
+                           </li>
+                           <li>
+                              <p>You might have specified the wrong project.</p>
+                           </li>
+                           <li>
+                              <p>You might have entered the project name incorrectly.</p>
+                           </li>
+                           <li>
+                              <p>You might not have used a valid VSS path (for example, this is
+                                             incorrect: <strong class="userinput"><code>$/MyProject/res</code></strong>).
+                              </p>
+                           </li>
+                           <li>
+                              <p>Your connection to the VSS server computer might be
+                                             broken.
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div><br class="example-break"></div>
+            <div class="section" lang="en">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h3 class="title"><a name="d0e9484"></a>2.2.&nbsp;Using WinMerge as a version control system's diff tool
+                        </h3>
+                     </div>
+                  </div>
+               </div><a class="indexterm" name="d0e9487"></a><p>When you compare files in TortoiseSVN, TortoiseCVS, or Rational
+                        ClearCase, you can have the VCS launch WinMerge instead of its native diff
+                        utility. You can configure some of these integrations during <a class="link" href="Install.html#Installing_usinginstaller" title="3.&nbsp;Using the installer (recommended)">WinMerge installation</a>.
+               </p>
+               <div class="example"><a name="d0e9495"></a><p class="title"><b>Example&nbsp;2.&nbsp;Tortoise SVN integration</b></p>
+                  <div class="example-contents">
+                     <p>Here is a sample diff operation in TortoiseSVN that uses the
+                                WinMerge integration. The integrations with TortoiseCVS and ClearCase
+                                are similar.
+                     </p>
+                     <div class="orderedlist">
+                        <ol type="1">
+                           <li>
+                              <p>In Windows Explorer, navigate to a Subversion working copy
+                                             that you have checked out.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Right-click a file that is under Subversion management
+                                             (usually indicated by a distinct TortoiseSVN icon), and click
+                                             <span class="guimenu">TortoiseSVN</span> in the context menu.
+                              </p>
+                              <div class="itemizedlist">
+                                 <ul type="disc">
+                                    <li>
+                                       <p>If the file has not been modified, the context menu
+                                                          contains the shortcut, <span class="guimenuitem">Diff with previous
+                                                             version</span>. This command compares the checked-out
+                                                          version of the file with the previous version that was checked
+                                                          in to the repository.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p>If you have modified the file, the context menu contains
+                                                          the same <span class="guimenuitem">Diff with previous version</span>
+                                                          shortcut, plus the <span class="guimenuitem">Diff</span> shortcut.
+                                                          This command compares your revision to the current version (the
+                                                          one you checked out). It is useful for reviewing the changes you
+                                                          have made.
+                                       </p>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li>
+                              <p>Choose either the <span class="guimenuitem">Diff with previous
+                                                version</span> or <span class="guimenuitem">Diff</span> shortcut.
+                                             The WinMerge window opens, with the target file versions loaded In
+                                             the File Compare window.
+                              </p>
+                           </li>
+                        </ol>
+                     </div>
+                     <p>The <span class="guimenu">TortoiseSVN</span> &#8594; <span class="guimenuitem">Diff</span> shortcut is available for comparing any two files in
+                                your file system, not just files that are managed by Subversion. To
+                                illustrate how the WinMerge integration works in this case:
+                     </p>
+                     <div class="orderedlist">
+                        <ol type="1">
+                           <li>
+                              <p>In Windows Explorer, hold <span class="keycap"><strong>Ctrl</strong></span>, select any
+                                             two files, and right-click.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Choose <span class="guimenu">TortoiseSVN</span> &#8594; <span class="guimenuitem">Diff</span> in the context menu.
+                              </p>
+                              <p>The WinMerge window opens, with the selected files loaded In
+                                             the File Compare window.
+                              </p>
+                           </li>
+                        </ol>
+                     </div>
+                  </div>
+               </div><br class="example-break"><div class="example"><a name="d0e9561"></a><p class="title"><b>Example&nbsp;3.&nbsp;Visual Studio Team Foundation Server integration</b></p>
+                  <div class="example-contents">
+                     <p>You can manually set up WinMerge as the default tool to use for
+                        		in Visual Studio to show differences in Team Foundation Server (TFS)
+                                Other version control systems can be set up in very similar ways.
+                     </p>
+                     <div class="orderedlist">
+                        <ol type="1">
+                           <li>
+                              <p>In Visual Studio, navigate to the 
+                                 			  <span class="guimenu">Tools</span> &#8594; <span class="guimenuitem">Options...</span> menu.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Under <span class="guimenu">Source Control</span>, find the<span class="guimenu"> Visual Studio Team Foundation Server</span> options.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Click the <span class="guimenuitem">Configure User Tools...</span> button.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Click the <span class="guimenuitem">Add...</span> button.
+                              </p>
+                           </li>
+                           <li>
+                              <div class="mediaobject"><img src="screenshots/tfs_configure.png"></div>
+                              <p>Type in the following options in the Configure Tool.</p>
+                              <div class="itemizedlist">
+                                 <ul type="disc">
+                                    <li>
+                                       <p>Extension: .*</p>
+                                    </li>
+                                    <li>
+                                       <p>Operation: Compare</p>
+                                    </li>
+                                    <li>
+                                       <p>Command: {Path to WinMerge}\WinMergeU.exe</p>
+                                    </li>
+                                    <li>
+                                       <p>Arguments: /e /u /dl %6 /dr %7 %1 %2</p>
+                                    </li>
+                                 </ul>
+                              </div>
+                              <p> Where {Path to WinMerge} is the path were WinMerge is installed.
+                                 			In the above screenshot it is installed to the default installation path 
+                                 			C:\Program Files (x86)\WinMerge\WinMergeU.exe
+                              </p>
+                              <p> The arguments are described under <a class="xref" href="Command_line.html" title="Command line">Command line</a>.
+                              </p>
+                           </li>
+                        </ol>
+                     </div>
+                     <p>Every time you tell TFS to compare two files, it will now use WinMerge.</p>
+                  </div>
+               </div><br class="example-break"><div class="section" lang="en">
+                  <div class="titlepage">
+                     <div>
+                        <div>
+                           <h4 class="title"><a name="VersionControl_cc"></a>2.2.1.&nbsp;About the ClearCase integration
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  <p>When you choose the integration option for Rational ClearCase
+                             during WinMerge installation, the installer:
+                  </p>
+                  <div class="orderedlist">
+                     <ol type="1">
+                        <li>
+                           <p>Creates a backup copy of the ClearCase
+                                          <code class="filename">map</code> file, <code class="filename">map.bak</code>, in the
+                                          <code class="filename"><em class="replaceable"><code>ccase-home-dir</code></em>\lib\mgrs</code>
+                                          directory. The <code class="filename">map</code> file is a user-configurable
+                                          file that associates ClearCase methods with the programs that carry
+                                          them out.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Modifies the <span class="guilabel">text_file_delta</span> field In the
+                                          <code class="filename">map</code> file, specifying WinMerge instead of the
+                                          default <code class="filename">cleardiff.exe</code> when running the
+                                          <span class="command"><strong>cleartool diff</strong></span> command.
+                           </p>
+                        </li>
+                     </ol>
+                  </div>
+                  <p>If you later want to disable WinMerge interactions with ClearCase,
+                             replace the ClearCase <code class="filename">map</code> file created by the
+                             WinMerge installer with the <code class="filename">map.bak</code> backup file.
+                             Alternatively, edit the ClearCase <code class="filename">map</code> file to run
+                             <code class="filename">cleardiff.exe</code> for the <span class="command"><strong>cleartool
+                                   diff</strong></span> command.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="navfooter">
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="Command_line.html">Prev</a>&nbsp;
+               </td>
+               <td width="20%" align="center">&nbsp;</td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="Faq.html">Next</a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Command line&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Frequently asked questions</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>
