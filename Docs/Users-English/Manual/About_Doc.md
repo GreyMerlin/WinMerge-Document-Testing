@@ -62,7 +62,6 @@ To learn about WinMerge in more detail, read these topics:
 
 Before submitting questions to [SourceForge.net](http://sourceforge.net/projects/winmerge/), please check the [Faq]()  topic first to see if your question is answered there.
           
-
 ## 4. Documentation conventions
 
 
@@ -74,5 +73,5 @@ Before submitting questions to [SourceForge.net](http://sourceforge.net/projects
 |Click *File &rarr; Open*.|The arrow indicates menu navigation. In the example, you choose the *Open* item in the WinMerge *File* menu.|
 |Right-click the row and choose the *Compare* shortcut.|Click the right mouse button on an object to open its context menu, and then either left-click or right-click the indicated item in the context menu.|
 |Enter *options file*.ini<br/><br/>Use the *Filter* field to eliminate files from the             operation<br/><br/>One or more consecutive different lines form one difference (or *diff*).|*Italicized* text can represent: <br/>&nbsp;&nbsp;&bull;&nbsp;&nbsp; A replaceable value or string. In the first example, you would substitute a real file name for the italicized term, but enter the `ini` file extension, which is not italicized, as written<br/>&nbsp;&nbsp;&bull;&nbsp;&nbsp; The name of a field, menu, or control in a WinMerge window<br/>&nbsp;&nbsp;&bull;&nbsp;&nbsp; A significant word or phrase that is introduced.|
-|The path `%WORKDIR%\project1` is expanded to `C:\workfiles\project1`<br/></br> `TwoWords` | `Monospaced` text can indicate:<br/>&nbsp;&nbsp;&bull;&nbsp;&nbsp; A path or the name of a file or other system item<br/>&nbsp;&nbsp;&bull;&nbsp;&nbsp; Sample code fragments<br/>&nbsp;&nbsp;&bull;&nbsp;&nbsp;  Sample output<br/>&nbsp;&nbsp;&bull;&nbsp;&nbsp; Information that you enter in a form or on the command line|
+|The path `%WORKDIR%\project1` is expanded to `C:\workfiles\project1`<br/><br/> `TwoWords` | `Monospaced` text can indicate:<br/>&nbsp;&nbsp;&bull;&nbsp;&nbsp; A path or the name of a file or other system item<br/>&nbsp;&nbsp;&bull;&nbsp;&nbsp; Sample code fragments<br/>&nbsp;&nbsp;&bull;&nbsp;&nbsp;  Sample output<br/>&nbsp;&nbsp;&bull;&nbsp;&nbsp; Information that you enter in a form or on the command line|
 |`command inputpath [outputpath]`|In syntax lines, brackets indicate optional elements. In this example, you must enter an input path with the command; you can also enter an output path, but the command is valid without it.
