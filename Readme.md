@@ -20,3 +20,4 @@
 
 - I refrain from making any 'value judgement' statements on this page.  However, see my comments at [WinMerge Issue #88 - Modernize User Manual]( https://bitbucket.org/winmerge/winmerge/issues/88/modernize-user-manual-for-215x-and-beyond)
 
+- This is a **Temporary** repo. If you feel inclined to make a fork, please keep in mind that I ***will*** eventually delete the entire repo.
