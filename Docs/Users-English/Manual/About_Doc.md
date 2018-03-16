@@ -1,6 +1,5 @@
 # About WinMerge Help
 
-
 This is Help for WinMerge 2.16.0
 
 ## 1. Audience and scope
@@ -11,7 +10,7 @@ WinMerge Help is intended for both new and experienced users.  It explains how t
 
 WinMerge Help topics are provided in two forms:
 
-- Microsoft HTML Help (`WinMerge.chm`), located in your WinMerge/Docs installation directory.
+- Microsoft HTML Help (`WinMerge.chm`), located in your WinMerge\Docs installation directory.
         
 - HTML manual on the WinMerge Web site.
 
@@ -30,37 +29,37 @@ You can access WinMerge Help in several ways:
 
 Please read the following topics to learn essential WinMerge basics,
 
-- **[Quick Start](./Quick_start.md)**  
+- **[Quick Start](./Quick_start.md "Quick Start")**  
     Gets you quickly started with WinMerge and shows its basic usage.
           
-- **[Comparing and merging folders]()**  
+- **[Comparing and merging folders](.\Compare_Dirs.xml "Comparing and merging folders")**  
     Explains the folder comparison window, available operations, and customizing the results display.
           
-- **[Comparing and merging text files]()**  
+- **[Comparing and merging text files](.\Compare_files.xml "Comparing and merging text files")**  
     Explains the file comparison/merge window, available operations, methods of navigation, and modes.
           
-- **[Options and Configuration]()**  
+- **[Options and Configuration](.\Configuration.xml "Options and Configuration")**  
     Explains how to customize WinMerge, including handling whitespace, colours, and text encoding.
           
           
 To learn about WinMerge in more detail, read these topics:
 
-- **[Opening Files and Folders]()**  
+- **[Opening Files and Folders](.\Open_paths.xml "Opening Files and Folders")**  
     Introduces several ways to open files and folders in WinMerge - there are many! For example, do you know how to use the Shell Extension context menu in advanced mode?
           
-- **[Plugins]()**  
+- **[Plugins](.\Plugins.xml "Plugins")**  
     Describes the optional, extra features that you can add to WinMerge using its plugin mechanism.
 
-- **[Using Filters]()**  
+- **[Using Filters](.\Filters.xml "Filters")**  
     Explains how to control what is compared in the folder or file comparison window.
 
-- **[Command Line]()**  
+- **[Command Line](.\Command_line.xml "Command Line")**  
     Lists command-line parameters for using WinMerge with other tools or from a script.
 
-- **[Faq]()**  
+- **[Frequently Asked Questions](.\Faq.xml "Frequently Asked Questions")**  
     Contains answers to many common questions asked of developers.
 
-Before submitting questions to [SourceForge.net](http://sourceforge.net/projects/winmerge/), please check the [Faq]()  topic first to see if your question is answered there.
+Before submitting questions to [SourceForge.net](http://sourceforge.net/projects/winmerge/), please check the [Frequently Asked Questions](.\Faq.xml "Frequently Asked Questions")  topic first to see if your question is answered there.
           
 ## 4. Documentation conventions
 

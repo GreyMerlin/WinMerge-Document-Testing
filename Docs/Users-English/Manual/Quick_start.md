@@ -13,12 +13,12 @@ other methods and more advanced skills, which are covered in other help topics.
  
 2. In the WinMerge window select the files or folders that you want to operate on. For example:
       - Click *File &rarr; Open*.
-      - Click the ![](./screenshots/open_icon.png) WinMerge open button.
+      - Click the ![](./screenshots/open_icon.png "WinMerge open button") WinMerge open button.
       - Press **Ctrl+O**.  
 
       The Select Files or Folders dialog opens:
 
-      ![](./screenshots/OpenDlg1.png)
+      ![](./screenshots/OpenDlg1.png "Select Files or Folders window")
 
 
 3. In the *1st* and *2nd* fields, specify the files and folders to compare. Use any of these         methods:
@@ -35,7 +35,7 @@ other methods and more advanced skills, which are covered in other help topics.
 
       - Click the combo box and choose a previously-used path.
 
-        > ![](./images/tip.gif) **Tip** <br/> To make it easier to select frequently-used paths, consider enabling the *Open-dialog Auto-completion* option. With this option, WinMerge shows a list of paths available as you type in the fields. See [Options and Configuration](./Configuration.md) for details.
+        > ![](./images/tip.gif) **Tip** <br/> To make it easier to select frequently-used paths, consider enabling the *Open-dialog Auto-completion* option. With this option, WinMerge shows a list of paths available as you type in the fields. See [Options and Configuration](./Configuration.md "Options and Configuration") for details.
 
       - Drag and drop a file or folder into the dialog or the *1st* or *2nd* field.
 
@@ -50,7 +50,7 @@ other methods and more advanced skills, which are covered in other help topics.
 
       For more robust filtering, enter a filter file instead of file masks: click the Select button next to the *Filters* field to choose from a list of available filters. File filters contain any number of rules to either include or exclude files. WinMerge installs a set of filter files, which you can edit or augment with your own files.
 
-      See [Using Filters](./Filters.md) for full details about file masks and filter files.
+      See [Using Filters](./Filters.md "Using Filters") for full details about file masks and filter files.
 
 5. The *Include Subfolders* check box provides another way to control the scope of folder comparisons. If you check this option, WinMerge recursively compares subfolders, and shows all the files and folders it finds in one view. If you disable the option, only the current folder is compared, and subfolders are listed by name (without their contents), so you can browse into them.
 
@@ -72,7 +72,7 @@ other methods and more advanced skills, which are covered in other help topics.
 
        - [Launching WinMerge operations in Windows Explorer](./Open_paths.md)
 
-       - Use the [Command Line](./Command_line) interface to start WinMerge from other applications, from a command prompt, or a batch or script file.
+       - Use the [Command line](./Command_line "Command line") interface to start WinMerge from other applications, from a command prompt, or a batch or script file.
 
        - Drag and drop files and folders directly into the WinMerge window or on the WinMerge desktop shortcut.
  
@@ -80,7 +80,7 @@ other methods and more advanced skills, which are covered in other help topics.
 
 If you selected two folders in the Open dialog, the Folder Compare window is opened. The Folder Compare window is a tabular list of items found in the compared folders. Each row displays information about a found file, with the file name in the left column and additional information in the other columns:
 
-![](./screenshots/foldercomp1.png)
+![](./screenshots/foldercomp1.png "Folder Compare window")
 
  WinMerge does not have a concept of *original* and *changed* sides. Instead, it simply shows what is different between two selected folders. A file or folder that is found only on one side is simply shown as a unique item on that side, not as added or removed. For example, in the *Comparison result* column of the preceding figure, `Merge.aps` and `Merge.rc.bak` are each found in only one of the compared folders.
 
@@ -96,19 +96,19 @@ If a file or folder exists in both sides (and it is not a binary file) it can be
 
    - Select the row and press **Enter**.
 
-If you compare a subfolder, the new folder's comparison table is loaded in the current Folder Compare window . When you are done with that folder's comparison, you can navigate back to its parent folder by double-clicking the ![](screenshots/nav_uparrow_btn.png) up arrow at the top of the Filename column.
+If you compare a subfolder, the new folder's comparison table is loaded in the current Folder Compare window . When you are done with that folder's comparison, you can navigate back to its parent folder by double-clicking the ![](screenshots/nav_uparrow_btn.png "Navivagor up arrow button") up arrow at the top of the Filename column.
 
 If you compare a file, WinMerge opens the File Compare window, described in the next section. If you change a file in the File Compare window, and then return to the Folder Compare window, you will see the file's data is updated there.
 
 
 ## 3. Comparing files
 
-![](./screenshots/filecomp1.png)
+![](./screenshots/filecomp1.png "File Compare window")
 
 The File Compare window shows the two selected files side by side, in separate File panes. Different lines are highlighted with a background color. One or more consecutive different lines form one difference (or *diff*). In the preceding example, a single difference is selected in the File panes and displayed by itself in the Diff Pane. WinMerge mainly works with these differences, not separate lines. When you merge a difference, you copy all of its lines from one side to the other.
 
 > ![](./images/important.gif) &nbsp; **Important** <br/> Notice how WinMerge fills missing lines, so that similar lines are always aligned vertically, side by side. This is different from most other compare/merge programs, and can take a while to learn.
 
-WinMerge has a simple integrated editor that features basic typing, copying, cutting and pasting of text. If *Automatic rescan* is enabled, WinMerge updates file differences while you edit a file. If *Automatic rescan* is disabled, you can update files by selecting *Edit &rarr; Refresh*, clicking the ![](./Screenshots/refresh_btn.png) toolbar button, or pressing **F5**
+WinMerge has a simple integrated editor that features basic typing, copying, cutting and pasting of text. If *Automatic rescan* is enabled, WinMerge updates file differences while you edit a file. If *Automatic rescan* is disabled, you can update files by selecting *Edit &rarr; Refresh*, clicking the ![](./Screenshots/refresh_btn.png "Refresh Button") toolbar button, or pressing **F5**
     
     

@@ -3,14 +3,14 @@
 
 #### Original Authors ...
 
-- **Kimmo Varis**
-- **Denis Bradford**
-- **Dean Grimm**
-- **Laurent Ganier**
-- **Tim Gerundt**
-- **Perry Rapp**
-- **Christian List**
-- and all others who helped with this
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Kimmo Varis**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Denis Bradford**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Dean Grimm**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Laurent Ganier**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Tim Gerundt**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Perry Rapp**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Christian List**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and all others who helped with this
 
 *Revision 2.16.0*
 
@@ -25,11 +25,11 @@ Information in this document is subject to change without notice.
 
 --------
 
-[About Doc](./About_Doc.md)
+[About Doc](./About_Doc.md "About")
 
-[Quick Start](./Quick_start.md) 
+[Quick Start](./Quick_start.md "Quick Start") 
 
-[Introduction](./Introduction.md)
+[Introduction](./Introduction.md "Introduction")
 
 ![](./images/note.gif) &nbsp; Thats as far as I've gotten !! 
 
